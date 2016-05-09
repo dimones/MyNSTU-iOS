@@ -1,0 +1,12 @@
+
+/* Class = "UIButton"; normalTitle = "Войти как гость"; ObjectID = "24y-so-xvT"; */
+"24y-so-xvT.normalTitle" = "Войти как гость";
+
+/* Class = "UIButton"; normalTitle = "Войти"; ObjectID = "h4K-4N-sjM"; */
+"h4K-4N-sjM.normalTitle" = "Войти";
+
+/* Class = "UITextField"; placeholder = "Пароль"; ObjectID = "tpe-Si-63h"; */
+"tpe-Si-63h.placeholder" = "Пароль";
+
+/* Class = "UITextField"; placeholder = "Логин"; ObjectID = "xS0-KI-Uo0"; */
+"xS0-KI-Uo0.placeholder" = "Логин";

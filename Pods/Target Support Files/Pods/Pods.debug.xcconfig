@@ -1,0 +1,10 @@
+GCC_ENABLE_CPP_EXCEPTIONS = YES
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+GCC_WARN_64_TO_32_BIT_CONVERSION = NO
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/YandexMobileMetrica"
+LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
+LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/YandexMobileMetrica"
+OTHER_CFLAGS = $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/AFNetworking.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/Bolts.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/FBSDKCoreKit.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/FBSDKLoginKit.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/FBSDKShareKit.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/FMDB.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/KSCrash.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/VK_ios_sdk.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/protobuf_c.framework/Headers" -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/YandexMobileMetrica"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"YandexMobileMetrica" -l"sqlite3" -l"z" -framework "AFNetworking" -framework "AdSupport" -framework "Bolts" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreTelephony" -framework "FBSDKCoreKit" -framework "FBSDKLoginKit" -framework "FBSDKShareKit" -framework "FMDB" -framework "Foundation" -framework "KSCrash" -framework "SystemConfiguration" -framework "UIKit" -framework "VK_ios_sdk" -framework "protobuf_c"
+PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods
+PODS_ROOT = ${SRCROOT}/Pods
