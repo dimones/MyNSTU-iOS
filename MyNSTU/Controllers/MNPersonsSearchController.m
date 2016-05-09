@@ -45,13 +45,15 @@
         __block NSInteger index = 0;
         [[((NSDictionary*)jsonObject) allKeys] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             id t_obj = jsonObject[obj];
+            NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+            f.numberStyle = NSNumberFormatterDecimalStyle;
             if(index<20)
             {
-                [personsArray addObject:@{ @"name":t_obj[@"name"],@"id":obj ,@"job_title":t_obj[@"post"]}];
-                [persallArray addObject: @{ @"name":t_obj[@"name"],@"id":obj ,@"job_title":t_obj[@"post"]}];
+                [personsArray addObject:@{ @"name":t_obj[@"name"],@"id":[f numberFromString:obj] ,@"job_title":t_obj[@"post"]}];
+                [persallArray addObject: @{ @"name":t_obj[@"name"],@"id":[f numberFromString:obj] ,@"job_title":t_obj[@"post"]}];
             }
             else
-                [persallArray addObject: @{ @"name":t_obj[@"name"],@"id":obj ,@"job_title":t_obj[@"post"]}];
+                [persallArray addObject: @{ @"name":t_obj[@"name"],@"id":[f numberFromString:obj] ,@"job_title":t_obj[@"post"]}];
             index++;
             
         }];

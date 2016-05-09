@@ -16,6 +16,7 @@
     NSMutableDictionary *heightDict;
     NSString *FIO;
     NSString *post;
+    NSString *persID;
 }
 @property (weak, nonatomic) IBOutlet UIImageView *personImgBackground;
 @property (weak, nonatomic) IBOutlet UILabel *personSurname;
@@ -46,10 +47,10 @@
 - (void) loadDatas
 {
     //Images
-    UIImage *background = [[MNAPI_Addition getImageFromID:[NSString stringWithFormat:@"%@.jpg", personInfo[@"id"]]] blurredImage:.3f];
+    UIImage *background = [[MNAPI_Addition getImageFromID:[NSString stringWithFormat:@"%@.jpg", persID]] blurredImage:.3f];
     self.personImgBackground.clipsToBounds = YES;
     self.personImgBackground.image = background;
-    UIImage *persIm = [MNAPI_Addition getImageFromID:[NSString stringWithFormat:@"%@.jpg", personInfo[@"id"]]];
+    UIImage *persIm = [MNAPI_Addition getImageFromID:[NSString stringWithFormat:@"%@.jpg", persID]];
     
     persIm = [MNAPI_Addition scaleTheImage:persIm andRect:self.personImgPhoto.frame.size];
     [self.personImgPhoto setImage:persIm];
@@ -75,14 +76,15 @@
 {
     MNPersonsTabController *parent = (MNPersonsTabController*)self.parentViewController;
     NSNumber *personID = parent.personID;
+    persID = personID.stringValue;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         NSString *filePath = [[NSBundle mainBundle] pathForResource:@"persons" ofType:@"json"];
         id jsonObject = [MNAPI_Addition JSONObjectFromFile:filePath];
-        FIO = jsonObject[personID][@"name"];
-        post = jsonObject[personID][@"post"];
+        FIO = jsonObject[personID.stringValue][@"name"];
+        post = jsonObject[personID.stringValue][@"post"];
         filePath =[[NSBundle mainBundle] pathForResource:@"details" ofType:@"json"];
         jsonObject = [MNAPI_Addition JSONObjectFromFile:filePath];
-        personInfo = jsonObject[personID][@"info"];
+        personInfo = jsonObject[personID.stringValue][@"info"];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.personTable reloadData];
             self.scrollView.contentInset = UIEdgeInsetsMake(60, 0, 50, 0);
