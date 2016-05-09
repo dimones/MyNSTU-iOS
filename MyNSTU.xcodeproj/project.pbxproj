@@ -15,12 +15,12 @@
 		463361531B861AFC002DFFC7 /* Upload-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 463361301B861AFC002DFFC7 /* Upload-100.png */; };
 		463361541B861AFC002DFFC7 /* Время.png in Resources */ = {isa = PBXBuildFile; fileRef = 463361311B861AFC002DFFC7 /* Время.png */; };
 		463361551B861AFC002DFFC7 /* Группа.png in Resources */ = {isa = PBXBuildFile; fileRef = 463361321B861AFC002DFFC7 /* Группа.png */; };
-		463361561B861AFC002DFFC7 /* Локация.png in Resources */ = {isa = PBXBuildFile; fileRef = 463361331B861AFC002DFFC7 /* Локация.png */; };
-		463361571B861AFC002DFFC7 /* Неделя.png in Resources */ = {isa = PBXBuildFile; fileRef = 463361341B861AFC002DFFC7 /* Неделя.png */; };
+		463361561B861AFC002DFFC7 /* Loc.png in Resources */ = {isa = PBXBuildFile; fileRef = 463361331B861AFC002DFFC7 /* Loc.png */; };
+		463361571B861AFC002DFFC7 /* Sch.png in Resources */ = {isa = PBXBuildFile; fileRef = 463361341B861AFC002DFFC7 /* Sch.png */; };
 		463361581B861AFC002DFFC7 /* Поиск.png in Resources */ = {isa = PBXBuildFile; fileRef = 463361351B861AFC002DFFC7 /* Поиск.png */; };
 		463361591B861AFC002DFFC7 /* Почта.png in Resources */ = {isa = PBXBuildFile; fileRef = 463361361B861AFC002DFFC7 /* Почта.png */; };
 		4633615A1B861AFC002DFFC7 /* Преподаватель.png in Resources */ = {isa = PBXBuildFile; fileRef = 463361371B861AFC002DFFC7 /* Преподаватель.png */; };
-		4633615B1B861AFC002DFFC7 /* Телефон.png in Resources */ = {isa = PBXBuildFile; fileRef = 463361381B861AFC002DFFC7 /* Телефон.png */; };
+		4633615B1B861AFC002DFFC7 /* Phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 463361381B861AFC002DFFC7 /* Phone.png */; };
 		4633615C1B861AFC002DFFC7 /* Удаление.png in Resources */ = {isa = PBXBuildFile; fileRef = 463361391B861AFC002DFFC7 /* Удаление.png */; };
 		4633615D1B861AFC002DFFC7 /* Ask Question Filled-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 4633613B1B861AFC002DFFC7 /* Ask Question Filled-100.png */; };
 		4633615E1B861AFC002DFFC7 /* consults.png in Resources */ = {isa = PBXBuildFile; fileRef = 4633613C1B861AFC002DFFC7 /* consults.png */; };
@@ -891,6 +891,7 @@
 		468A0DF01CE0837C00146EB9 /* profile_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 468A0DEF1CE0837C00146EB9 /* profile_gray.png */; };
 		468A0DF21CE0BB9100146EB9 /* nstu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 468A0DF11CE0BB9100146EB9 /* nstu.jpg */; };
 		468A0DF81CE0BE9400146EB9 /* MNEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 468A0DF61CE0BE9400146EB9 /* MNEmptyViewController.m */; };
+		468A0DFA1CE0CC7C00146EB9 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 468A0DF91CE0CC7C00146EB9 /* email.png */; };
 		46C29B061B8CC3BD00C70E73 /* MNBannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C29B051B8CC3BD00C70E73 /* MNBannerScrollView.m */; };
 		46C29B091B8ED6F900C70E73 /* MNNewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C29B081B8ED6F900C70E73 /* MNNewsDetailController.m */; };
 		46C94FBE1C6EA98D00CBCB0E /* iphone-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 46C94FBC1C6EA98D00CBCB0E /* iphone-3.png */; };
@@ -949,12 +950,12 @@
 		463361301B861AFC002DFFC7 /* Upload-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Upload-100.png"; sourceTree = "<group>"; };
 		463361311B861AFC002DFFC7 /* Время.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Время.png"; sourceTree = "<group>"; };
 		463361321B861AFC002DFFC7 /* Группа.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Группа.png"; sourceTree = "<group>"; };
-		463361331B861AFC002DFFC7 /* Локация.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Локация.png"; sourceTree = "<group>"; };
-		463361341B861AFC002DFFC7 /* Неделя.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Неделя.png"; sourceTree = "<group>"; };
+		463361331B861AFC002DFFC7 /* Loc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loc.png; sourceTree = "<group>"; };
+		463361341B861AFC002DFFC7 /* Sch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sch.png; sourceTree = "<group>"; };
 		463361351B861AFC002DFFC7 /* Поиск.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Поиск.png"; sourceTree = "<group>"; };
 		463361361B861AFC002DFFC7 /* Почта.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Почта.png"; sourceTree = "<group>"; };
 		463361371B861AFC002DFFC7 /* Преподаватель.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Преподаватель.png"; sourceTree = "<group>"; };
-		463361381B861AFC002DFFC7 /* Телефон.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Телефон.png"; sourceTree = "<group>"; };
+		463361381B861AFC002DFFC7 /* Phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phone.png; sourceTree = "<group>"; };
 		463361391B861AFC002DFFC7 /* Удаление.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Удаление.png"; sourceTree = "<group>"; };
 		4633613B1B861AFC002DFFC7 /* Ask Question Filled-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ask Question Filled-100.png"; sourceTree = "<group>"; };
 		4633613C1B861AFC002DFFC7 /* consults.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = consults.png; sourceTree = "<group>"; };
@@ -1869,6 +1870,7 @@
 		468A0DF11CE0BB9100146EB9 /* nstu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nstu.jpg; sourceTree = "<group>"; };
 		468A0DF61CE0BE9400146EB9 /* MNEmptyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNEmptyViewController.m; path = Controllers/MNEmptyViewController.m; sourceTree = "<group>"; };
 		468A0DF71CE0BE9400146EB9 /* MNEmptyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNEmptyViewController.h; path = Controllers/MNEmptyViewController.h; sourceTree = "<group>"; };
+		468A0DF91CE0CC7C00146EB9 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
 		46C29B041B8CC3BD00C70E73 /* MNBannerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBannerScrollView.h; sourceTree = "<group>"; };
 		46C29B051B8CC3BD00C70E73 /* MNBannerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNBannerScrollView.m; sourceTree = "<group>"; };
 		46C29B071B8ED6F900C70E73 /* MNNewsDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNNewsDetailController.h; path = Controllers/MNNewsDetailController.h; sourceTree = "<group>"; };
@@ -1952,6 +1954,7 @@
 		463361281B861AFC002DFFC7 /* design */ = {
 			isa = PBXGroup;
 			children = (
+				468A0DF91CE0CC7C00146EB9 /* email.png */,
 				468A0DF11CE0BB9100146EB9 /* nstu.jpg */,
 				46FAF6291C741D0A00DB2E1B /* proffesor.png */,
 				46FAF6251C741CEC00DB2E1B /* place.png */,
@@ -1986,12 +1989,12 @@
 				463361301B861AFC002DFFC7 /* Upload-100.png */,
 				463361311B861AFC002DFFC7 /* Время.png */,
 				463361321B861AFC002DFFC7 /* Группа.png */,
-				463361331B861AFC002DFFC7 /* Локация.png */,
-				463361341B861AFC002DFFC7 /* Неделя.png */,
+				463361331B861AFC002DFFC7 /* Loc.png */,
+				463361341B861AFC002DFFC7 /* Sch.png */,
 				463361351B861AFC002DFFC7 /* Поиск.png */,
 				463361361B861AFC002DFFC7 /* Почта.png */,
 				463361371B861AFC002DFFC7 /* Преподаватель.png */,
-				463361381B861AFC002DFFC7 /* Телефон.png */,
+				463361381B861AFC002DFFC7 /* Phone.png */,
 				463361391B861AFC002DFFC7 /* Удаление.png */,
 			);
 			path = "Общие";
@@ -3533,7 +3536,7 @@
 				463A4A6E1B9B04560051F021 /* 35921.jpg in Resources */,
 				463A49F91B9B04560051F021 /* 22175.jpg in Resources */,
 				463A4AD91B9B04560051F021 /* 49203.jpg in Resources */,
-				4633615B1B861AFC002DFFC7 /* Телефон.png in Resources */,
+				4633615B1B861AFC002DFFC7 /* Phone.png in Resources */,
 				463A48AC1B9B04560051F021 /* 1037.jpg in Resources */,
 				463A49681B9B04560051F021 /* 20395.jpg in Resources */,
 				463A4B0F1B9B04560051F021 /* 55001.jpg in Resources */,
@@ -4091,13 +4094,14 @@
 				463A49D11B9B04560051F021 /* 21798.jpg in Resources */,
 				463A49961B9B04560051F021 /* 21027.jpg in Resources */,
 				463A4B0B1B9B04560051F021 /* 54601.jpg in Resources */,
+				468A0DFA1CE0CC7C00146EB9 /* email.png in Resources */,
 				463A4BC81B9B04560051F021 /* persons.json in Resources */,
 				463A49291B9B04560051F021 /* 1581.jpg in Resources */,
 				463A4ABA1B9B04560051F021 /* 43862.jpg in Resources */,
 				463A4B751B9B04560051F021 /* 734.jpg in Resources */,
 				463A4A421B9B04560051F021 /* 2958.jpg in Resources */,
 				463A48F61B9B04560051F021 /* 1331.jpg in Resources */,
-				463361561B861AFC002DFFC7 /* Локация.png in Resources */,
+				463361561B861AFC002DFFC7 /* Loc.png in Resources */,
 				463A49971B9B04560051F021 /* 21036.jpg in Resources */,
 				463A491D1B9B04560051F021 /* 1513.jpg in Resources */,
 				463A499E1B9B04560051F021 /* 21166.jpg in Resources */,
@@ -4122,7 +4126,7 @@
 				463A4B521B9B04560051F021 /* 64661.jpg in Resources */,
 				463A49B51B9B04560051F021 /* 21443.jpg in Resources */,
 				463A49631B9B04560051F021 /* 20267.jpg in Resources */,
-				463361571B861AFC002DFFC7 /* Неделя.png in Resources */,
+				463361571B861AFC002DFFC7 /* Sch.png in Resources */,
 				463A4B9E1B9B04560051F021 /* 861.jpg in Resources */,
 				463A4B2D1B9B04560051F021 /* 597.jpg in Resources */,
 				463A492E1B9B04560051F021 /* 1613.jpg in Resources */,

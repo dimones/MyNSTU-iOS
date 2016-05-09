@@ -130,7 +130,7 @@
                 emailText = @"Отсутствует";
             }
             cell.titleLabel.text = [NSString stringWithFormat:@"Телефон: %@", emailText];
-            [cell.imgView setImage:[UIImage imageNamed:@"Photo.png"]];
+            [cell.imgView setImage:[UIImage imageNamed:@"Phonesa.png"]];
             [cell.titleLabel setFrame:[MNAPI_Addition rectByLabel:cell.titleLabel andMaxWidth:self.view.frame.size.width - 30]];
             [heightDict setObject:[NSNumber numberWithFloat:cell.titleLabel.frame.size.height + 10 + cell.titleLabel.frame.origin.y] forKey:[NSNumber numberWithInteger:indexPath.row]];
         }
@@ -143,7 +143,7 @@
                 emailText = @"Отсутствует";
             }
             cell.titleLabel.text = [NSString stringWithFormat:@"E-mail: %@", emailText];
-            [cell.imgView setImage:[UIImage imageNamed:@"Mail.png"]];
+            [cell.imgView setImage:[UIImage imageNamed:@"email.png"]];
             [cell.titleLabel setFrame:[MNAPI_Addition rectByLabel:cell.titleLabel andMaxWidth:self.view.frame.size.width - 30]];
             [heightDict setObject:[NSNumber numberWithFloat:cell.titleLabel.frame.size.height + 10 + cell.titleLabel.frame.origin.y] forKey:[NSNumber numberWithInteger:indexPath.row]];
         }
@@ -156,7 +156,7 @@
                 emailText = @"Отсутствует";
             }
             cell.titleLabel.text = [NSString stringWithFormat:@"Расположение: %@", emailText];
-            [cell.imgView setImage:[UIImage imageNamed:@"place.png"]];
+            [cell.imgView setImage:[UIImage imageNamed:@"Loc.png"]];
             [cell.titleLabel setFrame:[MNAPI_Addition rectByLabel:cell.titleLabel andMaxWidth:self.view.frame.size.width - 30]];
             [heightDict setObject:[NSNumber numberWithFloat:cell.titleLabel.frame.size.height + 10 + cell.titleLabel.frame.origin.y] forKey:[NSNumber numberWithInteger:indexPath.row]];
         }
@@ -168,8 +168,8 @@
             {
                 emailText = @"Отсутствует";
             }
-            cell.titleLabel.text = [NSString stringWithFormat:@"Расписание: %@", emailText];
-            [cell.imgView setImage:[UIImage imageNamed:@"calendar_use.png"]];
+            cell.titleLabel.text = [NSString stringWithFormat:@"Доп. расп.: %@", emailText];
+            [cell.imgView setImage:[UIImage imageNamed:@"Sch.png"]];
             [cell.titleLabel setFrame:[MNAPI_Addition rectByLabel:cell.titleLabel andMaxWidth:self.view.frame.size.width - 30]];
             [heightDict setObject:[NSNumber numberWithFloat:cell.titleLabel.frame.size.height + 10 + cell.titleLabel.frame.origin.y] forKey:[NSNumber numberWithInteger:indexPath.row]];
         }
