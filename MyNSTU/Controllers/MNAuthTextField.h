@@ -12,5 +12,7 @@ IB_DESIGNABLE
 
 @property (nonatomic) IBInspectable NSUInteger cornerRadius;
 
+@property (nonatomic) IBInspectable bool needCorner;
+
 @property (nonatomic, getter = isUpper) IBInspectable BOOL upper;
 @end

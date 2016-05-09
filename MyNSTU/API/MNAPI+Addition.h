@@ -59,6 +59,7 @@
 - (NSString *) getMD5;
 - (NSString*) encodeBase64;
 - (NSString*) decodeBase64;
+- (BOOL)isValidEmail;
 @end
 
 @interface IQSideMenuController (MNAPIAddition)

@@ -8,8 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "MNAPI+Addition.h"
+#define LOCAL 1
+#if LOCAL == 0
 #define SERVER_ADDRESS @"https://api.mynstu.xyz/"
-
+#else
+#define SERVER_ADDRESS @"http://192.168.1.9:5001/"
+#endif
+#define UUID [[[UIDevice currentDevice] identifierForVendor] UUIDString]
 enum MNAPIConnectStatus
 {
     MNAPIConnected = 0,
@@ -81,6 +86,15 @@ typedef enum : NSUInteger {
                       andOneNews: (id) news;
 - (void) MNHTTPDidRecieveFaculties: (MNHTTPAPI*) api
                            andFacs: (id) faculties;
+- (void) MNHTTPDidRecieveCheckUsernameResult: (MNHTTPAPI*) api
+                           andResult: (bool) result;
+- (void) MNHTTPDidRecieveAuthFail: (MNHTTPAPI*) api;
+- (void) MNHTTPDidRecieveAuthSuccess: (MNHTTPAPI*) api
+                            andToken: (NSString*) token;
+- (void) MNHTTPDidRecieveRegFail: (MNHTTPAPI*) api
+                       andReason: (NSString*) reason;
+- (void) MNHTTPDidRecieveRegSuccess: (MNHTTPAPI*) api
+                            andToken: (NSString*) token;
 @end
 
 
@@ -102,7 +116,13 @@ typedef enum : NSUInteger {
 - (void) searchWithQuery:(NSString*)query;
 - (void) downloadAllPersRepo;
 + (BOOL) isAuthed;
-
+- (void) checkUsername: (NSString*) username;
+- (void) authUser: (NSString*) username andPassword:(NSString*) password;
+- (void) regUser: (NSString*) username
+     andPassword: (NSString*) password
+         andName: (NSString*) name
+      andSurname: (NSString*) surname
+        andEmail: (NSString*) email;
 //v2 begin
 
 - (void) getBanners;

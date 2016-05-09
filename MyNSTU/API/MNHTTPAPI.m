@@ -149,4 +149,79 @@
     BOOL authed = [MNAPI_Addition getObjectFROMNSUDWithKey:@"authed"];
     return authed;
 }
+- (void) checkUsername: (NSString*) username
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:[NSString stringWithFormat:@"%@user/check_username?username=%@",SERVER_ADDRESS,username]  parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveCheckUsernameResult:andResult:)])
+            [self.delegate MNHTTPDidRecieveCheckUsernameResult:self andResult:((NSNumber*)responseObject[@"answer"]).boolValue];
+        else NSLog(@"[MNHTTPAPI] Did not responds selector MNHTTPDidRecieveOneNews:andOneNews:");
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if([self.delegate respondsToSelector:@selector(MNHTTPError)])
+            [self.delegate MNHTTPError];
+    }];
+}
+- (void) authUser: (NSString*) username andPassword:(NSString*) password
+{
+    NSLog(@"auth pass: %@ %@", [password getMD5], password);
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager POST:[NSString stringWithFormat:@"%@user/auth",SERVER_ADDRESS]  parameters:@{ @"username": username,
+                                                                                           @"password": [password getMD5],
+                                                                                           @"device_id": UUID }
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if(((NSNumber*)responseObject[@"succeed"]).boolValue)
+        {
+            if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveAuthSuccess:andToken:)])
+                [self.delegate MNHTTPDidRecieveAuthSuccess:self andToken:responseObject[@"device_token"]];
+            else NSLog(@"[MNHTTPAPI] Did not responds selector MNHTTPDidRecieveAuthSuccess:andToken:");
+        }
+        else
+        {
+            if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveAuthFail:)])
+                [self.delegate MNHTTPDidRecieveAuthFail:self];
+            else NSLog(@"[MNHTTPAPI] Did not responds selector MNHTTPDidRecieveAuthFail:");
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if([self.delegate respondsToSelector:@selector(MNHTTPError)])
+            [self.delegate MNHTTPError];
+    }];
+}
+- (void) regUser: (NSString*) username
+     andPassword: (NSString*) password
+         andName: (NSString*) name
+      andSurname: (NSString*) surname
+        andEmail: (NSString*) email
+{
+    NSLog(@"reg pass: %@ %@", [password getMD5], password);
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager POST:[NSString stringWithFormat:@"%@user/reg",SERVER_ADDRESS]  parameters:@{ @"username": username,
+                                                                                          @"password": [password getMD5],
+                                                                                          @"device_id": UUID,
+                                                                                          @"name": name,
+                                                                                          @"surname": surname,
+                                                                                          @"email": email}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if(((NSNumber*)responseObject[@"succeed"]).boolValue)
+              {
+                  if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveRegSuccess:andToken:)])
+                      [self.delegate MNHTTPDidRecieveRegSuccess:self andToken:responseObject[@"device_token"]];
+                  else NSLog(@"[MNHTTPAPI] Did not responds selector MNHTTPDidRecieveRegSuccess:andToken:");
+              }
+              else
+              {
+                  if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveRegFail:andReason:)])
+                      [self.delegate MNHTTPDidRecieveRegFail:self andReason:responseObject[@"reason"]];
+                  else NSLog(@"[MNHTTPAPI] Did not responds selector MNHTTPDidRecieveAuthFail:");
+
+              }
+              
+              
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(MNHTTPError)])
+                  [self.delegate MNHTTPError];
+          }];
+}
+
 @end

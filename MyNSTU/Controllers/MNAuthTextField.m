@@ -15,6 +15,9 @@
     //// Color Declarations
     UIColor* color = [UIColor colorWithRed: 1 green: 1 blue: 1 alpha: 1];
     //// Rectangle Drawing
+    if (_needCorner) {
+        self.cornerRadius = 0;
+    }
     if(self.isUpper)
     {
         UIBezierPath* rectanglePath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(0, 0, rect.size.width, rect.size.height) byRoundingCorners: UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii: CGSizeMake(self.cornerRadius, self.cornerRadius)];
