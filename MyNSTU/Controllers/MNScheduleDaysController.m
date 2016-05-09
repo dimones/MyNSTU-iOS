@@ -97,8 +97,8 @@
             NSInteger weekdayNumber = (NSInteger)[[nowDateFormatter stringFromDate:now] integerValue];
             self.daysScroll.bounces = YES;
             pageControl.currentPage = weekdayNumber-2;
-            self.title = [NSString stringWithFormat:@"%@ %ld неделя",dayDisc[[NSString stringWithFormat:@"%ld",(long)weekdayNumber-1]],(long)displayWeek];
-            [daysScroll scrollRectToVisible:CGRectMake(scrollFrame.size.width*(weekdayNumber-1), 0,scrollFrame.size.width, scrollFrame.size.height) animated:NO];
+            self.title = [NSString stringWithFormat:@"%@ %ld неделя",dayDisc[[NSString stringWithFormat:@"%ld",(long)weekdayNumber]],(long)displayWeek];
+            [daysScroll scrollRectToVisible:CGRectMake(scrollFrame.size.width*(weekdayNumber), 0,scrollFrame.size.width, scrollFrame.size.height) animated:NO];
         });
         return;
     });
