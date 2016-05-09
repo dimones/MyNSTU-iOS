@@ -148,7 +148,9 @@
     else return 0;
 }
 
-
+-(void) personTapped: (id) sender{
+    NSLog(@"%@",sender);
+}
 //-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 //{
 //    return ((NSNumber*)heightDict[[NSNumber numberWithInt:indexPath.row]]).intValue;
@@ -179,10 +181,22 @@
     else typeString = typeDescription[pairArray[indexPath.row][@"type"]];
     
     //Text assign
-    if(![pairArray[indexPath.row][@"person1"] isEqual:[NSNull null]])
-        cell.labelPersons.text = [NSString stringWithFormat:@"%@", personsName[((NSNumber*)pairArray[indexPath.row][@"person1"]).stringValue][@"name"]];
-    if (![pairArray[indexPath.row][@"person2"] isEqual:[NSNull null]])
-        cell.labelPersons.text = [NSString stringWithFormat:@"%@ %@", cell.labelPersons.text, personsName[((NSNumber*)pairArray[indexPath.row][@"person2"]).stringValue][@"name"]];
+    
+    NSDictionary *underlineAttribute = @{NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle)};
+    if(![pairArray[indexPath.row][@"person1"] isEqual:[NSNull null]]){
+        cell.labelPersons.attributedText = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", personsName[((NSNumber*)pairArray[indexPath.row][@"person1"]).stringValue][@"name"]]
+                                                                 attributes:underlineAttribute];
+//        cell.labelPersons.text = [NSString stringWithFormat:@"%@", personsName[((NSNumber*)pairArray[indexPath.row][@"person1"]).stringValue][@"name"]];
+    }
+    if (![pairArray[indexPath.row][@"person2"] isEqual:[NSNull null]]){
+        cell.labelPersons.attributedText = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@ %@",cell.labelPersons.text, personsName[((NSNumber*)pairArray[indexPath.row][@"person1"]).stringValue][@"name"]]
+                                                                           attributes:underlineAttribute];
+        //cell.labelPersons.text = [NSString stringWithFormat:@"%@ %@", cell.labelPersons.text, personsName[((NSNumber*)pairArray[indexPath.row][@"person2"]).stringValue][@"name"]];
+    }
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(personTapped:)];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    [cell.labelPersons addGestureRecognizer:tapGestureRecognizer];
+    cell.labelPersons.userInteractionEnabled = YES;
     if(pairArray[indexPath.row][@"pair_number"]!=nil)
         cell.labelTime.text = pairDescripion[[NSString stringWithFormat:@"%@",pairArray[indexPath.row][@"pair_number"]]];
     if(pairArray[indexPath.row][@"name"]!=nil)

@@ -36,8 +36,20 @@
     self.sessTable.dataSource = self;
     self.sessTable.tableFooterView = [UIView new];
     MNPersonsTabController * parentTab = (MNPersonsTabController*)self.parentViewController;
-    parentTab.title = [MNAPI_Addition getObjectFROMNSUDWithKey:@"person_name"];
     isSessZ = false;
+    NSString *persID = parentTab.personID.stringValue;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"persons" ofType:@"json"];
+        id jsonObject = [MNAPI_Addition JSONObjectFromFile:filePath];
+        NSString *FIO = jsonObject[persID][@"name"];
+        NSArray *nameArray = [FIO componentsSeparatedByString:@" "];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            parentTab.title = [NSString stringWithFormat:@"%@ %@.%@.",nameArray[0],
+                               [[nameArray[1] uppercaseString] substringWithRange:NSMakeRange(0, 1)],
+                               [[nameArray[2] uppercaseString] substringWithRange:NSMakeRange(0, 1)]];
+        });
+        
+    });
     [self initHelper];
     // Do any additional setup after loading the view.
 }
