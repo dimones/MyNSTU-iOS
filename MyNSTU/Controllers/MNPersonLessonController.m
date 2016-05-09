@@ -133,7 +133,7 @@
         CGRect frameGroups = cell.groupsLabel.frame;
         frameGroups.origin.x = nameRect.size.width+nameRect.origin.x+5;
         frameGroups.size.width = self.view.frame.size.width-nameRect.size.width+nameRect.origin.x-10;
-        [cell.groupsLabel setFrame:[MNAPI_Addition rectByLabel:cell.groupsLabel andMaxWidth:self.view.frame.size.width - cell.nameLabel.frame.size.width - 40]];
+        [cell.groupsLabel setFrame:[self rectByLabel:cell.groupsLabel]];
         
         [cell.timeLabel setTextColor:[UIColor grayColor]];
         [cell.audienceLabel setTextColor:[UIColor grayColor]];
@@ -145,6 +145,17 @@
     [cell setNeedsLayout];
     [cell setNeedsDisplay];
     return cell;
+}
+- (CGRect) rectByLabel:(UILabel*) label
+{
+    CGSize maximumLabelSize = CGSizeMake(self.view.bounds.size.width-20, FLT_MAX);
+    
+    CGSize expectedLabelSize = [label.text sizeWithFont:label.font constrainedToSize:maximumLabelSize lineBreakMode:label.lineBreakMode];
+    
+    //adjust the label the the new height.
+    CGRect newFrame = label.frame;
+    newFrame.size.height = expectedLabelSize.height;
+    return newFrame;
 }
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
