@@ -889,6 +889,8 @@
 		466DDBA01C6EA65600047033 /* WalkTwo.xib in Resources */ = {isa = PBXBuildFile; fileRef = 466DDB981C6EA65600047033 /* WalkTwo.xib */; };
 		466DDBA11C6EA65600047033 /* WalkThree.xib in Resources */ = {isa = PBXBuildFile; fileRef = 466DDB991C6EA65600047033 /* WalkThree.xib */; };
 		468A0DF01CE0837C00146EB9 /* profile_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 468A0DEF1CE0837C00146EB9 /* profile_gray.png */; };
+		468A0DF21CE0BB9100146EB9 /* nstu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 468A0DF11CE0BB9100146EB9 /* nstu.jpg */; };
+		468A0DF81CE0BE9400146EB9 /* MNEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 468A0DF61CE0BE9400146EB9 /* MNEmptyViewController.m */; };
 		46C29B061B8CC3BD00C70E73 /* MNBannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C29B051B8CC3BD00C70E73 /* MNBannerScrollView.m */; };
 		46C29B091B8ED6F900C70E73 /* MNNewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C29B081B8ED6F900C70E73 /* MNNewsDetailController.m */; };
 		46C94FBE1C6EA98D00CBCB0E /* iphone-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 46C94FBC1C6EA98D00CBCB0E /* iphone-3.png */; };
@@ -1864,6 +1866,9 @@
 		466DDB981C6EA65600047033 /* WalkTwo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkTwo.xib; sourceTree = "<group>"; };
 		466DDB991C6EA65600047033 /* WalkThree.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkThree.xib; sourceTree = "<group>"; };
 		468A0DEF1CE0837C00146EB9 /* profile_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_gray.png; sourceTree = "<group>"; };
+		468A0DF11CE0BB9100146EB9 /* nstu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = nstu.jpg; sourceTree = "<group>"; };
+		468A0DF61CE0BE9400146EB9 /* MNEmptyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNEmptyViewController.m; path = Controllers/MNEmptyViewController.m; sourceTree = "<group>"; };
+		468A0DF71CE0BE9400146EB9 /* MNEmptyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNEmptyViewController.h; path = Controllers/MNEmptyViewController.h; sourceTree = "<group>"; };
 		46C29B041B8CC3BD00C70E73 /* MNBannerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBannerScrollView.h; sourceTree = "<group>"; };
 		46C29B051B8CC3BD00C70E73 /* MNBannerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNBannerScrollView.m; sourceTree = "<group>"; };
 		46C29B071B8ED6F900C70E73 /* MNNewsDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNNewsDetailController.h; path = Controllers/MNNewsDetailController.h; sourceTree = "<group>"; };
@@ -1947,6 +1952,7 @@
 		463361281B861AFC002DFFC7 /* design */ = {
 			isa = PBXGroup;
 			children = (
+				468A0DF11CE0BB9100146EB9 /* nstu.jpg */,
 				46FAF6291C741D0A00DB2E1B /* proffesor.png */,
 				46FAF6251C741CEC00DB2E1B /* place.png */,
 				46FAF6261C741CEC00DB2E1B /* calendar_use.png */,
@@ -2128,6 +2134,8 @@
 		463361CF1B86DFC0002DFFC7 /* Universal */ = {
 			isa = PBXGroup;
 			children = (
+				468A0DF61CE0BE9400146EB9 /* MNEmptyViewController.m */,
+				468A0DF71CE0BE9400146EB9 /* MNEmptyViewController.h */,
 				463361CA1B86DFBC002DFFC7 /* MNRedHeaderTableViewCell.h */,
 				463361CB1B86DFBC002DFFC7 /* MNRedHeaderTableViewCell.m */,
 				463361CC1B86DFBC002DFFC7 /* MNRedHeaderTableViewCell.xib */,
@@ -3486,6 +3494,7 @@
 				463A4B8E1B9B04560051F021 /* 817.jpg in Resources */,
 				463A49C21B9B04560051F021 /* 21547.jpg in Resources */,
 				463A48FF1B9B04560051F021 /* 1389.jpg in Resources */,
+				468A0DF21CE0BB9100146EB9 /* nstu.jpg in Resources */,
 				463A49A41B9B04560051F021 /* 21260.jpg in Resources */,
 				463A490A1B9B04560051F021 /* 1433.jpg in Resources */,
 				463A4A871B9B04560051F021 /* 394.jpg in Resources */,
@@ -4240,6 +4249,7 @@
 				46398B5C1B9720D1005E5E6D /* MNPersonInfoController.m in Sources */,
 				4633618A1B86DD2B002DFFC7 /* MNAPI+Addition.m in Sources */,
 				463361721B862215002DFFC7 /* MNAuthTextField.m in Sources */,
+				468A0DF81CE0BE9400146EB9 /* MNEmptyViewController.m in Sources */,
 				46C94FC31C6FC2B500CBCB0E /* MNScheduleChooseFaculty.m in Sources */,
 				46D486751B8618FE00899BD3 /* main.m in Sources */,
 				463361CD1B86DFBC002DFFC7 /* MNRedHeaderTableViewCell.m in Sources */,

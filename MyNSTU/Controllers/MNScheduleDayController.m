@@ -8,6 +8,9 @@
 
 #import "MNScheduleDayController.h"
 #import "MNSchedulePairCell.h"
+#import "MNAPI+Addition.h"
+#import "MNPersonsTabController.h"
+#import "MNEmptyViewController.h"
 #define NEW 0
 
 @interface MNScheduleDayController ()<UITableViewDataSource,UITableViewDelegate>
@@ -56,15 +59,10 @@
 {
     [self.scheduleTable reloadData];
     if([pairArray count] == 0){
-        CGRect rr = self.view.bounds;
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(rr.size.width /2 -50, rr.size.height /2 - 50, rr.size.width, 50)];
-        label.backgroundColor = [UIColor clearColor];
-        label.textAlignment = NSTextAlignmentCenter;
-        label.textColor = [UIColor whiteColor];
-        label.numberOfLines = 0;
-        label.lineBreakMode = UILineBreakModeWordWrap;
-        label.text = @"Занятий в этот день нет.";
-        [self.scheduleTable addSubview:label];
+        MNEmptyViewController* contr = [MNAPI_Addition getViewControllerWithIdentifier:@"EmptyView"];
+        contr.emptyLabel.text = @"В этот день занятий нет.";
+        [contr.view setFrame:self.scheduleTable.bounds];
+        [self.view addSubview:contr.view];
     }
 //    dispatch_async(dispatch_get_main_queue(), ^{
 //        //This code will run in the main thread:
@@ -148,8 +146,15 @@
     else return 0;
 }
 
--(void) personTapped: (id) sender{
-    NSLog(@"%@",sender);
+-(void) personTapped: (UIGestureRecognizer*) sender{
+//    NSLog(@"%@", sender.view.tag);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UINavigationController *pDet = [MNAPI_Addition getViewControllerWithIdentifier:@"PersonDetail"];
+        MNPersonsTabController *res = (MNPersonsTabController*)[pDet.viewControllers firstObject];
+        res.personID = [NSNumber numberWithInt:sender.view.tag];
+        [IQSideMenuController turnScroll];
+        [MNAPI_Addition changeContentViewControllerWithController:pDet];
+    });
 }
 //-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 //{
@@ -193,6 +198,8 @@
                                                                            attributes:underlineAttribute];
         //cell.labelPersons.text = [NSString stringWithFormat:@"%@ %@", cell.labelPersons.text, personsName[((NSNumber*)pairArray[indexPath.row][@"person2"]).stringValue][@"name"]];
     }
+    
+    [cell.labelPersons setTag:((NSNumber*)pairArray[indexPath.row][@"person1"]).integerValue];
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(personTapped:)];
     tapGestureRecognizer.numberOfTapsRequired = 1;
     [cell.labelPersons addGestureRecognizer:tapGestureRecognizer];

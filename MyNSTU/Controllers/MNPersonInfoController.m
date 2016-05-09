@@ -48,10 +48,15 @@
 {
     //Images
     UIImage *background = [[MNAPI_Addition getImageFromID:[NSString stringWithFormat:@"%@.jpg", persID]] blurredImage:.3f];
+    if (background==nil) {
+        background = [[UIImage imageNamed:@"nstu.jpg"] blurredImage:.3f];
+    }
     self.personImgBackground.clipsToBounds = YES;
     self.personImgBackground.image = background;
     UIImage *persIm = [MNAPI_Addition getImageFromID:[NSString stringWithFormat:@"%@.jpg", persID]];
-    
+    if (persIm == nil) {
+        self.personSurname.textColor = [UIColor whiteColor];
+    }
     persIm = [MNAPI_Addition scaleTheImage:persIm andRect:self.personImgPhoto.frame.size];
     [self.personImgPhoto setImage:persIm];
     self.personImgPhoto.layer.cornerRadius = self.personImgPhoto.frame.size.width/2;
