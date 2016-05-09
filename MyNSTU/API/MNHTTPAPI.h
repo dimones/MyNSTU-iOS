@@ -95,6 +95,8 @@ typedef enum : NSUInteger {
                        andReason: (NSString*) reason;
 - (void) MNHTTPDidRecieveRegSuccess: (MNHTTPAPI*) api
                             andToken: (NSString*) token;
+- (void) MNHTTPDidRecieveInfo: (MNHTTPAPI*) api
+                      andInfo: (id) infoDictionary;
 @end
 
 
@@ -123,6 +125,7 @@ typedef enum : NSUInteger {
          andName: (NSString*) name
       andSurname: (NSString*) surname
         andEmail: (NSString*) email;
+- (void) getInfo;
 //v2 begin
 
 - (void) getBanners;

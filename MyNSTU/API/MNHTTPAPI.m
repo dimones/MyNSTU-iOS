@@ -224,4 +224,20 @@
           }];
 }
 
+- (void) getInfo
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:[NSString stringWithFormat:@"%@user/get_info",SERVER_ADDRESS]  parameters:@{@"device_id": UUID,
+                                                                                                      @"device_token": [MNAPI_Addition getObjectFROMNSUDWithKey:@"device_token"]
+                                                                                                      }
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveInfo:andInfo:)])
+                 [self.delegate MNHTTPDidRecieveInfo:self andInfo:responseObject];
+             else NSLog(@"[MNHTTPAPI] Did not responds selector MNHTTPDidRecieveInfo:andInfo:");
+             
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             if([self.delegate respondsToSelector:@selector(MNHTTPError)])
+                 [self.delegate MNHTTPError];
+         }];
+}
 @end

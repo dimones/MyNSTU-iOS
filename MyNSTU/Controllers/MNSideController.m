@@ -144,9 +144,9 @@
 
 #pragma mark - MNAuthDelegate
 
-- (void) MNAuthCompleted:(NSString *)firstName andSecondName:(NSString *)secondName
+- (void) MNAuthCompleted:(id)infoDict
 {
-    
+    NSLog(@"auth completed %@", infoDict);
 }
 
 @end

@@ -81,7 +81,9 @@
     NSData *datad = [NSKeyedArchiver archivedDataWithRootObject:t];
     [datad writeToFile:plistPath atomically:YES];
     [MNAPI_Addition changeContentViewControllerWithName:@"ScheduleController"];
-    
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 
 

@@ -48,6 +48,9 @@
 }
 - (IBAction)reg:(id)sender {
     [api regUser:_username andPassword:_password  andName:self.nameField.text andSurname:self.surnameField.text andEmail:self.emailField.text];
+    [self presentViewController:[MNAPI_Addition getViewControllerWithIdentifier:@"SchedulePrep"] animated:YES completion:^{
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
 }
 - (void) screenTapped: (id) sender{
     [[self view] endEditing:YES];
@@ -117,7 +120,8 @@
 
 - (void) MNHTTPDidRecieveRegSuccess:(MNHTTPAPI *)api andToken:(NSString *)token
 {
-    NSLog(@"TOKKEEN : %@",token);
+    [MNAPI_Addition setObjectTONSUD:token withKey:@"device_token"];
+    [MNAPI_Addition setObjectTONSUD:@true withKey:@"authed"];
 }
 
 

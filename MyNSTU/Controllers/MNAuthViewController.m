@@ -59,7 +59,8 @@
     regContr.username = self.loginField.text;
     regContr.password = self.passField.text;
     [self presentViewController:regContr animated:YES completion:^{
-        
+        [api getInfo];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }];
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -137,8 +138,20 @@
 }
 - (void) MNHTTPDidRecieveAuthSuccess:(MNHTTPAPI *)api andToken:(NSString *)token
 {
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Yeah!" message:@"You have a nice day" delegate:self cancelButtonTitle:@"Fuck off, bitch" otherButtonTitles:nil];
-    [alertView show];
+    [MNAPI_Addition setObjectTONSUD:token withKey:@"device_token"];
+    [MNAPI_Addition setObjectTONSUD:@true withKey:@"authed"];
+    [self dismissViewControllerAnimated:NO completion:^{
+        [api getInfo];
+    }];
+}
+- (void) MNHTTPDidRecieveInfo:(MNHTTPAPI *)api andInfo:(id)infoDictionary
+{
+    if([self.delegate respondsToSelector:@selector(MNAuthCompleted:)])
+    {
+        [self.delegate MNAuthCompleted:infoDictionary];
+    }
+    //            [self.delegate MNHTTPDidRecieveCheckUsernameResult:self andResult:((NSNumber*)responseObject[@"answer"]).boolValue];
+    else NSLog(@"[MNHTTPAPI] Did not responds selector MNAuthCompleted:");
 }
 - (void) MNHTTPError
 {

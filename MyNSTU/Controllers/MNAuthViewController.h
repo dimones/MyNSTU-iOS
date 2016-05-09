@@ -10,7 +10,7 @@
 #import "MNAuthTextField.h"
 @protocol MNAuthDelegate <NSObject>
 @required
-- (void) MNAuthCompleted:(NSString*) firstName andSecondName:(NSString*)secondName;
+- (void) MNAuthCompleted:(id) infoDict;
 @end
 @interface MNAuthViewController : UIViewController
 {
