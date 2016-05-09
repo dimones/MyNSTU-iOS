@@ -190,7 +190,8 @@
                 }
                 else {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.refreshControl endRefreshing];                        newsIndicator.hidden = YES;
+                        [self.refreshControl endRefreshing];
+                        newsIndicator.hidden = YES;
                         [newsIndicator stopAnimating];
                     });
                     return;
@@ -211,6 +212,7 @@
         [self.refreshControl endRefreshing];
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка сети" message:@"Не удалось получить новости. Попробуйте поздее или проверьте сетевое соединение" delegate:self cancelButtonTitle:@"Хорошо" otherButtonTitles:nil];
         [alertView show];
+        NSLog(@"%@",error);
     }];
 }
 - (void) saveFile{

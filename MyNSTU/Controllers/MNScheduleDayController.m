@@ -55,6 +55,17 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [self.scheduleTable reloadData];
+    if([pairArray count] == 0){
+        CGRect rr = self.view.bounds;
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(rr.size.width /2 -50, rr.size.height /2 - 50, rr.size.width, 50)];
+        label.backgroundColor = [UIColor clearColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.textColor = [UIColor whiteColor];
+        label.numberOfLines = 0;
+        label.lineBreakMode = UILineBreakModeWordWrap;
+        label.text = @"Занятий в этот день нет.";
+        [self.scheduleTable addSubview:label];
+    }
 //    dispatch_async(dispatch_get_main_queue(), ^{
 //        //This code will run in the main thread:
 //        CGRect frame = scheduleTable.frame;
