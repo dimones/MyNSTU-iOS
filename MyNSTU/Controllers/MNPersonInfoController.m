@@ -46,10 +46,10 @@
 - (void) loadDatas
 {
     //Images
-    UIImage *background = [[MNAPI_Addition getImageFromID:[NSString stringWithFormat:@"%@", personInfo[@"id"]]] blurredImage:.3f];
+    UIImage *background = [[MNAPI_Addition getImageFromID:[NSString stringWithFormat:@"%@.jpg", personInfo[@"id"]]] blurredImage:.3f];
     self.personImgBackground.clipsToBounds = YES;
     self.personImgBackground.image = background;
-    UIImage *persIm = [MNAPI_Addition getImageFromID:[NSString stringWithFormat:@"%@", personInfo[@"id"]]];
+    UIImage *persIm = [MNAPI_Addition getImageFromID:[NSString stringWithFormat:@"%@.jpg", personInfo[@"id"]]];
     
     persIm = [MNAPI_Addition scaleTheImage:persIm andRect:self.personImgPhoto.frame.size];
     [self.personImgPhoto setImage:persIm];

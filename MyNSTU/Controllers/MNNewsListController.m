@@ -19,6 +19,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "IQSideMenuController.h"
 #define banner_ratio 16*9
+//#define banner_ratio 220*160
 #define ind_size 50.f
 //#define banner_ratio 220*140
 @interface MNNewsListController ()<UITableViewDataSource,UITableViewDelegate,MNAPIHTTPDelegate,MBProgressHUDDelegate,REMenuDelegate>

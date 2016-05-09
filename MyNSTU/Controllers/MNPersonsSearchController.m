@@ -155,7 +155,7 @@
         }
         else
         {
-            [cell.personImage setImage:[MNAPI_Addition scaleTheImage:[UIImage imageNamed:@"profile.png"] andRect:CGSizeMake(50,50)]];
+            [cell.personImage setImage:[MNAPI_Addition scaleTheImage:[UIImage imageNamed:@"profile_gray.png"] andRect:CGSizeMake(50,50)]];
             CGRect r = cell.personImage.frame;
             r.size = CGSizeMake(50,50);
             [cell.personImage setFrame:r];
