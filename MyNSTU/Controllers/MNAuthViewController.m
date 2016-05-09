@@ -9,6 +9,7 @@
 #import "MNAuthViewController.h"
 #import "MNPrepareScheduleTableViewController.h"
 #import "MNAPI+Addition.h"
+#import "MNRegController.h"
 @interface MNAuthViewController ()<UITextFieldDelegate,MNSchedulePreparingDelegate>
 
 @end
@@ -33,6 +34,12 @@
 }
 - (IBAction)authButton:(id)sender {
     
+}
+- (IBAction)reg_button:(id)sender {
+    MNRegController *regContr = [MNAPI_Addition getViewControllerWithIdentifier:@"RegController"];
+    [self presentViewController:regContr animated:YES completion:^{
+        
+    }];
 }
 - (IBAction)guestButton:(id)sender {
     UINavigationController *contr = [MNAPI_Addition getViewControllerWithIdentifier:@"PrepareNavigation"];

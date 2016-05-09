@@ -34,7 +34,7 @@
     [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
     [[self window] setRootViewController:sideMenuController];
     [[self window] makeKeyAndVisible];
-    if (YES == NO){
+    if (YES == YES){
     //if (scheduleFinished.boolValue) {
         MNAuthViewController *authContr = [MNAPI_Addition getViewControllerWithIdentifier:@"AuthController"];
         

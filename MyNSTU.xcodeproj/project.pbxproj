@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		460DFC591CE0D9B700E2C81F /* MNRegController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460DFC581CE0D9B700E2C81F /* MNRegController.m */; };
 		4614A4461B91C47000149679 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4614A4451B91C47000149679 /* Social.framework */; };
 		4614A44A1B91DA6800149679 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4614A4491B91DA6800149679 /* arrow.png */; };
 		4614A44D1B91E09400149679 /* UIScrollView+InfiniteScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 4614A44C1B91E09400149679 /* UIScrollView+InfiniteScroll.m */; };
@@ -941,6 +942,8 @@
 
 /* Begin PBXFileReference section */
 		3985878A06803AA9A2217A7B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		460DFC571CE0D9B700E2C81F /* MNRegController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNRegController.h; path = Controllers/MNRegController.h; sourceTree = "<group>"; };
+		460DFC581CE0D9B700E2C81F /* MNRegController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNRegController.m; path = Controllers/MNRegController.m; sourceTree = "<group>"; };
 		4614A4451B91C47000149679 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4614A4491B91DA6800149679 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		4614A44B1B91E09400149679 /* UIScrollView+InfiniteScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+InfiniteScroll.h"; sourceTree = "<group>"; };
@@ -2056,6 +2059,8 @@
 				463361741B863230002DFFC7 /* MNAuthViewController.m */,
 				463361791B8633B0002DFFC7 /* MNAuthButton.h */,
 				4633617A1B8633B0002DFFC7 /* MNAuthButton.m */,
+				460DFC571CE0D9B700E2C81F /* MNRegController.h */,
+				460DFC581CE0D9B700E2C81F /* MNRegController.m */,
 			);
 			name = MNAuth;
 			sourceTree = "<group>";
@@ -4206,6 +4211,7 @@
 				4633618B1B86DD2B002DFFC7 /* MNHTTPAPI.m in Sources */,
 				463A45741B9958260051F021 /* MNPersonLessonController.m in Sources */,
 				46C29B091B8ED6F900C70E73 /* MNNewsDetailController.m in Sources */,
+				460DFC591CE0D9B700E2C81F /* MNRegController.m in Sources */,
 				463361BE1B86DDCC002DFFC7 /* REMenuItem.m in Sources */,
 				463361BB1B86DDCC002DFFC7 /* RECommonFunctions.m in Sources */,
 				46DF88241B8895A20026159B /* MNSideController.m in Sources */,

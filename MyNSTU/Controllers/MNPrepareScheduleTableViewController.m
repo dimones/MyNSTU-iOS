@@ -143,7 +143,10 @@
     [prepareTable reloadData];
     [hud hide:YES];
 }
-
+- (void) MNHTTPDidRecieveFaculties:(MNHTTPAPI *)api andFacs:(id)faculties
+{
+    
+}
 -(void) MNHTTPDidRecieveSchedule:(MNHTTPAPI *)api andResults:(NSArray *)results andSemesterBegin:(NSString *)semesterBegin
 {
     _semesterBegin = semesterBegin;
