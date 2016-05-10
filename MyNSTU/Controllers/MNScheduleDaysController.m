@@ -39,9 +39,16 @@
     dayControllers = [NSMutableArray new];
     daysScroll.delegate = self;
     daysScroll.pagingEnabled = YES;
+    NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"schedules.plist"];
+    
+    NSData *data = [NSData dataWithContentsOfFile:plistPath];
+    if (data == nil) {
+        [MNAPI_Addition setObjectTONSUD:@"move" withKey:@"sch"];
+        [MNAPI_Addition changeContentViewControllerWithName:@"SchedulePrep"];
+        return;
+    }
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"schedules.plist"];
-        NSData *data = [NSData dataWithContentsOfFile:plistPath];
+        
         NSMutableDictionary *t = [[NSMutableDictionary alloc] initWithDictionary:[NSKeyedUnarchiver unarchiveObjectWithData:data]];
         NSString *currentGroup = t[@"current"];
         [t[@"data"] enumerateObjectsUsingBlock:^(id groups, NSUInteger idx, BOOL *stop){

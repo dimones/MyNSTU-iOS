@@ -25,6 +25,14 @@
         jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&jsonError];
     return jsonObject;
 }
++ (id) JSONObjectFromString:(NSString*) string{
+    NSData* responseObject = [string dataUsingEncoding:NSUTF8StringEncoding];
+    id jsonObject;
+    NSError *jsonError = nil;
+    if(responseObject!=nil)
+        jsonObject = [NSJSONSerialization JSONObjectWithData:responseObject options:kNilOptions error:&jsonError];
+    return jsonObject;
+}
 + (CGRect) rectByLabel:(UILabel*) label andMaxWidth:(CGFloat) width
 {
     CGSize maximumLabelSize = CGSizeMake(width, FLT_MAX);

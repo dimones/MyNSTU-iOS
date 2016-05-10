@@ -11,6 +11,7 @@
 #import "ionicons-codes.h"
 @interface MNAPI_Addition : NSObject
 + (id) JSONObjectFromFile:(NSString*)filePath;
++ (id) JSONObjectFromString:(NSString*) string;
 + (CGRect) rectByLabel:(UILabel*) label andMaxWidth:(CGFloat) width;
 + (UIImage*) getImageFromID:(NSString*) _id;
 + (UIImage*)scaleTheImage:(UIImage*)image andRect:(CGSize) size;
@@ -67,7 +68,10 @@
 + (IQSideMenuController *) getNowUsedController;
 + (void) turnScroll;
 @end
+@interface UINavigationController (MNAPIAddition)
 
+@property (nonatomic, copy) void (^didDismiss)();
+@end
 @interface UIColor (MNAPIAddition)
 + (UIColor *)colorFromHexString:(NSString *)hexString;
 @end

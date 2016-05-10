@@ -14,7 +14,9 @@
 //
 #import "MNAuthViewController.h"
 @interface AppDelegate ()
-
+{
+    IQSideMenuController *sideMenuController;
+}
 @end
 
 @implementation AppDelegate
@@ -28,7 +30,12 @@
     NSNumber *scheduleFinished = [MNAPI_Addition getObjectFROMNSUDWithKey:@"schedule_finished"];
     id sideController = [MNAPI_Addition getViewControllerWithIdentifier:@"SideController"];
     id contentViewController = [MNAPI_Addition getViewControllerWithIdentifier:@"NewsNavigation"];
-    IQSideMenuController *sideMenuController = [[IQSideMenuController alloc] initWithMenuViewController:sideController
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(scheduleDismissed)
+     name:@"ScheduleControllerDismissed"
+     object:nil];
+    sideMenuController = [[IQSideMenuController alloc] initWithMenuViewController:sideController
                                                                                andContentViewController:contentViewController];
     [MNAPI_Addition setObjectTONSUD:[NSNumber numberWithBool:YES] withKey:@"schedule_finished"];
     [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
@@ -45,6 +52,9 @@
     sideMenuController.view.hidden = NO;
     return [[FBSDKApplicationDelegate sharedInstance] application:application
                                     didFinishLaunchingWithOptions:launchOptions];
+}
+- (void) scheduleDismissed{
+    [sideMenuController dismissViewControllerAnimated:YES completion:nil];
 }
 - (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url

@@ -174,6 +174,7 @@
 {
     [MNAPI_Addition setObjectTONSUD:infoDictionary withKey:@"user_info"];
     [searchView updateInfo];
+    [api getSchedule];
 }
 #pragma mark - MNSearchDelegate
 - (void) MNSearchBegin

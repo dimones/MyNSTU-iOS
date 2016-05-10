@@ -58,10 +58,9 @@
     MNRegController *regContr = [MNAPI_Addition getViewControllerWithIdentifier:@"RegController"];
     regContr.username = self.loginField.text;
     regContr.password = self.passField.text;
-    [self presentViewController:regContr animated:YES completion:^{
-        [api getInfo];
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }];
+    [self presentViewController:regContr animated:YES completion:nil];
+    
+//    [self dismissViewControllerAnimated:NO completion:nil];
 }
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -71,8 +70,8 @@
 - (void) textFieldDidBeginEditing:(UITextField *)textField
 {
     CGFloat t = multiplier;
-    CGFloat tt = t <= 1 ? t : t * 2.3;
-    offsetHeight = textField.bounds.origin.y + textField.bounds.size.height + 60 * tt;
+    CGFloat tt = t <= 1 ? t : t * powf(2.3,2);
+    offsetHeight = textField.bounds.origin.y + textField.bounds.size.height + 50 * tt;
     [scrollView setContentOffset:CGPointMake(0,offsetHeight) animated:YES];
 }
 - (void) textFieldDidChange:(NSNotification *)notification
@@ -118,6 +117,8 @@
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     scrollView.contentInset = contentInsets;
     scrollView.scrollIndicatorInsets = contentInsets;
+    [scrollView setContentOffset:CGPointMake(0,offsetHeight) animated:YES];
+
 }
 #pragma mark - MNSchedulePreparingDelegate
 - (void) MNSchedulePreparingFinishing:(BOOL)finished

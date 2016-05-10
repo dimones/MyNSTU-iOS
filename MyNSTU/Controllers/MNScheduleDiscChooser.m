@@ -8,10 +8,13 @@
 
 #import "MNScheduleDiscChooser.h"
 #import "MNAPI+Addition.h"
+
+#import "IQSideMenuController.h"
 @interface MNScheduleDiscChooser ()<UITableViewDataSource,UITableViewDelegate>
 {
     UISegmentedControl *seg_contr;
     NSMutableDictionary *rowSizes;
+    MNHTTPAPI *api;
 }
 @end
 
@@ -20,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Дисциплины";
+    api = [MNHTTPAPI new];
+    api.delegate = self;
     rowSizes = [NSMutableDictionary new];
     discTable.delegate = self;
     discTable.dataSource = self;
@@ -49,8 +54,8 @@
     [data_array enumerateObjectsUsingBlock:^(id disc, NSUInteger idx, BOOL *stop) {
         NSNumber *check = disc[@"check"];
         if([check  isEqual: @1])
-            [validDiscs addObject:@{ disc[@"id"]: disc[@"check"] }];
-        [goodDiskArray addObject:@{ disc[@"id"] : disc[@"description"]}];
+            [validDiscs addObject:@{ ((NSNumber*)disc[@"id"]).stringValue: disc[@"check"] }];
+        [goodDiskArray addObject:@{ ((NSNumber*)disc[@"id"]).stringValue : disc[@"description"]}];
     }];
     
     NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"schedules.plist"];
@@ -67,7 +72,7 @@
     {
         [t setObject:self.group_name forKey:@"current"];
         NSArray *arr = @[ @{ @"name":self.group_name,@"semester_begin":self.semester_begin,@"valid_discs":newValDisc,
-                             @"days":days ,@"good_discs":goodDiskArray , @"sub_group" : [NSNumber numberWithInt:seg_contr.selectedSegmentIndex]}];
+                             @"days":days ,@"good_discs":goodDiskArray, @"sub_group" : [NSNumber numberWithInt:seg_contr.selectedSegmentIndex]}];
         [t setObject:arr forKey:@"data"];
     }
     else
@@ -80,10 +85,17 @@
     }
     NSData *datad = [NSKeyedArchiver archivedDataWithRootObject:t];
     [datad writeToFile:plistPath atomically:YES];
-    [MNAPI_Addition changeContentViewControllerWithName:@"ScheduleController"];
-    [self dismissViewControllerAnimated:YES completion:^{
-        
-    }];
+    [api setSchedule:t];
+    if([[MNAPI_Addition getObjectFROMNSUDWithKey:@"sch"] isEqualToString:@"close"])
+    {
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"ScheduleControllerDismissed"
+         object:nil userInfo:nil];
+    }
+    else if([[MNAPI_Addition getObjectFROMNSUDWithKey:@"sch"] isEqualToString:@"move"])
+    {
+        [MNAPI_Addition changeContentViewControllerWithName:@"ScheduleController"];
+    }
 }
 
 

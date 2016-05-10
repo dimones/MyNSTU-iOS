@@ -11,4 +11,6 @@
 @interface MNRegController : UIViewController
 @property (strong, nonatomic) NSString* username;
 @property (strong, nonatomic) NSString* password;
+
+@property (nonatomic, copy) void (^didDismiss)();
 @end

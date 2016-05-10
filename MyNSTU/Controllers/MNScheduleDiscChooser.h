@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MNScheduleDiscChooser : UIViewController
+#import "MNHTTPAPI.h"
+@interface MNScheduleDiscChooser : UIViewController <MNAPIHTTPDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *discTable;
 @property (nonatomic, strong) NSString *semester_begin;
 @property (nonatomic, strong) NSMutableArray *data_array;

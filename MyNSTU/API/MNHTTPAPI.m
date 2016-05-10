@@ -194,7 +194,6 @@
       andSurname: (NSString*) surname
         andEmail: (NSString*) email
 {
-    NSLog(@"reg pass: %@ %@", [password getMD5], password);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager POST:[NSString stringWithFormat:@"%@user/reg",SERVER_ADDRESS]  parameters:@{ @"username": username,
                                                                                           @"password": [password getMD5],
@@ -240,4 +239,50 @@
                  [self.delegate MNHTTPError];
          }];
 }
+
+
+- (void) setSchedule:(id) scheduleData
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager POST:[NSString stringWithFormat:@"%@user/set_schedule",SERVER_ADDRESS]  parameters:@{
+                                                                                          @"device_id": UUID,
+                                                                                          @"device_token": [MNAPI_Addition getObjectFROMNSUDWithKey:@"device_token"],
+                                                                                          @"device_type": @1,
+                                                                                          @"schedule_data": [NSString getJSONStringFromObject:scheduleData]}
+          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              if(((NSNumber*)responseObject[@"succeed"]).boolValue)
+              {
+                  NSLog(@"setted schedule");
+              }
+              else
+              {
+                  
+                  
+              }
+              
+              
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(MNHTTPError)])
+                  [self.delegate MNHTTPError];
+          }];
+}
+- (void) getSchedule
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager GET:[NSString stringWithFormat:@"%@user/get_schedule",SERVER_ADDRESS]  parameters:@{@"device_id": UUID,
+                                                                                                 @"device_token": [MNAPI_Addition getObjectFROMNSUDWithKey:@"device_token"],
+                                                                                                 @"device_type": @1
+                                                                                             }
+         success:^(AFHTTPRequestOperation *operation, id responseObject) {
+             id schedule = [MNAPI_Addition JSONObjectFromString:(NSString*)responseObject[@"schedule_data"]];
+             NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"schedules.plist"];
+             NSData *datad = [NSKeyedArchiver archivedDataWithRootObject:schedule];
+             [datad writeToFile:plistPath atomically:YES];
+         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+             if([self.delegate respondsToSelector:@selector(MNHTTPError)])
+                 [self.delegate MNHTTPError];
+         }];
+}
+
+
 @end

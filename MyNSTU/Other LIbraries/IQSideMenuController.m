@@ -465,7 +465,7 @@ IQSideMenuControllerWidthCalculatorBlock percentCalculator(CGFloat percentOfPare
 
 - (void)closeMenuAnimated:(BOOL)animated {
     [self updateCurrentPercentOfAnimation];
-    [UIView animateWithDuration:1.0f animations:^{
+    [UIView animateWithDuration:.5f animations:^{
         [_scrollView setContentOffset:CGPointMake([[_menuViewController view] bounds].size.width, [_scrollView contentOffset].y)
                              animated:animated];
     }];

@@ -48,9 +48,12 @@
 }
 - (IBAction)reg:(id)sender {
     [api regUser:_username andPassword:_password  andName:self.nameField.text andSurname:self.surnameField.text andEmail:self.emailField.text];
-    [self presentViewController:[MNAPI_Addition getViewControllerWithIdentifier:@"SchedulePrep"] animated:YES completion:^{
-        [self dismissViewControllerAnimated:YES completion:nil];
+    [MNAPI_Addition setObjectTONSUD:@"close" withKey:@"sch"];
+    UINavigationController *nav = [MNAPI_Addition getViewControllerWithIdentifier:@"SchedulePrep"];
+    [self presentViewController:nav animated:YES completion:^{
+//        [self dismissViewControllerAnimated:YES completion:nil];
     }];
+    
 }
 - (void) screenTapped: (id) sender{
     [[self view] endEditing:YES];
@@ -104,6 +107,8 @@
     UIEdgeInsets contentInsets = UIEdgeInsetsZero;
     scrollView.contentInset = contentInsets;
     scrollView.scrollIndicatorInsets = contentInsets;
+    [scrollView setContentOffset:CGPointMake(0,offsetHeight) animated:YES];
+
 }
 #pragma mark - MNHTTPAPI delegate
 - (void) MNHTTPError

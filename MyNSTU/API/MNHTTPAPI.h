@@ -12,7 +12,7 @@
 #if LOCAL == 0
 #define SERVER_ADDRESS @"https://api.mynstu.xyz/"
 #else
-#define SERVER_ADDRESS @"http://192.168.1.9:5001/"
+#define SERVER_ADDRESS @"http://192.168.1.3:5001/"
 #endif
 #define UUID [[[UIDevice currentDevice] identifierForVendor] UUIDString]
 enum MNAPIConnectStatus
@@ -126,6 +126,8 @@ typedef enum : NSUInteger {
       andSurname: (NSString*) surname
         andEmail: (NSString*) email;
 - (void) getInfo;
+- (void) setSchedule:(id) scheduleData;
+- (void) getSchedule;
 //v2 begin
 
 - (void) getBanners;

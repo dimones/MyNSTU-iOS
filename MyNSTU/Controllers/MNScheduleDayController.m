@@ -88,8 +88,12 @@
         canUpdate = false;
         pairArray = [NSMutableArray new];
         self.weekNumber = weekNumber;
+        NSMutableArray *validDiscs = [NSMutableArray new];
+        [ValidDiscs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [validDiscs addObject:[NSNumber numberWithLong:((NSString*)obj).longLongValue]];
+        }];
         [dayArray enumerateObjectsUsingBlock:^(id pair, NSUInteger idx, BOOL *stop) {
-            if([ValidDiscs containsObject:pair[@"id"]])
+            if([validDiscs containsObject:pair[@"id"]])
             {
                 NSArray *arrWeek = pair[@"weeks"];
                 if([arrWeek count] >= weekNumber)
