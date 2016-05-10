@@ -59,6 +59,8 @@
     }];
     
     NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"schedules.plist"];
+    if([[NSFileManager defaultManager] fileExistsAtPath:plistPath isDirectory:NO])
+        [[NSFileManager defaultManager] removeItemAtPath:plistPath error:nil];
     if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath isDirectory:NO])
         [[NSFileManager defaultManager] createFileAtPath:plistPath contents:nil attributes:nil];
     NSData *data = [NSData dataWithContentsOfFile:plistPath];

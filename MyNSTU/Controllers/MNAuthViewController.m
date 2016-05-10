@@ -70,7 +70,7 @@
 - (void) textFieldDidBeginEditing:(UITextField *)textField
 {
     CGFloat t = multiplier;
-    CGFloat tt = t <= 1 ? t : t * powf(2.3,2);
+    CGFloat tt = t <= 1 ? t : t * powf(2.3,1.4);
     offsetHeight = textField.bounds.origin.y + textField.bounds.size.height + 50 * tt;
     [scrollView setContentOffset:CGPointMake(0,offsetHeight) animated:YES];
 }
@@ -81,15 +81,20 @@
     }
 }
 - (IBAction)guestButton:(id)sender {
-    UINavigationController *contr = [MNAPI_Addition getViewControllerWithIdentifier:@"PrepareNavigation"];
-    MNPrepareScheduleTableViewController *needContr = [contr.viewControllers firstObject];
-    needContr.delegate = self;
-    needContr._wind = self._wind;
-    needContr.prepareStage = MNGetFaculty;
-    [self presentViewController:contr animated:YES completion:^{
-        
+    [MNAPI_Addition setObjectTONSUD:@"close" withKey:@"sch"];
+    UINavigationController *nav = [MNAPI_Addition getViewControllerWithIdentifier:@"SchedulePrep"];
+    [self presentViewController:nav animated:YES completion:^{
+        //        [self dismissViewControllerAnimated:YES completion:nil];
     }];
-    
+//    UINavigationController *contr = [MNAPI_Addition getViewControllerWithIdentifier:@"PrepareNavigation"];
+//    MNPrepareScheduleTableViewController *needContr = [contr.viewControllers firstObject];
+//    needContr.delegate = self;
+//    needContr._wind = self._wind;
+//    needContr.prepareStage = MNGetFaculty;
+//    [self presentViewController:contr animated:YES completion:^{
+//        
+//    }];
+//    
 }
 - (void)registerForKeyboardNotifications
 {
