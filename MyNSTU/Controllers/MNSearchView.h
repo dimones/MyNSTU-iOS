@@ -11,6 +11,7 @@
 @required
 - (void) MNSearchBegin;
 - (void) MNSearchEnd;
+- (void) MNNeedLogin;
 @end
 @interface MNSearchView : UIView
 {
@@ -23,4 +24,5 @@
 @property (strong, nonatomic) UIButton *logButton;
 @property (strong, nonatomic) UIButton *cancelButton;
 @property (strong, nonatomic) UILabel *nameLabel;
+- (void) updateInfo;
 @end

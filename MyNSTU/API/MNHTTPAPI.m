@@ -146,7 +146,7 @@
 }
 + (BOOL) isAuthed
 {
-    BOOL authed = [MNAPI_Addition getObjectFROMNSUDWithKey:@"authed"];
+    BOOL authed = ((NSNumber*)[MNAPI_Addition getObjectFROMNSUDWithKey:@"authed"]).boolValue;
     return authed;
 }
 - (void) checkUsername: (NSString*) username

@@ -136,22 +136,14 @@
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка авторизации" message:@"Неверные данные логина/пароля" delegate:self cancelButtonTitle:@"Хорошо" otherButtonTitles:nil];
     [alertView show];
 }
-- (void) MNHTTPDidRecieveAuthSuccess:(MNHTTPAPI *)api andToken:(NSString *)token
+- (void) MNHTTPDidRecieveAuthSuccess:(MNHTTPAPI *)aapi andToken:(NSString *)token
 {
     [MNAPI_Addition setObjectTONSUD:token withKey:@"device_token"];
     [MNAPI_Addition setObjectTONSUD:@true withKey:@"authed"];
+    [api getInfo];
     [self dismissViewControllerAnimated:NO completion:^{
-        [api getInfo];
+        
     }];
-}
-- (void) MNHTTPDidRecieveInfo:(MNHTTPAPI *)api andInfo:(id)infoDictionary
-{
-    if([self.delegate respondsToSelector:@selector(MNAuthCompleted:)])
-    {
-        [self.delegate MNAuthCompleted:infoDictionary];
-    }
-    //            [self.delegate MNHTTPDidRecieveCheckUsernameResult:self andResult:((NSNumber*)responseObject[@"answer"]).boolValue];
-    else NSLog(@"[MNHTTPAPI] Did not responds selector MNAuthCompleted:");
 }
 - (void) MNHTTPError
 {

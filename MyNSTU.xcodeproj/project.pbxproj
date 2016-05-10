@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		460DFC591CE0D9B700E2C81F /* MNRegController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460DFC581CE0D9B700E2C81F /* MNRegController.m */; };
+		460DFC5F1CE1AE4A00E2C81F /* MNSideTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 460DFC5E1CE1AE4A00E2C81F /* MNSideTopCell.m */; };
+		460DFC691CE1B67900E2C81F /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 460DFC621CE1B67900E2C81F /* UIColor+HexString.m */; };
+		460DFC6A1CE1B67900E2C81F /* UIImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 460DFC641CE1B67900E2C81F /* UIImageEffects.m */; };
+		460DFC6B1CE1B67900E2C81F /* UIView+DropShadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 460DFC661CE1B67900E2C81F /* UIView+DropShadow.m */; };
+		460DFC6C1CE1B67900E2C81F /* ZHPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 460DFC681CE1B67900E2C81F /* ZHPopupView.m */; };
+		460DFC6E1CE1B78900E2C81F /* warning.png in Resources */ = {isa = PBXBuildFile; fileRef = 460DFC6D1CE1B78900E2C81F /* warning.png */; };
 		4614A4461B91C47000149679 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4614A4451B91C47000149679 /* Social.framework */; };
 		4614A44A1B91DA6800149679 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4614A4491B91DA6800149679 /* arrow.png */; };
 		4614A44D1B91E09400149679 /* UIScrollView+InfiniteScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 4614A44C1B91E09400149679 /* UIScrollView+InfiniteScroll.m */; };
@@ -944,6 +950,17 @@
 		3985878A06803AA9A2217A7B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		460DFC571CE0D9B700E2C81F /* MNRegController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNRegController.h; path = Controllers/MNRegController.h; sourceTree = "<group>"; };
 		460DFC581CE0D9B700E2C81F /* MNRegController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNRegController.m; path = Controllers/MNRegController.m; sourceTree = "<group>"; };
+		460DFC5D1CE1AE4A00E2C81F /* MNSideTopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSideTopCell.h; path = Controllers/MNSideTopCell.h; sourceTree = "<group>"; };
+		460DFC5E1CE1AE4A00E2C81F /* MNSideTopCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSideTopCell.m; path = Controllers/MNSideTopCell.m; sourceTree = "<group>"; };
+		460DFC611CE1B67900E2C81F /* UIColor+HexString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexString.h"; sourceTree = "<group>"; };
+		460DFC621CE1B67900E2C81F /* UIColor+HexString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexString.m"; sourceTree = "<group>"; };
+		460DFC631CE1B67900E2C81F /* UIImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageEffects.h; sourceTree = "<group>"; };
+		460DFC641CE1B67900E2C81F /* UIImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageEffects.m; sourceTree = "<group>"; };
+		460DFC651CE1B67900E2C81F /* UIView+DropShadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+DropShadow.h"; sourceTree = "<group>"; };
+		460DFC661CE1B67900E2C81F /* UIView+DropShadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+DropShadow.m"; sourceTree = "<group>"; };
+		460DFC671CE1B67900E2C81F /* ZHPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHPopupView.h; sourceTree = "<group>"; };
+		460DFC681CE1B67900E2C81F /* ZHPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHPopupView.m; sourceTree = "<group>"; };
+		460DFC6D1CE1B78900E2C81F /* warning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warning.png; sourceTree = "<group>"; };
 		4614A4451B91C47000149679 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		4614A4491B91DA6800149679 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		4614A44B1B91E09400149679 /* UIScrollView+InfiniteScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+InfiniteScroll.h"; sourceTree = "<group>"; };
@@ -1954,9 +1971,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		460DFC601CE1B67900E2C81F /* ZHPopupView */ = {
+			isa = PBXGroup;
+			children = (
+				460DFC611CE1B67900E2C81F /* UIColor+HexString.h */,
+				460DFC621CE1B67900E2C81F /* UIColor+HexString.m */,
+				460DFC631CE1B67900E2C81F /* UIImageEffects.h */,
+				460DFC641CE1B67900E2C81F /* UIImageEffects.m */,
+				460DFC651CE1B67900E2C81F /* UIView+DropShadow.h */,
+				460DFC661CE1B67900E2C81F /* UIView+DropShadow.m */,
+				460DFC671CE1B67900E2C81F /* ZHPopupView.h */,
+				460DFC681CE1B67900E2C81F /* ZHPopupView.m */,
+			);
+			path = ZHPopupView;
+			sourceTree = "<group>";
+		};
 		463361281B861AFC002DFFC7 /* design */ = {
 			isa = PBXGroup;
 			children = (
+				460DFC6D1CE1B78900E2C81F /* warning.png */,
 				468A0DF91CE0CC7C00146EB9 /* email.png */,
 				468A0DF11CE0BB9100146EB9 /* nstu.jpg */,
 				46FAF6291C741D0A00DB2E1B /* proffesor.png */,
@@ -2079,6 +2112,7 @@
 		4633618C1B86DDCC002DFFC7 /* Other LIbraries */ = {
 			isa = PBXGroup;
 			children = (
+				460DFC601CE1B67900E2C81F /* ZHPopupView */,
 				4614A44B1B91E09400149679 /* UIScrollView+InfiniteScroll.h */,
 				4614A44C1B91E09400149679 /* UIScrollView+InfiniteScroll.m */,
 				4633618E1B86DDCC002DFFC7 /* ionicons-codes.h */,
@@ -3151,6 +3185,8 @@
 				46F4D14C1B93473100B5B3C3 /* MNSideUniCell.m */,
 				46F4D14E1B9361B500B5B3C3 /* MNSearchView.h */,
 				46F4D14F1B9361B500B5B3C3 /* MNSearchView.m */,
+				460DFC5D1CE1AE4A00E2C81F /* MNSideTopCell.h */,
+				460DFC5E1CE1AE4A00E2C81F /* MNSideTopCell.m */,
 			);
 			name = MNSideMenu;
 			sourceTree = "<group>";
@@ -3621,6 +3657,7 @@
 				463A49721B9B04560051F021 /* 20464.jpg in Resources */,
 				463A4B391B9B04560051F021 /* 616.jpg in Resources */,
 				463A4B961B9B04560051F021 /* 843.jpg in Resources */,
+				460DFC6E1CE1B78900E2C81F /* warning.png in Resources */,
 				463A4B641B9B04560051F021 /* 687.jpg in Resources */,
 				463A49831B9B04560051F021 /* 20688.jpg in Resources */,
 				463A4A211B9B04560051F021 /* 26682.jpg in Resources */,
@@ -4215,15 +4252,19 @@
 				463361BE1B86DDCC002DFFC7 /* REMenuItem.m in Sources */,
 				463361BB1B86DDCC002DFFC7 /* RECommonFunctions.m in Sources */,
 				46DF88241B8895A20026159B /* MNSideController.m in Sources */,
+				460DFC6A1CE1B67900E2C81F /* UIImageEffects.m in Sources */,
 				463361C41B86DDCC002DFFC7 /* ActionSheetLocalePicker.m in Sources */,
 				463361C81B86DDCC002DFFC7 /* NSDate+TCUtils.m in Sources */,
 				46FAF6361C74213900DB2E1B /* MNScheduleRightCapController.m in Sources */,
 				46FAF6331C74202A00DB2E1B /* MNScheduleLeftCapController.m in Sources */,
 				463361BF1B86DDCC002DFFC7 /* REMenuItemView.m in Sources */,
 				46FAF61E1C741AE200DB2E1B /* MNScheduleDaysController.m in Sources */,
+				460DFC6C1CE1B67900E2C81F /* ZHPopupView.m in Sources */,
 				4656E2891B88E6BC001EFB41 /* MNBannerView.m in Sources */,
 				463361C61B86DDCC002DFFC7 /* DistancePickerView.m in Sources */,
+				460DFC6B1CE1B67900E2C81F /* UIView+DropShadow.m in Sources */,
 				46398B591B971EEB005E5E6D /* MNPersonsTabController.m in Sources */,
+				460DFC5F1CE1AE4A00E2C81F /* MNSideTopCell.m in Sources */,
 				46C29B061B8CC3BD00C70E73 /* MNBannerScrollView.m in Sources */,
 				46FAF6301C741FBC00DB2E1B /* MNSchedulePairCell.m in Sources */,
 				46398B5F1B972342005E5E6D /* MNPersonInfoCell.m in Sources */,
@@ -4232,6 +4273,7 @@
 				463361C21B86DDCC002DFFC7 /* ActionSheetDatePicker.m in Sources */,
 				46EC231E1B88DE5300444309 /* MNNewsTextCell.m in Sources */,
 				463A45711B99550D0051F021 /* MNSessCell.m in Sources */,
+				460DFC691CE1B67900E2C81F /* UIColor+HexString.m in Sources */,
 				463361C11B86DDCC002DFFC7 /* ActionSheetCustomPicker.m in Sources */,
 				463A4BD21B9B06E40051F021 /* MNPersonSearchCell.m in Sources */,
 				46F4D14D1B93473100B5B3C3 /* MNSideUniCell.m in Sources */,

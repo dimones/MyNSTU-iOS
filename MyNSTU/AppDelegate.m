@@ -10,7 +10,7 @@
 #import "MNAPI+Addition.h"
 #import "VKSdk.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-
+#import "MNHTTPAPI.h"
 //
 #import "MNAuthViewController.h"
 @interface AppDelegate ()
@@ -34,10 +34,10 @@
     [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
     [[self window] setRootViewController:sideMenuController];
     [[self window] makeKeyAndVisible];
-    if (YES == YES){
+    if (![MNHTTPAPI isAuthed]){
     //if (scheduleFinished.boolValue) {
         MNAuthViewController *authContr = [MNAPI_Addition getViewControllerWithIdentifier:@"AuthController"];
-        
+        authContr.delegate = sideController;
         [sideMenuController presentViewController:authContr animated:YES completion:nil];
         authContr._wind = [self window];
     }

@@ -11,7 +11,9 @@
 #import "MNAuthViewController.h"
 #import "MNSearchView.h"
 #import "MNAPI+Addition.h"
-@interface MNSideController ()<UITableViewDelegate,UITableViewDataSource,MNAuthDelegate>
+#import "MNHTTPAPI.h"
+#import "MNSideTopCell.h"
+@interface MNSideController ()<UITableViewDelegate,UITableViewDataSource,MNAuthDelegate,MNSearchDelegate>
 {
     BOOL isSearching;
     BOOL isAuthed;
@@ -19,7 +21,8 @@
     NSDictionary *cellsProperty;
     MNAuthViewController *authController;
     MNSearchView *searchView;
-    
+    MNHTTPAPI *api;
+    MNSideTopCell *topCell;
 }
 @end
 
@@ -27,6 +30,10 @@
 @synthesize sideTable;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    api = [MNHTTPAPI new];
+    api.delegate = self;
+    if (([MNAPI_Addition getObjectFROMNSUDWithKey:@"user_info"] == nil) && [MNHTTPAPI isAuthed])
+        [api getInfo];
     cellsProperty = @{ @1 : @{ @"title": @"Новости", @"imageName": @"news.png"},
                        @2 : @{ @"title": @"Задания", @"imageName": @"tasks.png"},
                        @3 : @{ @"title": @"Расписание", @"imageName": @"schedule.png"},
@@ -44,17 +51,25 @@
     if (searchView == nil) {
         searchView = [[MNSearchView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width * .87f, 112)];
         searchView.backgroundColor = [UIColor colorFromHexString:@"#353535"];
+        searchView.delegate = self;
     }
     [self.sideTable insertSubview:searchView aboveSubview:self.sideTable];
     [self.sideTable bringSubviewToFront:searchView];
-    [self.authTest addTarget:self action:@selector(authAction:) forControlEvents:UIControlEventTouchUpInside];
+    [searchView.logButton addTarget:self action:@selector(authAction:) forControlEvents:UIControlEventTouchUpInside];
+}
+- (void) viewWillAppear:(BOOL)animated
+{
+    if (([MNAPI_Addition getObjectFROMNSUDWithKey:@"user_info"] == nil) && [MNHTTPAPI isAuthed])
+        [api getInfo];
     
 }
 - (IBAction)authAction:(id)sender {
-    [MNAPI_Addition changeContentViewControllerWithName:@"SchedulePrep"];
-    [MNAPI_Addition hideORShowLeftBar];
+    
 }
-
+- (void) viewDidAppear:(BOOL)animated
+{
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -129,7 +144,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MNSideUniCell *cell = [tableView dequeueReusableCellWithIdentifier:@"sideUniCell" forIndexPath:indexPath];
     if (indexPath.row == 0) {
-        return [UITableViewCell new];
+        topCell = [tableView dequeueReusableCellWithIdentifier:@"sideProfileCell"];
+        
+        [topCell.authButton addTarget:self action:@selector(authAction:) forControlEvents:UIControlEventTouchUpInside];
+        if(topCell == nil)
+            return [MNSideTopCell new];
+        return topCell;
+//        return [UITableViewCell new];
     }
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     cell.iconView.image = [UIImage imageNamed:cellsProperty[[NSNumber numberWithInteger:indexPath.row]][@"imageName"]];
@@ -148,5 +169,25 @@
 {
     NSLog(@"auth completed %@", infoDict);
 }
-
+- (void) MNHTTPDidRecieveInfo: (MNHTTPAPI*) api
+                      andInfo: (id) infoDictionary
+{
+    [MNAPI_Addition setObjectTONSUD:infoDictionary withKey:@"user_info"];
+    [searchView updateInfo];
+}
+#pragma mark - MNSearchDelegate
+- (void) MNSearchBegin
+{
+    
+}
+- (void) MNSearchEnd
+{
+    
+}
+- (void) MNNeedLogin
+{
+    MNAuthViewController *authContr = [MNAPI_Addition getViewControllerWithIdentifier:@"AuthController"];
+    
+    [self presentViewController:authContr animated:YES completion:nil];
+}
 @end
