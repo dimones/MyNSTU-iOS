@@ -145,10 +145,10 @@
         NSDictionary *dict = [personsArray objectAtIndex:[indexPath row]];
         cell.personFirstName.text = dict[@"name"];
         cell.personSecondName.text = [[dict[@"job_title"] lowercaseString] stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[NSString stringWithFormat:@"%C",[dict[@"job_title"] characterAtIndex:0]]];
-        UIImage *image = [MNAPI_Addition scaleTheImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",dict[@"id"]]] andRect:CGSizeMake(50,50)];
-        if(image!=nil)
+        UIImage *img = [UIImage imageNamed:[NSString stringWithFormat:@"%@.jpg",dict[@"id"]]];
+        if(img!=nil)
         {
-            [cell.personImage setImage:[MNAPI_Addition scaleTheImage:image andRect:CGSizeMake(50,50)]];//[self croppIngimageByImageName:image toRect:CGRectMake(0, 0, 50, 50)]];
+            [cell.personImage setImage:[MNAPI_Addition scaleTheImage:img andRect:CGSizeMake(50,50)]];//[self croppIngimageByImageName:image toRect:CGRectMake(0, 0, 50, 50)]];
             CGRect r = cell.personImage.frame;
             r.size = CGSizeMake(50,50);
             [cell.personImage setFrame:r];
