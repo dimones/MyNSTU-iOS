@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "MNAPI+Addition.h"
-#define LOCAL 1
+#define LOCAL 0
 #if LOCAL == 0
 #define SERVER_ADDRESS @"https://api.mynstu.xyz/"
 #else

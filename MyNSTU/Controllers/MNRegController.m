@@ -77,8 +77,8 @@
 - (void) textFieldDidBeginEditing:(UITextField *)textField
 {
     CGFloat t = multiplier;
-    CGFloat tt = t <= 1 ? t : t * 2.3;
-    offsetHeight = textField.bounds.origin.y + textField.bounds.size.height + 60 * tt;
+    CGFloat tt = t <= 1 ? t : t *1.5;
+    offsetHeight = textField.bounds.origin.y + textField.bounds.size.height + 30 * tt;
     [scrollView setContentOffset:CGPointMake(0,offsetHeight) animated:YES];
 }
 - (void)registerForKeyboardNotifications
