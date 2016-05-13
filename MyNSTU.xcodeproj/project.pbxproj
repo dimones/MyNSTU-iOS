@@ -1932,7 +1932,7 @@
 		46F4D14F1B9361B500B5B3C3 /* MNSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSearchView.m; path = Controllers/MNSearchView.m; sourceTree = "<group>"; };
 		46F4D1511B9450A400B5B3C3 /* gray_block.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_block.png; sourceTree = "<group>"; };
 		46FAF61C1C741AE200DB2E1B /* MNScheduleDaysController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNScheduleDaysController.h; path = Controllers/MNScheduleDaysController.h; sourceTree = "<group>"; };
-		46FAF61D1C741AE200DB2E1B /* MNScheduleDaysController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNScheduleDaysController.m; path = Controllers/MNScheduleDaysController.m; sourceTree = "<group>"; };
+		46FAF61D1C741AE200DB2E1B /* MNScheduleDaysController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = MNScheduleDaysController.m; path = Controllers/MNScheduleDaysController.m; sourceTree = "<group>"; };
 		46FAF61F1C741C8C00DB2E1B /* arrow_r.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_r.png; sourceTree = "<group>"; };
 		46FAF6201C741C8C00DB2E1B /* arrow_l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_l.png; sourceTree = "<group>"; };
 		46FAF6231C741CAD00DB2E1B /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
