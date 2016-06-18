@@ -30,23 +30,23 @@
 - (void) parseNews:(id) jsonObject
 {
     id newsArray = jsonObject;
-        NSMutableArray *newsOutArray = [NSMutableArray new];
-        [newsArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            if(obj!=nil)
-            {
-                NSMutableDictionary *tempDict = [NSMutableDictionary new];
-                [tempDict setObject:obj[@"title"] forKey:@"title"];
-                [tempDict setObject:obj[@"pubdate"] forKeyedSubscript:@"pubdate"];
-                //[tempDict setObject:temp!=nil?temp:[NSDate date] forKey:@"pubdate"];
-                [tempDict setObject:obj[@"link"] forKey:@"link"];
-                [tempDict setObject:obj[@"description"] forKey:@"description"];
-                [newsOutArray addObject:tempDict];
-            }
-        }];
-        [newsOutArray sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"pubdate" ascending:NO], nil]];
-        if([self.delegate respondsToSelector:@selector(MNAPIDidRecieveNews:news:)])
-            [self.delegate MNAPIDidRecieveNews:self news:newsOutArray];
-        else NSLog(@"[MNHTTPAPI] Did not responds selector MNAPIDidRecieveNews:news:");
+    NSMutableArray *newsOutArray = [NSMutableArray new];
+    [newsArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if(obj!=nil)
+        {
+            NSMutableDictionary *tempDict = [NSMutableDictionary new];
+            [tempDict setObject:obj[@"title"] forKey:@"title"];
+            [tempDict setObject:obj[@"pubdate"] forKeyedSubscript:@"pubdate"];
+            //[tempDict setObject:temp!=nil?temp:[NSDate date] forKey:@"pubdate"];
+            [tempDict setObject:obj[@"link"] forKey:@"link"];
+            [tempDict setObject:obj[@"description"] forKey:@"description"];
+            [newsOutArray addObject:tempDict];
+        }
+    }];
+    [newsOutArray sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"pubdate" ascending:NO], nil]];
+    if([self.delegate respondsToSelector:@selector(MNAPIDidRecieveNews:news:)])
+        [self.delegate MNAPIDidRecieveNews:self news:newsOutArray];
+    else NSLog(@"[MNHTTPAPI] Did not responds selector MNAPIDidRecieveNews:news:");
 }
 - (void) getAllNews
 {
@@ -91,10 +91,10 @@
         if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveFaculties:andFacs:)])
             [self.delegate MNHTTPDidRecieveFaculties:self andFacs:responseObject];
         else NSLog(@"[MNHTTPAPI] Did not responds selector MNHTTPDidRecieveFaculties:andFacs:");
-//        NSArray *sortedKeys = [[responseObject allKeys] sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES]]];
-//        if([self.delegate respondsToSelector:@selector(MNHttpDidRecieveFacultiesResponse:andResults:sortedFacs:)])
-//            [self.delegate MNHttpDidRecieveFacultiesResponse:self andResults:responseObject sortedFacs:sortedKeys];
-//        else NSLog(@"[MNHTTPAPI] Did not responds selector MNHttpDidRecieveFacultiesResponse:andResults:sortedFacs:");
+        //        NSArray *sortedKeys = [[responseObject allKeys] sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES]]];
+        //        if([self.delegate respondsToSelector:@selector(MNHttpDidRecieveFacultiesResponse:andResults:sortedFacs:)])
+        //            [self.delegate MNHttpDidRecieveFacultiesResponse:self andResults:responseObject sortedFacs:sortedKeys];
+        //        else NSLog(@"[MNHTTPAPI] Did not responds selector MNHttpDidRecieveFacultiesResponse:andResults:sortedFacs:");
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@",error);
@@ -170,23 +170,23 @@
                                                                                            @"password": [password getMD5],
                                                                                            @"device_id": UUID }
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if(((NSNumber*)responseObject[@"succeed"]).boolValue)
-        {
-            if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveAuthSuccess:andToken:)])
-                [self.delegate MNHTTPDidRecieveAuthSuccess:self andToken:responseObject[@"device_token"]];
-            else NSLog(@"[MNHTTPAPI] Did not responds selector MNHTTPDidRecieveAuthSuccess:andToken:");
-        }
-        else
-        {
-            if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveAuthFail:)])
-                [self.delegate MNHTTPDidRecieveAuthFail:self];
-            else NSLog(@"[MNHTTPAPI] Did not responds selector MNHTTPDidRecieveAuthFail:");
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        if([self.delegate respondsToSelector:@selector(MNHTTPError)])
-            [self.delegate MNHTTPError];
-    }];
+              if(((NSNumber*)responseObject[@"succeed"]).boolValue)
+              {
+                  if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveAuthSuccess:andToken:)])
+                      [self.delegate MNHTTPDidRecieveAuthSuccess:self andToken:responseObject[@"device_token"]];
+                  else NSLog(@"[MNHTTPAPI] Did not responds selector MNHTTPDidRecieveAuthSuccess:andToken:");
+              }
+              else
+              {
+                  if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveAuthFail:)])
+                      [self.delegate MNHTTPDidRecieveAuthFail:self];
+                  else NSLog(@"[MNHTTPAPI] Did not responds selector MNHTTPDidRecieveAuthFail:");
+              }
+              
+          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+              if([self.delegate respondsToSelector:@selector(MNHTTPError)])
+                  [self.delegate MNHTTPError];
+          }];
 }
 - (void) regUser: (NSString*) username
      andPassword: (NSString*) password
@@ -213,7 +213,7 @@
                   if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveRegFail:andReason:)])
                       [self.delegate MNHTTPDidRecieveRegFail:self andReason:responseObject[@"reason"]];
                   else NSLog(@"[MNHTTPAPI] Did not responds selector MNHTTPDidRecieveAuthFail:");
-
+                  
               }
               
               
@@ -227,8 +227,8 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:[NSString stringWithFormat:@"%@user/get_info",SERVER_ADDRESS]  parameters:@{@"device_id": UUID,
-                                                                                                      @"device_token": [MNAPI_Addition getObjectFROMNSUDWithKey:@"device_token"]
-                                                                                                      }
+                                                                                             @"device_token": [MNAPI_Addition getObjectFROMNSUDWithKey:@"device_token"]
+                                                                                             }
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveInfo:andInfo:)])
                  [self.delegate MNHTTPDidRecieveInfo:self andInfo:responseObject];
@@ -245,10 +245,10 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager POST:[NSString stringWithFormat:@"%@user/set_schedule",SERVER_ADDRESS]  parameters:@{
-                                                                                          @"device_id": UUID,
-                                                                                          @"device_token": [MNAPI_Addition getObjectFROMNSUDWithKey:@"device_token"],
-                                                                                          @"device_type": @1,
-                                                                                          @"schedule_data": [NSString getJSONStringFromObject:scheduleData]}
+                                                                                                  @"device_id": UUID,
+                                                                                                  @"device_token": [MNAPI_Addition getObjectFROMNSUDWithKey:@"device_token"],
+                                                                                                  @"device_type": @1,
+                                                                                                  @"schedule_data": [NSString getJSONStringFromObject:scheduleData]}
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
               if(((NSNumber*)responseObject[@"succeed"]).boolValue)
               {
@@ -272,7 +272,7 @@
     [manager GET:[NSString stringWithFormat:@"%@user/get_schedule",SERVER_ADDRESS]  parameters:@{@"device_id": UUID,
                                                                                                  @"device_token": [MNAPI_Addition getObjectFROMNSUDWithKey:@"device_token"],
                                                                                                  @"device_type": @1
-                                                                                             }
+                                                                                                 }
          success:^(AFHTTPRequestOperation *operation, id responseObject) {
              id schedule = [MNAPI_Addition JSONObjectFromString:(NSString*)responseObject[@"schedule_data"]];
              NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"schedules.plist"];

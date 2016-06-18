@@ -2997,6 +2997,18 @@
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
+					0540828DC595E6717E61CA1DD264C623 = {
+						DevelopmentTeam = 2B793573M4;
+						DevelopmentTeamName = "Dmitriy Bogomolov (Personal Team)";
+					};
+					18A2346FA56F559B43B2182095FBC8CD = {
+						DevelopmentTeam = 2B793573M4;
+						DevelopmentTeamName = "Dmitriy Bogomolov (Personal Team)";
+					};
+					1F2A5F9DA4F281EA09DFF37DE3C24552 = {
+						DevelopmentTeam = 2B793573M4;
+						DevelopmentTeamName = "Dmitriy Bogomolov (Personal Team)";
+					};
 					407DF91564E25A1FD7D27AD570B02BD5 = {
 						DevelopmentTeam = ZGYN7LMWAA;
 					};
@@ -3014,6 +3026,10 @@
 					};
 					B8BD0AF39BEFE59F95DE816D474685DD = {
 						DevelopmentTeam = ZGYN7LMWAA;
+					};
+					D1BF278E08552212CC9F3E774E3DCF7E = {
+						DevelopmentTeam = 2B793573M4;
+						DevelopmentTeamName = "Dmitriy Bogomolov (Personal Team)";
 					};
 				};
 			};
