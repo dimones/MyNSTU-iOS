@@ -886,6 +886,18 @@
 		463A4BD21B9B06E40051F021 /* MNPersonSearchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 463A4BD11B9B06E40051F021 /* MNPersonSearchCell.m */; };
 		464298941C7ADE5200AE65C2 /* MNScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 464298921C7ADE5200AE65C2 /* MNScheduleCell.m */; };
 		464298951C7ADE5200AE65C2 /* MNScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464298931C7ADE5200AE65C2 /* MNScheduleCell.xib */; };
+		46524E991D50F24A00FD05C0 /* fm-engine.js in Resources */ = {isa = PBXBuildFile; fileRef = 46524E8A1D50F24A00FD05C0 /* fm-engine.js */; };
+		46524E9A1D50F24A00FD05C0 /* jquery-1.11.1.js in Resources */ = {isa = PBXBuildFile; fileRef = 46524E8D1D50F24A00FD05C0 /* jquery-1.11.1.js */; };
+		46524E9B1D50F24A00FD05C0 /* jquery.ajax-progress.js in Resources */ = {isa = PBXBuildFile; fileRef = 46524E8E1D50F24A00FD05C0 /* jquery.ajax-progress.js */; };
+		46524E9C1D50F24A00FD05C0 /* jquery.loadie.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 46524E8F1D50F24A00FD05C0 /* jquery.loadie.min.js */; };
+		46524E9D1D50F24A00FD05C0 /* jquery.validate.1.15.0.js in Resources */ = {isa = PBXBuildFile; fileRef = 46524E901D50F24A00FD05C0 /* jquery.validate.1.15.0.js */; };
+		46524E9E1D50F24A00FD05C0 /* js.cookie.min.2.1.1.js in Resources */ = {isa = PBXBuildFile; fileRef = 46524E911D50F24A00FD05C0 /* js.cookie.min.2.1.1.js */; };
+		46524E9F1D50F24A00FD05C0 /* CanvasRenderer.js in Resources */ = {isa = PBXBuildFile; fileRef = 46524E931D50F24A00FD05C0 /* CanvasRenderer.js */; };
+		46524EA01D50F24A00FD05C0 /* OrbitControls.js in Resources */ = {isa = PBXBuildFile; fileRef = 46524E941D50F24A00FD05C0 /* OrbitControls.js */; };
+		46524EA11D50F24A00FD05C0 /* Projector.js in Resources */ = {isa = PBXBuildFile; fileRef = 46524E951D50F24A00FD05C0 /* Projector.js */; };
+		46524EA21D50F24A00FD05C0 /* three.js in Resources */ = {isa = PBXBuildFile; fileRef = 46524E961D50F24A00FD05C0 /* three.js */; };
+		46524EA31D50F24A00FD05C0 /* map.html in Resources */ = {isa = PBXBuildFile; fileRef = 46524E971D50F24A00FD05C0 /* map.html */; };
+		46524EA41D50F24A00FD05C0 /* nstu_map_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 46524E981D50F24A00FD05C0 /* nstu_map_data.json */; };
 		4656E2891B88E6BC001EFB41 /* MNBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656E2881B88E6BC001EFB41 /* MNBannerView.m */; };
 		466DDB8D1C6EA36400047033 /* WalkthroughPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466DDB8A1C6EA36400047033 /* WalkthroughPageViewController.m */; };
 		466DDB8E1C6EA36400047033 /* WalkThroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466DDB8C1C6EA36400047033 /* WalkThroughViewController.m */; };
@@ -899,29 +911,6 @@
 		468A0DF21CE0BB9100146EB9 /* nstu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 468A0DF11CE0BB9100146EB9 /* nstu.jpg */; };
 		468A0DF81CE0BE9400146EB9 /* MNEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 468A0DF61CE0BE9400146EB9 /* MNEmptyViewController.m */; };
 		468A0DFA1CE0CC7C00146EB9 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 468A0DF91CE0CC7C00146EB9 /* email.png */; };
-		46B980571D4F5FAF0038BDC2 /* bootstrap-material-design.css in Resources */ = {isa = PBXBuildFile; fileRef = 46B980381D4F5FAF0038BDC2 /* bootstrap-material-design.css */; };
-		46B980581D4F5FAF0038BDC2 /* bootstrap-material-design.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 46B9803A1D4F5FAF0038BDC2 /* bootstrap-material-design.min.css */; };
-		46B980591D4F5FAF0038BDC2 /* bootstrap.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 46B9803C1D4F5FAF0038BDC2 /* bootstrap.min.css */; };
-		46B9805A1D4F5FAF0038BDC2 /* jquery.dropdown.css in Resources */ = {isa = PBXBuildFile; fileRef = 46B9803E1D4F5FAF0038BDC2 /* jquery.dropdown.css */; };
-		46B9805B1D4F5FAF0038BDC2 /* loadie.css in Resources */ = {isa = PBXBuildFile; fileRef = 46B9803F1D4F5FAF0038BDC2 /* loadie.css */; };
-		46B9805C1D4F5FAF0038BDC2 /* ripples.css in Resources */ = {isa = PBXBuildFile; fileRef = 46B980401D4F5FAF0038BDC2 /* ripples.css */; };
-		46B9805D1D4F5FAF0038BDC2 /* ripples.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 46B980421D4F5FAF0038BDC2 /* ripples.min.css */; };
-		46B9805E1D4F5FAF0038BDC2 /* nstu_map_no_traffic.png in Resources */ = {isa = PBXBuildFile; fileRef = 46B980451D4F5FAF0038BDC2 /* nstu_map_no_traffic.png */; };
-		46B9805F1D4F5FAF0038BDC2 /* nstu_map_traffic.png in Resources */ = {isa = PBXBuildFile; fileRef = 46B980461D4F5FAF0038BDC2 /* nstu_map_traffic.png */; };
-		46B980601D4F5FAF0038BDC2 /* bootstrap.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 46B980481D4F5FAF0038BDC2 /* bootstrap.min.js */; };
-		46B980611D4F5FAF0038BDC2 /* jquery-1.11.1.js in Resources */ = {isa = PBXBuildFile; fileRef = 46B980491D4F5FAF0038BDC2 /* jquery-1.11.1.js */; };
-		46B980621D4F5FAF0038BDC2 /* jquery.ajax-progress.js in Resources */ = {isa = PBXBuildFile; fileRef = 46B9804A1D4F5FAF0038BDC2 /* jquery.ajax-progress.js */; };
-		46B980631D4F5FAF0038BDC2 /* jquery.loadie.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 46B9804B1D4F5FAF0038BDC2 /* jquery.loadie.min.js */; };
-		46B980641D4F5FAF0038BDC2 /* jquery.validate.1.15.0.js in Resources */ = {isa = PBXBuildFile; fileRef = 46B9804C1D4F5FAF0038BDC2 /* jquery.validate.1.15.0.js */; };
-		46B980651D4F5FAF0038BDC2 /* js.cookie.min.2.1.1.js in Resources */ = {isa = PBXBuildFile; fileRef = 46B9804D1D4F5FAF0038BDC2 /* js.cookie.min.2.1.1.js */; };
-		46B980661D4F5FAF0038BDC2 /* nstu_map_cookie.js in Resources */ = {isa = PBXBuildFile; fileRef = 46B9804E1D4F5FAF0038BDC2 /* nstu_map_cookie.js */; };
-		46B980671D4F5FAF0038BDC2 /* nstu_map_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 46B9804F1D4F5FAF0038BDC2 /* nstu_map_data.json */; };
-		46B980681D4F5FAF0038BDC2 /* nstu_map_engine.js in Resources */ = {isa = PBXBuildFile; fileRef = 46B980501D4F5FAF0038BDC2 /* nstu_map_engine.js */; };
-		46B980691D4F5FAF0038BDC2 /* nstu_map_mouse.js in Resources */ = {isa = PBXBuildFile; fileRef = 46B980511D4F5FAF0038BDC2 /* nstu_map_mouse.js */; };
-		46B9806A1D4F5FAF0038BDC2 /* nstu_map_schedule.js in Resources */ = {isa = PBXBuildFile; fileRef = 46B980521D4F5FAF0038BDC2 /* nstu_map_schedule.js */; };
-		46B9806B1D4F5FAF0038BDC2 /* nstu_map_schedule_runner.js in Resources */ = {isa = PBXBuildFile; fileRef = 46B980531D4F5FAF0038BDC2 /* nstu_map_schedule_runner.js */; };
-		46B9806C1D4F5FAF0038BDC2 /* pixi.js in Resources */ = {isa = PBXBuildFile; fileRef = 46B980541D4F5FAF0038BDC2 /* pixi.js */; };
-		46B9806D1D4F5FAF0038BDC2 /* map.html in Resources */ = {isa = PBXBuildFile; fileRef = 46B980561D4F5FAF0038BDC2 /* map.html */; };
 		46B980711D4F603E0038BDC2 /* MNMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B980701D4F603E0038BDC2 /* MNMapViewController.m */; };
 		46C29B061B8CC3BD00C70E73 /* MNBannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C29B051B8CC3BD00C70E73 /* MNBannerScrollView.m */; };
 		46C29B091B8ED6F900C70E73 /* MNNewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C29B081B8ED6F900C70E73 /* MNNewsDetailController.m */; };
@@ -1886,6 +1875,19 @@
 		464298911C7ADE5200AE65C2 /* MNScheduleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNScheduleCell.h; path = Controllers/MNScheduleCell.h; sourceTree = "<group>"; };
 		464298921C7ADE5200AE65C2 /* MNScheduleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNScheduleCell.m; path = Controllers/MNScheduleCell.m; sourceTree = "<group>"; };
 		464298931C7ADE5200AE65C2 /* MNScheduleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MNScheduleCell.xib; path = Controllers/MNScheduleCell.xib; sourceTree = "<group>"; };
+		46524E8A1D50F24A00FD05C0 /* fm-engine.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "fm-engine.js"; path = "map/fm-engine.js"; sourceTree = "<group>"; };
+		46524E8B1D50F24A00FD05C0 /* nstu.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = nstu.map; path = map/nstu.map; sourceTree = "<group>"; };
+		46524E8D1D50F24A00FD05C0 /* jquery-1.11.1.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.11.1.js"; sourceTree = "<group>"; };
+		46524E8E1D50F24A00FD05C0 /* jquery.ajax-progress.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery.ajax-progress.js"; sourceTree = "<group>"; };
+		46524E8F1D50F24A00FD05C0 /* jquery.loadie.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.loadie.min.js; sourceTree = "<group>"; };
+		46524E901D50F24A00FD05C0 /* jquery.validate.1.15.0.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.validate.1.15.0.js; sourceTree = "<group>"; };
+		46524E911D50F24A00FD05C0 /* js.cookie.min.2.1.1.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = js.cookie.min.2.1.1.js; sourceTree = "<group>"; };
+		46524E931D50F24A00FD05C0 /* CanvasRenderer.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = CanvasRenderer.js; sourceTree = "<group>"; };
+		46524E941D50F24A00FD05C0 /* OrbitControls.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = OrbitControls.js; sourceTree = "<group>"; };
+		46524E951D50F24A00FD05C0 /* Projector.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = Projector.js; sourceTree = "<group>"; };
+		46524E961D50F24A00FD05C0 /* three.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = three.js; sourceTree = "<group>"; };
+		46524E971D50F24A00FD05C0 /* map.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = map.html; path = map/map.html; sourceTree = "<group>"; };
+		46524E981D50F24A00FD05C0 /* nstu_map_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = nstu_map_data.json; path = map/nstu_map_data.json; sourceTree = "<group>"; };
 		4656E2871B88E6BC001EFB41 /* MNBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNBannerView.h; path = Controllers/MNBannerView.h; sourceTree = "<group>"; };
 		4656E2881B88E6BC001EFB41 /* MNBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNBannerView.m; path = Controllers/MNBannerView.m; sourceTree = "<group>"; };
 		466DDB891C6EA36400047033 /* WalkthroughPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WalkthroughPageViewController.h; path = Controllers/WalkthroughPageViewController.h; sourceTree = "<group>"; };
@@ -1904,35 +1906,6 @@
 		468A0DF61CE0BE9400146EB9 /* MNEmptyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNEmptyViewController.m; path = Controllers/MNEmptyViewController.m; sourceTree = "<group>"; };
 		468A0DF71CE0BE9400146EB9 /* MNEmptyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNEmptyViewController.h; path = Controllers/MNEmptyViewController.h; sourceTree = "<group>"; };
 		468A0DF91CE0CC7C00146EB9 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
-		46B980381D4F5FAF0038BDC2 /* bootstrap-material-design.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "bootstrap-material-design.css"; sourceTree = "<group>"; };
-		46B980391D4F5FAF0038BDC2 /* bootstrap-material-design.css.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = "bootstrap-material-design.css.map"; sourceTree = "<group>"; };
-		46B9803A1D4F5FAF0038BDC2 /* bootstrap-material-design.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "bootstrap-material-design.min.css"; sourceTree = "<group>"; };
-		46B9803B1D4F5FAF0038BDC2 /* bootstrap-material-design.min.css.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = "bootstrap-material-design.min.css.map"; sourceTree = "<group>"; };
-		46B9803C1D4F5FAF0038BDC2 /* bootstrap.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = bootstrap.min.css; sourceTree = "<group>"; };
-		46B9803D1D4F5FAF0038BDC2 /* bootstrap.min.css.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = bootstrap.min.css.map; sourceTree = "<group>"; };
-		46B9803E1D4F5FAF0038BDC2 /* jquery.dropdown.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = jquery.dropdown.css; sourceTree = "<group>"; };
-		46B9803F1D4F5FAF0038BDC2 /* loadie.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = loadie.css; sourceTree = "<group>"; };
-		46B980401D4F5FAF0038BDC2 /* ripples.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ripples.css; sourceTree = "<group>"; };
-		46B980411D4F5FAF0038BDC2 /* ripples.css.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = ripples.css.map; sourceTree = "<group>"; };
-		46B980421D4F5FAF0038BDC2 /* ripples.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ripples.min.css; sourceTree = "<group>"; };
-		46B980431D4F5FAF0038BDC2 /* ripples.min.css.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = ripples.min.css.map; sourceTree = "<group>"; };
-		46B980451D4F5FAF0038BDC2 /* nstu_map_no_traffic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nstu_map_no_traffic.png; sourceTree = "<group>"; };
-		46B980461D4F5FAF0038BDC2 /* nstu_map_traffic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nstu_map_traffic.png; sourceTree = "<group>"; };
-		46B980481D4F5FAF0038BDC2 /* bootstrap.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = bootstrap.min.js; sourceTree = "<group>"; };
-		46B980491D4F5FAF0038BDC2 /* jquery-1.11.1.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.11.1.js"; sourceTree = "<group>"; };
-		46B9804A1D4F5FAF0038BDC2 /* jquery.ajax-progress.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery.ajax-progress.js"; sourceTree = "<group>"; };
-		46B9804B1D4F5FAF0038BDC2 /* jquery.loadie.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.loadie.min.js; sourceTree = "<group>"; };
-		46B9804C1D4F5FAF0038BDC2 /* jquery.validate.1.15.0.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jquery.validate.1.15.0.js; sourceTree = "<group>"; };
-		46B9804D1D4F5FAF0038BDC2 /* js.cookie.min.2.1.1.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = js.cookie.min.2.1.1.js; sourceTree = "<group>"; };
-		46B9804E1D4F5FAF0038BDC2 /* nstu_map_cookie.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = nstu_map_cookie.js; sourceTree = "<group>"; };
-		46B9804F1D4F5FAF0038BDC2 /* nstu_map_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = nstu_map_data.json; sourceTree = "<group>"; };
-		46B980501D4F5FAF0038BDC2 /* nstu_map_engine.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = nstu_map_engine.js; sourceTree = "<group>"; };
-		46B980511D4F5FAF0038BDC2 /* nstu_map_mouse.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = nstu_map_mouse.js; sourceTree = "<group>"; };
-		46B980521D4F5FAF0038BDC2 /* nstu_map_schedule.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = nstu_map_schedule.js; sourceTree = "<group>"; };
-		46B980531D4F5FAF0038BDC2 /* nstu_map_schedule_runner.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = nstu_map_schedule_runner.js; sourceTree = "<group>"; };
-		46B980541D4F5FAF0038BDC2 /* pixi.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = pixi.js; sourceTree = "<group>"; };
-		46B980551D4F5FAF0038BDC2 /* pixi.js.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = pixi.js.map; sourceTree = "<group>"; };
-		46B980561D4F5FAF0038BDC2 /* map.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = map.html; path = map/map.html; sourceTree = "<group>"; };
 		46B9806F1D4F603E0038BDC2 /* MNMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNMapViewController.h; path = Controllers/MNMapViewController.h; sourceTree = "<group>"; };
 		46B980701D4F603E0038BDC2 /* MNMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNMapViewController.m; path = Controllers/MNMapViewController.m; sourceTree = "<group>"; };
 		46C29B041B8CC3BD00C70E73 /* MNBannerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBannerScrollView.h; sourceTree = "<group>"; };
@@ -3078,6 +3051,31 @@
 			name = MNPersonsSearch;
 			sourceTree = "<group>";
 		};
+		46524E8C1D50F24A00FD05C0 /* jquery */ = {
+			isa = PBXGroup;
+			children = (
+				46524E8D1D50F24A00FD05C0 /* jquery-1.11.1.js */,
+				46524E8E1D50F24A00FD05C0 /* jquery.ajax-progress.js */,
+				46524E8F1D50F24A00FD05C0 /* jquery.loadie.min.js */,
+				46524E901D50F24A00FD05C0 /* jquery.validate.1.15.0.js */,
+				46524E911D50F24A00FD05C0 /* js.cookie.min.2.1.1.js */,
+			);
+			name = jquery;
+			path = map/jquery;
+			sourceTree = "<group>";
+		};
+		46524E921D50F24A00FD05C0 /* threejs */ = {
+			isa = PBXGroup;
+			children = (
+				46524E931D50F24A00FD05C0 /* CanvasRenderer.js */,
+				46524E941D50F24A00FD05C0 /* OrbitControls.js */,
+				46524E951D50F24A00FD05C0 /* Projector.js */,
+				46524E961D50F24A00FD05C0 /* three.js */,
+			);
+			name = threejs;
+			path = map/threejs;
+			sourceTree = "<group>";
+		};
 		466DDB881C6EA2EE00047033 /* MNWalkthrough */ = {
 			isa = PBXGroup;
 			children = (
@@ -3133,64 +3131,14 @@
 		46B980361D4F5F9D0038BDC2 /* map */ = {
 			isa = PBXGroup;
 			children = (
-				46B980371D4F5FAF0038BDC2 /* css */,
-				46B980441D4F5FAF0038BDC2 /* images */,
-				46B980471D4F5FAF0038BDC2 /* js */,
-				46B980561D4F5FAF0038BDC2 /* map.html */,
+				46524E8A1D50F24A00FD05C0 /* fm-engine.js */,
+				46524E8B1D50F24A00FD05C0 /* nstu.map */,
+				46524E8C1D50F24A00FD05C0 /* jquery */,
+				46524E921D50F24A00FD05C0 /* threejs */,
+				46524E971D50F24A00FD05C0 /* map.html */,
+				46524E981D50F24A00FD05C0 /* nstu_map_data.json */,
 			);
 			name = map;
-			sourceTree = "<group>";
-		};
-		46B980371D4F5FAF0038BDC2 /* css */ = {
-			isa = PBXGroup;
-			children = (
-				46B980381D4F5FAF0038BDC2 /* bootstrap-material-design.css */,
-				46B980391D4F5FAF0038BDC2 /* bootstrap-material-design.css.map */,
-				46B9803A1D4F5FAF0038BDC2 /* bootstrap-material-design.min.css */,
-				46B9803B1D4F5FAF0038BDC2 /* bootstrap-material-design.min.css.map */,
-				46B9803C1D4F5FAF0038BDC2 /* bootstrap.min.css */,
-				46B9803D1D4F5FAF0038BDC2 /* bootstrap.min.css.map */,
-				46B9803E1D4F5FAF0038BDC2 /* jquery.dropdown.css */,
-				46B9803F1D4F5FAF0038BDC2 /* loadie.css */,
-				46B980401D4F5FAF0038BDC2 /* ripples.css */,
-				46B980411D4F5FAF0038BDC2 /* ripples.css.map */,
-				46B980421D4F5FAF0038BDC2 /* ripples.min.css */,
-				46B980431D4F5FAF0038BDC2 /* ripples.min.css.map */,
-			);
-			name = css;
-			path = map/css;
-			sourceTree = "<group>";
-		};
-		46B980441D4F5FAF0038BDC2 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				46B980451D4F5FAF0038BDC2 /* nstu_map_no_traffic.png */,
-				46B980461D4F5FAF0038BDC2 /* nstu_map_traffic.png */,
-			);
-			name = images;
-			path = map/images;
-			sourceTree = "<group>";
-		};
-		46B980471D4F5FAF0038BDC2 /* js */ = {
-			isa = PBXGroup;
-			children = (
-				46B980481D4F5FAF0038BDC2 /* bootstrap.min.js */,
-				46B980491D4F5FAF0038BDC2 /* jquery-1.11.1.js */,
-				46B9804A1D4F5FAF0038BDC2 /* jquery.ajax-progress.js */,
-				46B9804B1D4F5FAF0038BDC2 /* jquery.loadie.min.js */,
-				46B9804C1D4F5FAF0038BDC2 /* jquery.validate.1.15.0.js */,
-				46B9804D1D4F5FAF0038BDC2 /* js.cookie.min.2.1.1.js */,
-				46B9804E1D4F5FAF0038BDC2 /* nstu_map_cookie.js */,
-				46B9804F1D4F5FAF0038BDC2 /* nstu_map_data.json */,
-				46B980501D4F5FAF0038BDC2 /* nstu_map_engine.js */,
-				46B980511D4F5FAF0038BDC2 /* nstu_map_mouse.js */,
-				46B980521D4F5FAF0038BDC2 /* nstu_map_schedule.js */,
-				46B980531D4F5FAF0038BDC2 /* nstu_map_schedule_runner.js */,
-				46B980541D4F5FAF0038BDC2 /* pixi.js */,
-				46B980551D4F5FAF0038BDC2 /* pixi.js.map */,
-			);
-			name = js;
-			path = map/js;
 			sourceTree = "<group>";
 		};
 		46B9806E1D4F5FE00038BDC2 /* MNMap */ = {
@@ -3421,7 +3369,6 @@
 				463A49F41B9B04560051F021 /* 22137.jpg in Resources */,
 				463A4B7C1B9B04560051F021 /* 76.jpg in Resources */,
 				463A49B21B9B04560051F021 /* 21394.jpg in Resources */,
-				46B9806A1D4F5FAF0038BDC2 /* nstu_map_schedule.js in Resources */,
 				463A4BA11B9B04560051F021 /* 873.jpg in Resources */,
 				463A49421B9B04560051F021 /* 1850.jpg in Resources */,
 				463A49321B9B04560051F021 /* 1654.jpg in Resources */,
@@ -3452,7 +3399,6 @@
 				463A4AAF1B9B04560051F021 /* 428.jpg in Resources */,
 				463A4B911B9B04560051F021 /* 822.jpg in Resources */,
 				463A4AE21B9B04560051F021 /* 50641.jpg in Resources */,
-				46B9806D1D4F5FAF0038BDC2 /* map.html in Resources */,
 				463A4B311B9B04560051F021 /* 60481.jpg in Resources */,
 				463A4A8B1B9B04560051F021 /* 39693.jpg in Resources */,
 				463A4A301B9B04560051F021 /* 283.jpg in Resources */,
@@ -3511,11 +3457,13 @@
 				463A4B081B9B04560051F021 /* 545.jpg in Resources */,
 				463361591B861AFC002DFFC7 /* Почта.png in Resources */,
 				463A4A391B9B04560051F021 /* 29241.jpg in Resources */,
+				46524E9B1D50F24A00FD05C0 /* jquery.ajax-progress.js in Resources */,
 				463A4B511B9B04560051F021 /* 646.jpg in Resources */,
 				463A4A091B9B04560051F021 /* 245.jpg in Resources */,
 				463A4B291B9B04560051F021 /* 592.jpg in Resources */,
 				463A49131B9B04560051F021 /* 1481.jpg in Resources */,
 				463A4B7E1B9B04560051F021 /* 762.jpg in Resources */,
+				46524E9E1D50F24A00FD05C0 /* js.cookie.min.2.1.1.js in Resources */,
 				463A48E21B9B04560051F021 /* 1259.jpg in Resources */,
 				463A4B251B9B04560051F021 /* 58762.jpg in Resources */,
 				463A4B7B1B9B04560051F021 /* 759.jpg in Resources */,
@@ -3530,7 +3478,6 @@
 				463A4B971B9B04560051F021 /* 846.jpg in Resources */,
 				46D486801B8618FE00899BD3 /* Images.xcassets in Resources */,
 				463A4B801B9B04560051F021 /* 766.jpg in Resources */,
-				46B9805D1D4F5FAF0038BDC2 /* ripples.min.css in Resources */,
 				463A49A31B9B04560051F021 /* 21255.jpg in Resources */,
 				463A4A6D1B9B04560051F021 /* 35881.jpg in Resources */,
 				463A4B241B9B04560051F021 /* 58704.jpg in Resources */,
@@ -3562,7 +3509,6 @@
 				463A49EF1B9B04560051F021 /* 22124.jpg in Resources */,
 				463A49B91B9B04560051F021 /* 21492.jpg in Resources */,
 				463A4A4C1B9B04560051F021 /* 307.jpg in Resources */,
-				46B9806C1D4F5FAF0038BDC2 /* pixi.js in Resources */,
 				463361581B861AFC002DFFC7 /* Поиск.png in Resources */,
 				463A48FA1B9B04560051F021 /* 1371.jpg in Resources */,
 				463A48D71B9B04560051F021 /* 1195.jpg in Resources */,
@@ -3581,7 +3527,6 @@
 				463A49511B9B04560051F021 /* 195.jpg in Resources */,
 				463A4B761B9B04560051F021 /* 738.jpg in Resources */,
 				463A49B41B9B04560051F021 /* 21440.jpg in Resources */,
-				46B980611D4F5FAF0038BDC2 /* jquery-1.11.1.js in Resources */,
 				463A48F81B9B04560051F021 /* 1339.jpg in Resources */,
 				463A4A801B9B04560051F021 /* 38.jpg in Resources */,
 				463A4B671B9B04560051F021 /* 690.jpg in Resources */,
@@ -3610,6 +3555,7 @@
 				463A49931B9B04560051F021 /* 21014.jpg in Resources */,
 				463A498A1B9B04560051F021 /* 20820.jpg in Resources */,
 				463A49E51B9B04560051F021 /* 22024.jpg in Resources */,
+				46524E9A1D50F24A00FD05C0 /* jquery-1.11.1.js in Resources */,
 				463A49181B9B04560051F021 /* 1505.jpg in Resources */,
 				463A48CA1B9B04560051F021 /* 1154.jpg in Resources */,
 				463A48EA1B9B04560051F021 /* 1279.jpg in Resources */,
@@ -3621,7 +3567,6 @@
 				463A4AE81B9B04560051F021 /* 50823.jpg in Resources */,
 				463A49411B9B04560051F021 /* 1840.jpg in Resources */,
 				463A49841B9B04560051F021 /* 20699.jpg in Resources */,
-				46B980641D4F5FAF0038BDC2 /* jquery.validate.1.15.0.js in Resources */,
 				463A4B8B1B9B04560051F021 /* 808.jpg in Resources */,
 				463A4AFB1B9B04560051F021 /* 530.jpg in Resources */,
 				463A4BA61B9B04560051F021 /* 907.jpg in Resources */,
@@ -3684,7 +3629,6 @@
 				463A49541B9B04560051F021 /* 20.jpg in Resources */,
 				463A4BA91B9B04560051F021 /* 912.jpg in Resources */,
 				463A4A481B9B04560051F021 /* 29981.jpg in Resources */,
-				46B9805C1D4F5FAF0038BDC2 /* ripples.css in Resources */,
 				463A4A071B9B04560051F021 /* 243.jpg in Resources */,
 				463A496C1B9B04560051F021 /* 20413.jpg in Resources */,
 				463A4A951B9B04560051F021 /* 39761.jpg in Resources */,
@@ -3702,7 +3646,6 @@
 				463A4B601B9B04560051F021 /* 67422.jpg in Resources */,
 				463A4B321B9B04560051F021 /* 60521.jpg in Resources */,
 				463A4BB91B9B04560051F021 /* 956.jpg in Resources */,
-				46B9806B1D4F5FAF0038BDC2 /* nstu_map_schedule_runner.js in Resources */,
 				463A4BA31B9B04560051F021 /* 876.jpg in Resources */,
 				463A4BB61B9B04560051F021 /* 949.jpg in Resources */,
 				463A490E1B9B04560051F021 /* 1461.jpg in Resources */,
@@ -3740,7 +3683,6 @@
 				463A49AE1B9B04560051F021 /* 21331.jpg in Resources */,
 				463A48C81B9B04560051F021 /* 1144.jpg in Resources */,
 				463A4B1B1B9B04560051F021 /* 568.jpg in Resources */,
-				46B9805B1D4F5FAF0038BDC2 /* loadie.css in Resources */,
 				463A4AE91B9B04560051F021 /* 50842.jpg in Resources */,
 				463A49AF1B9B04560051F021 /* 21349.jpg in Resources */,
 				4633615D1B861AFC002DFFC7 /* Ask Question Filled-100.png in Resources */,
@@ -3764,8 +3706,10 @@
 				463A4AC21B9B04560051F021 /* 45461.jpg in Resources */,
 				463A4A9A1B9B04560051F021 /* 402.jpg in Resources */,
 				463A4A771B9B04560051F021 /* 36421.jpg in Resources */,
+				46524E9F1D50F24A00FD05C0 /* CanvasRenderer.js in Resources */,
 				463A4A7B1B9B04560051F021 /* 36781.jpg in Resources */,
 				463A4AAC1B9B04560051F021 /* 424.jpg in Resources */,
+				46524EA31D50F24A00FD05C0 /* map.html in Resources */,
 				463A4A1E1B9B04560051F021 /* 265.jpg in Resources */,
 				463A49161B9B04560051F021 /* 1498.jpg in Resources */,
 				466DDB9F1C6EA65600047033 /* WalkOne.xib in Resources */,
@@ -3775,7 +3719,6 @@
 				463A49A91B9B04560051F021 /* 21282.jpg in Resources */,
 				463A49791B9B04560051F021 /* 20541.jpg in Resources */,
 				463A4AE01B9B04560051F021 /* 50501.jpg in Resources */,
-				46B9805F1D4F5FAF0038BDC2 /* nstu_map_traffic.png in Resources */,
 				463A48A01B9B04560051F021 /* details.json in Resources */,
 				463A4B8D1B9B04560051F021 /* 814.jpg in Resources */,
 				463A48D91B9B04560051F021 /* 1197.jpg in Resources */,
@@ -3823,6 +3766,7 @@
 				463A49E91B9B04560051F021 /* 22063.jpg in Resources */,
 				463A49A61B9B04560051F021 /* 21265.jpg in Resources */,
 				463A49BB1B9B04560051F021 /* 21509.jpg in Resources */,
+				46524E991D50F24A00FD05C0 /* fm-engine.js in Resources */,
 				463A4A971B9B04560051F021 /* 39922.jpg in Resources */,
 				463A497C1B9B04560051F021 /* 20551.jpg in Resources */,
 				463A4AA51B9B04560051F021 /* 41101.jpg in Resources */,
@@ -3831,7 +3775,6 @@
 				463A49481B9B04560051F021 /* 188.jpg in Resources */,
 				463A4A411B9B04560051F021 /* 2952.jpg in Resources */,
 				463A4B111B9B04560051F021 /* 553.jpg in Resources */,
-				46B980571D4F5FAF0038BDC2 /* bootstrap-material-design.css in Resources */,
 				463A48FB1B9B04560051F021 /* 1374.jpg in Resources */,
 				463A4A441B9B04560051F021 /* 2960.jpg in Resources */,
 				463A48C01B9B04560051F021 /* 1109.jpg in Resources */,
@@ -3856,7 +3799,6 @@
 				463A497F1B9B04560051F021 /* 20595.jpg in Resources */,
 				463A4AD01B9B04560051F021 /* 48203.jpg in Resources */,
 				463A48F91B9B04560051F021 /* 1343.jpg in Resources */,
-				46B980661D4F5FAF0038BDC2 /* nstu_map_cookie.js in Resources */,
 				463A49AD1B9B04560051F021 /* 21330.jpg in Resources */,
 				463A49D81B9B04560051F021 /* 21846.jpg in Resources */,
 				463A4A751B9B04560051F021 /* 363.jpg in Resources */,
@@ -3912,6 +3854,7 @@
 				463A4BA01B9B04560051F021 /* 87.jpg in Resources */,
 				463A49CF1B9B04560051F021 /* 21743.jpg in Resources */,
 				463A48A21B9B04560051F021 /* 10004.jpg in Resources */,
+				46524EA11D50F24A00FD05C0 /* Projector.js in Resources */,
 				463A4A601B9B04560051F021 /* 33881.jpg in Resources */,
 				463A4B001B9B04560051F021 /* 537.jpg in Resources */,
 				463A4B661B9B04560051F021 /* 69.jpg in Resources */,
@@ -3968,7 +3911,6 @@
 				463A4AA01B9B04560051F021 /* 40661.jpg in Resources */,
 				463A4ACA1B9B04560051F021 /* 47001.jpg in Resources */,
 				463A48B31B9B04560051F021 /* 1076.jpg in Resources */,
-				46B980651D4F5FAF0038BDC2 /* js.cookie.min.2.1.1.js in Resources */,
 				463A4BAF1B9B04560051F021 /* 925.jpg in Resources */,
 				463A4B121B9B04560051F021 /* 55364.jpg in Resources */,
 				463A4B171B9B04560051F021 /* 55963.jpg in Resources */,
@@ -4000,7 +3942,6 @@
 				463A4B5F1B9B04560051F021 /* 67322.jpg in Resources */,
 				463A494D1B9B04560051F021 /* 1923.jpg in Resources */,
 				463A48D81B9B04560051F021 /* 1196.jpg in Resources */,
-				46B980601D4F5FAF0038BDC2 /* bootstrap.min.js in Resources */,
 				463A49B31B9B04560051F021 /* 214.jpg in Resources */,
 				463A4BBD1B9B04560051F021 /* 975.jpg in Resources */,
 				463A4A541B9B04560051F021 /* 31621.jpg in Resources */,
@@ -4016,7 +3957,6 @@
 				463A4ABF1B9B04560051F021 /* 44461.jpg in Resources */,
 				463A4B6F1B9B04560051F021 /* 71244.jpg in Resources */,
 				463A4BB21B9B04560051F021 /* 930.jpg in Resources */,
-				46B9805E1D4F5FAF0038BDC2 /* nstu_map_no_traffic.png in Resources */,
 				463361501B861AFC002DFFC7 /* star_filled.png in Resources */,
 				463A49C41B9B04560051F021 /* 21553.jpg in Resources */,
 				463A4B061B9B04560051F021 /* 54321.jpg in Resources */,
@@ -4024,7 +3964,6 @@
 				463A49891B9B04560051F021 /* 208.jpg in Resources */,
 				463A48DA1B9B04560051F021 /* 1203.jpg in Resources */,
 				463A49A71B9B04560051F021 /* 21266.jpg in Resources */,
-				46B980671D4F5FAF0038BDC2 /* nstu_map_data.json in Resources */,
 				463A49D71B9B04560051F021 /* 21832.jpg in Resources */,
 				463A49CD1B9B04560051F021 /* 21677.jpg in Resources */,
 				463A4B8A1B9B04560051F021 /* 806.jpg in Resources */,
@@ -4045,11 +3984,11 @@
 				463A49E61B9B04560051F021 /* 22032.jpg in Resources */,
 				463A49101B9B04560051F021 /* 1466.jpg in Resources */,
 				463A4B151B9B04560051F021 /* 557.jpg in Resources */,
+				46524E9D1D50F24A00FD05C0 /* jquery.validate.1.15.0.js in Resources */,
 				463A4ABC1B9B04560051F021 /* 44021.jpg in Resources */,
 				463A4A851B9B04560051F021 /* 392.jpg in Resources */,
 				463A4B4B1B9B04560051F021 /* 63964.jpg in Resources */,
 				463A49391B9B04560051F021 /* 1668.jpg in Resources */,
-				46B980631D4F5FAF0038BDC2 /* jquery.loadie.min.js in Resources */,
 				463A4AB11B9B04560051F021 /* 431.jpg in Resources */,
 				463A4A911B9B04560051F021 /* 39721.jpg in Resources */,
 				463A48A41B9B04560051F021 /* 1009.jpg in Resources */,
@@ -4066,6 +4005,7 @@
 				463A48FE1B9B04560051F021 /* 1382.jpg in Resources */,
 				463A4AF51B9B04560051F021 /* 523.jpg in Resources */,
 				463A4B6E1B9B04560051F021 /* 71243.jpg in Resources */,
+				46524EA21D50F24A00FD05C0 /* three.js in Resources */,
 				463A49B61B9B04560051F021 /* 21454.jpg in Resources */,
 				463A4AB71B9B04560051F021 /* 435.jpg in Resources */,
 				463A49D01B9B04560051F021 /* 21756.jpg in Resources */,
@@ -4075,8 +4015,8 @@
 				463A4AC71B9B04560051F021 /* 46581.jpg in Resources */,
 				463A4B471B9B04560051F021 /* 635.jpg in Resources */,
 				463A4A7D1B9B04560051F021 /* 373.jpg in Resources */,
+				46524EA01D50F24A00FD05C0 /* OrbitControls.js in Resources */,
 				464298951C7ADE5200AE65C2 /* MNScheduleCell.xib in Resources */,
-				46B9805A1D4F5FAF0038BDC2 /* jquery.dropdown.css in Resources */,
 				463A48C11B9B04560051F021 /* 111.jpg in Resources */,
 				463A499F1B9B04560051F021 /* 21204.jpg in Resources */,
 				463A4B991B9B04560051F021 /* 85.jpg in Resources */,
@@ -4153,6 +4093,7 @@
 				463A4A261B9B04560051F021 /* 27661.jpg in Resources */,
 				463A48CB1B9B04560051F021 /* 1155.jpg in Resources */,
 				463A4AA91B9B04560051F021 /* 42.jpg in Resources */,
+				46524EA41D50F24A00FD05C0 /* nstu_map_data.json in Resources */,
 				463A4AC81B9B04560051F021 /* 46701.jpg in Resources */,
 				463A497A1B9B04560051F021 /* 20543.jpg in Resources */,
 				463A4ADA1B9B04560051F021 /* 49205.jpg in Resources */,
@@ -4168,7 +4109,6 @@
 				463A4ABD1B9B04560051F021 /* 44201.jpg in Resources */,
 				463A49561B9B04560051F021 /* 20084.jpg in Resources */,
 				463A49C01B9B04560051F021 /* 21535.jpg in Resources */,
-				46B980621D4F5FAF0038BDC2 /* jquery.ajax-progress.js in Resources */,
 				463A4BC61B9B04560051F021 /* _22.jpg in Resources */,
 				463A4AB41B9B04560051F021 /* 433.jpg in Resources */,
 				463A4B6D1B9B04560051F021 /* 71.jpg in Resources */,
@@ -4192,7 +4132,6 @@
 				463A4B861B9B04560051F021 /* 79.jpg in Resources */,
 				463A4AA41B9B04560051F021 /* 41002.jpg in Resources */,
 				463A49011B9B04560051F021 /* 1394.jpg in Resources */,
-				46B980581D4F5FAF0038BDC2 /* bootstrap-material-design.min.css in Resources */,
 				463A4B941B9B04560051F021 /* 828.jpg in Resources */,
 				463A49E71B9B04560051F021 /* 22040.jpg in Resources */,
 				463A4B3E1B9B04560051F021 /* 622.jpg in Resources */,
@@ -4218,7 +4157,6 @@
 				463A48D61B9B04560051F021 /* 1192.jpg in Resources */,
 				463A490F1B9B04560051F021 /* 1463.jpg in Resources */,
 				463A4A1B1B9B04560051F021 /* 260.jpg in Resources */,
-				46B980681D4F5FAF0038BDC2 /* nstu_map_engine.js in Resources */,
 				463A49141B9B04560051F021 /* 1485.jpg in Resources */,
 				463A49EE1B9B04560051F021 /* 22099.jpg in Resources */,
 				463A4B9F1B9B04560051F021 /* 862.jpg in Resources */,
@@ -4259,15 +4197,14 @@
 				463A48DC1B9B04560051F021 /* 122.jpg in Resources */,
 				463A49FA1B9B04560051F021 /* 22176.jpg in Resources */,
 				463A4A631B9B04560051F021 /* 34201.jpg in Resources */,
-				46B980691D4F5FAF0038BDC2 /* nstu_map_mouse.js in Resources */,
 				463A48A71B9B04560051F021 /* 1028.jpg in Resources */,
 				463A4B3B1B9B04560051F021 /* 619.jpg in Resources */,
 				466DDBA11C6EA65600047033 /* WalkThree.xib in Resources */,
 				463A4AD81B9B04560051F021 /* 49142.jpg in Resources */,
 				463A493D1B9B04560051F021 /* 1703.jpg in Resources */,
-				46B980591D4F5FAF0038BDC2 /* bootstrap.min.css in Resources */,
 				463A49F71B9B04560051F021 /* 22161.jpg in Resources */,
 				463A493F1B9B04560051F021 /* 174.jpg in Resources */,
+				46524E9C1D50F24A00FD05C0 /* jquery.loadie.min.js in Resources */,
 				463A49491B9B04560051F021 /* 1909.jpg in Resources */,
 				463A496A1B9B04560051F021 /* 204.jpg in Resources */,
 				463A4A4B1B9B04560051F021 /* 3052.jpg in Resources */,

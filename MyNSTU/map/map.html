@@ -3,29 +3,16 @@
 <html>
 
 <head>
-  <title>FME1</title>
+  <title>FME2</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css"> -->
-  <!--   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-  <link rel="stylesheet" href="loadie.css">
-  <link href="bootstrap.min.css" rel="stylesheet">
-  <link href="jquery.dropdown.css" rel="stylesheet">
-  <link href="bootstrap-material-design.css" rel="stylesheet">
-  <link href="ripples.min.css" rel="stylesheet">
 
   <script src="jquery-1.11.1.js"></script>
   <script src="jquery.ajax-progress.js"></script>
   <script src="jquery.loadie.min.js"></script>
-  <!--Сценарий страницы-->
-<!--   <script src="js/js.cookie.min.2.1.1.js"></script> -->
   <script src="jquery.validate.1.15.0.js"></script>
 
-  <script src="bootstrap.min.js"></script>
-
-  <script>
+<!--   <script>
       var api_address = "https://api.mynstu.xyz";
       var site_address = "https://mynstu.xyz";
       var api_address_local = "http://0.0.0.0:5001";
@@ -35,110 +22,24 @@
       var server_address = "http://0.0.0.0:5001/";
       if(type != 'local')
         server_address = 'https://api.mynstu.xyz/';
-      //$(window).load(function() { mynstuOnLoad(); });
-  </script>
+       $(window).load(function() {
+        mynstuOnLoad();
+       });
+  </script> -->
     
-  <script src="pixi.js"></script>
+  <!-- <script src="pixi.js"></script>
+  <script src="wall_filter_gradient.js"></script> -->
 
-  <script src="nstu_map_schedule.js"></script>
-  <script src="nstu_map_engine.js"></script>
-  <script src="nstu_map_cookie.js"></script>
-  <script src="nstu_map_mouse.js"></script>
-  <script src="nstu_map_schedule_runner.js"></script>
+  <script src="three.js"></script>
+  <script src="CanvasRenderer.js"></script>
+  <script src="Projector.js"></script>
+  <script src="OrbitControls.js"></script>
 
 </head>
 <body>
 <!--NSTU MAP - DO NOT TOUCH-->
-<div class="canv" id="canv" style="margin-top:20px; z-index:1;">
-     
-    <a data-container="body" data-toggle="popover" data-placement="top" data-content="<a href=''>gdsg</a>" style="position: fixed; left: 400px; top: 400px;" id="pop"></a>
-    
-<div class="btn-group-vertical" role="group" aria-label="" style="position: fixed;z-index:100; right: 10px; top: 10px;">
-  <button type="button" class="btn btn-toolbar btn-raised btn-sm" id="8" onclick="load_level_container(this.id);">8</button>
-  <button type="button" class="btn btn-toolbar btn-raised btn-sm" id="7" onclick="load_level_container(this.id);">7</button>
-  <button type="button" class="btn btn-toolbar btn-raised btn-sm" id="6" onclick="load_level_container(this.id);">6</button>
-  <button type="button" class="btn btn-toolbar btn-raised btn-sm" id="5" onclick="load_level_container(this.id);">5</button>
-  <button type="button" class="btn btn-toolbar btn-raised btn-sm" id="4" onclick="load_level_container(this.id);">4</button>
-  <button type="button" class="btn btn-toolbar btn-raised btn-sm" id="3" onclick="load_level_container(this.id);">3</button>
-  <button type="button" class="btn btn-toolbar btn-raised btn-sm" id="2" onclick="load_level_container(this.id);">2</button>
-  <button type="button" class="btn btn-toolbar btn-raised btn-sm" id="1" onclick="load_level_container(this.id);">1</button>
-  <button type="button" class="btn btn-toolbar btn-raised btn-sm" id="0" onclick="load_level_container(this.id);">0</button>
-<!--
-</div>
-<div class="btn-group-vertical" role="group" aria-label="" style="position: fixed;z-index:100; right: 80px; top: 70px;">
--->
-  <button type="button" class="btn btn-toolbar btn-raised btn-sm" onclick="button_zoom(1);">+</button>
-  <button type="button" class="btn btn-toolbar btn-raised btn-sm" onclick="button_zoom(-1);">-</button>
-</div>
-    
-<div class="btn-group" role="group" aria-label="" style="position: fixed;z-index:100; left: 0px; top: 90px;">
-  <button type="button" class="btn btn-toolbar btn-raised btn-sm" onclick="show_f1();">?</button>
-
-      <button type="button" class="btn btn-toolbar btn-raised btn-sm" onclick="schedule_RUN_SWITCHER();"><img src="images/nstu_map_no_traffic.png" width="38px" height="17" id="schedule_switcher"></button>
-    
-    <div class="btn-group">
-      <a class="btn btn-raised dropdown-toggle btn-sm" data-toggle="dropdown">
-          <font id="schedule_drop_down_day">00</font>
-        <span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu">
-        <li><a href="#" onclick="schedule_set_day(1,true);">ПН</a></li>
-        <li><a href="#" onclick="schedule_set_day(2,true);">ВТ</a></li>
-        <li><a href="#" onclick="schedule_set_day(3,true);">СР</a></li>
-        <li><a href="#" onclick="schedule_set_day(4,true);">ЧТ</a></li>
-        <li><a href="#" onclick="schedule_set_day(5,true);">ПТ</a></li>
-        <li><a href="#" onclick="schedule_set_day(6,true);">СБ</a></li>
-      </ul>
-    </div>
-    
-    <div class="btn-group">
-      <a class="btn btn-raised dropdown-toggle btn-sm" data-toggle="dropdown">
-          <font id="schedule_drop_down_pair">00</font>
-        <span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu">
-        <li><a href="#" onclick="schedule_set_pair(1,true);">1 пара</a></li>
-        <li><a href="#" onclick="schedule_set_pair(2,true);">2 пара</a></li>
-        <li><a href="#" onclick="schedule_set_pair(3,true);">3 пара</a></li>
-        <li><a href="#" onclick="schedule_set_pair(4,true);">4 пара</a></li>
-        <li><a href="#" onclick="schedule_set_pair(5,true);">5 пара</a></li>
-        <li><a href="#" onclick="schedule_set_pair(6,true);">6 пара</a></li>
-        <li><a href="#" onclick="schedule_set_pair(7,true);">7 пара</a></li>
-      </ul>
-    </div>
-    
-<!--
-    <div class="btn-group">
-      <a class="btn btn-raised dropdown-toggle btn-sm" data-toggle="dropdown">
-          <font id="schedule_drop_down_odd">00</font>
-        <span class="caret"></span>
-      </a>
-      <ul class="dropdown-menu">
-        <li><a href="#" onclick="schedule_set_odd(0,undefined,true);">ЧЕТ</a></li>
-        <li><a href="#" onclick="schedule_set_odd(1,undefined,true);">НЕЧ</a></li>
-        <li><a href="#" onclick="schedule_set_odd(-1,undefined,true);">ЧЕТ/НЕЧ</a></li>
-      </ul>
-    </div>
--->
-    <div class="btn-group">
-        <button type="button" class="btn btn-toolbar btn-raised btn-sm" onclick="schedule_prev_week();"><</button>
-        <button type="button" class="btn btn-default btn-toolbar btn-raised btn-sm" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Сброс" id="week_num" onclick="schedule_cur_week();">00</button>
-        <button type="button" class="btn btn-toolbar btn-raised btn-sm" onclick="schedule_next_week();">></button>
-    </div>
-</div>
-    
-<div class="modal fade modalDiv" id="read_me_modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h4 class="modal-title"><b>Интерфейс управления</b></h4>
-      </div>
-      <div class="modal-body">
-        <font color="black"><b>Верхнее меню - режим расписания:</b><br>Справка<br>Вкл/Выкл режим расписания<br>День недели<br>Номер пары<br>Номер недели<br>Нажатие на номер недели - Сброс на ближайшее распиание<br><br><b>Правое меню - этажи и изменение масштаба</b><br><br><b>Мышь:</b><br>Перемещение карты<br>Масштабирование колесиком<br>Zoom out до упора - перемещает карту на исходную позицию<br>Нажатие на заняную аудиторию - информация.<br><br><i><b>Ошибки и предложения пишите на <a href="mailto:seruif@mail.com">seruif@yandex.ru</a></i></b></font> 
-      </div>
-    </div>
-  </div>
-</div>
+<!-- <div class="canv" id="canv" style="margin-top:20px; z-index:1;">
+ -->
+   <script src="fm-engine.js"></script>
 </body>
 </html>
