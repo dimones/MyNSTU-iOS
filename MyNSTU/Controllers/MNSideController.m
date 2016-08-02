@@ -39,7 +39,8 @@
                        @3 : @{ @"title": @"Расписание", @"imageName": @"schedule.png"},
                        @4 : @{ @"title": @"Преподаватели", @"imageName": @"persons.png"},
                        @5 : @{ @"title": @"Контрольные недели", @"imageName": @"schedule.png"},
-                       @6 : @{ @"title": @"Результаты сессии", @"imageName": @"persons.png"}};
+                       @6 : @{ @"title": @"Результаты сессии", @"imageName": @"persons.png"},
+                       @7 : @{ @"title": @"Карта", @"imageName": @"map.png"}};
     isSearching = NO;
     self.clearsSelectionOnViewWillAppear = NO;
     
@@ -85,7 +86,7 @@
     if (isSearching) {
         return [personsArray count] + 1;
     }
-    return 5;
+    return 8;
 }
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -136,7 +137,12 @@
             
         }
             break;
-            
+        case 7:
+        {
+            [MNAPI_Addition changeContentViewControllerWithName:@"mapController"];
+            [MNAPI_Addition hideORShowLeftBar];
+        }
+            break;
         default:
             break;
     }

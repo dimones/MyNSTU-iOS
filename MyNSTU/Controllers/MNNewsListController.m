@@ -11,13 +11,13 @@
 #import "MNBannerScrollView.h"
 #import "MNAPI+Addition.h"
 #import "MNHTTPAPI.h"
+#import "IQSideMenuController.h"
 #import "MNNewsDetailController.h"
 #import "MBProgressHUD.h"
 #import "REMenu.h"
 #import "UIScrollView+InfiniteScroll.h"
 #import "AFNetworking.h"
 #import <QuartzCore/QuartzCore.h>
-#import "IQSideMenuController.h"
 #define banner_ratio 16*9
 //#define banner_ratio 220*160
 #define ind_size 50.f
