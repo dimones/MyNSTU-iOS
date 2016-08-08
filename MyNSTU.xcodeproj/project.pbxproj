@@ -3296,6 +3296,8 @@
 				46D4866D1B8618FE00899BD3 /* Resources */,
 				38A841190B37BF2050B412A7 /* Embed Pods Frameworks */,
 				1D34919F0118B6B357E5611E /* Copy Pods Resources */,
+				469B8EB61D57772800D84941 /* ShellScript */,
+				463F0E001D58855200F1B5E7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -4263,6 +4265,32 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		463F0E001D58855200F1B5E7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
+		};
+		469B8EB61D57772800D84941 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# если у нас релизная сборка, то нам нужна обычная иконка\n#if [ $CONFIGURATION = \"Release\" ]; then\n#exit\n#fi\n\n# номер версии\nversion=`/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\"`\n# номер билда\nbuild=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\"`\n# если нужно, можно взять имя ветки из git\nbranch=`git rev-parse --abbrev-ref HEAD`\n\n# функция генерации иконки\nfunction processIcon() {\n    export PATH=$PATH:/usr/local/bin\n    base_file=$1\n    target_icon_name=$2\n    base_path=`find ${SRCROOT} -name $base_file`\n    \n    if [[ ! -f ${base_path} || -z ${base_path} ]]; then\n    return;\n    fi\n    \n    target_file=`echo $target_icon_name | sed \"s/_base//\"`\n    target_path=\"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/${target_file}\"\n    \n    width=`identify -format %w ${base_path}`\n    \n    echo $target_path\n    echo $target_file\n    \n    convert -background '#0008' -fill white -gravity center -size ${width}x40 -pointsize 26\\\n    caption:\"${version} (${build})\"\\\n    \"${base_path}\" +swap -gravity south -composite \"${target_path}\"\n}\n\n# запускаем генерацию\nprocessIcon \"Icon-60@2x.png\" \"AppIcon-160x60@2x.png\"\nprocessIcon \"Icon-60@3x.png\" \"AppIcon-160x60@3x.png\"";
+		};
 		C91C15E01AF0959D071268A8 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -4423,8 +4451,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dmitriy Bogomolov (2F289RM9P6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2B793573M4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MyNSTU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -4485,8 +4514,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dmitriy Bogomolov (2F289RM9P6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2B793573M4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = MyNSTU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
