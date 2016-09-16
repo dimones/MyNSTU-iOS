@@ -106,6 +106,8 @@
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:[[NSString stringWithFormat:@"%@2/get_schedule/%@",SERVER_ADDRESS,group] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"SCHEDULE!!!");
+        NSLog(@"%@",responseObject);
         if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveSchedule:andResults:andSemesterBegin:)])
             [self.delegate MNHTTPDidRecieveSchedule:self andResults:responseObject[@"data"] andSemesterBegin:responseObject[@"semester_begin"]];
         else NSLog(@"[MNHTTPAPI] Did not responds selector MNHTTPDidRecieveScdhedule:andResults:andSemesterBegin:");
@@ -167,13 +169,14 @@
     NSLog(@"auth pass: %@ %@", [password getMD5], password);
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager POST:[NSString stringWithFormat:@"%@user/auth",SERVER_ADDRESS]  parameters:@{ @"username": username,
-                                                                                           @"password": [password getMD5],
+                                                                                           @"password": password,
                                                                                            @"device_id": UUID }
           success:^(AFHTTPRequestOperation *operation, id responseObject) {
+              NSLog(@"%@", responseObject);
               if(((NSNumber*)responseObject[@"succeed"]).boolValue)
               {
-                  if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveAuthSuccess:andToken:)])
-                      [self.delegate MNHTTPDidRecieveAuthSuccess:self andToken:responseObject[@"device_token"]];
+                  if([self.delegate respondsToSelector:@selector(MNHTTPDidRecieveAuthSuccess:andToken:userData:)])
+                      [self.delegate MNHTTPDidRecieveAuthSuccess:self andToken:responseObject[@"device_token"] userData:responseObject[@"user_info"]];
                   else NSLog(@"[MNHTTPAPI] Did not responds selector MNHTTPDidRecieveAuthSuccess:andToken:");
               }
               else
@@ -243,28 +246,28 @@
 
 - (void) setSchedule:(id) scheduleData
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager POST:[NSString stringWithFormat:@"%@user/set_schedule",SERVER_ADDRESS]  parameters:@{
-                                                                                                  @"device_id": UUID,
-                                                                                                  @"device_token": [MNAPI_Addition getObjectFROMNSUDWithKey:@"device_token"],
-                                                                                                  @"device_type": @1,
-                                                                                                  @"schedule_data": [NSString getJSONStringFromObject:scheduleData]}
-          success:^(AFHTTPRequestOperation *operation, id responseObject) {
-              if(((NSNumber*)responseObject[@"succeed"]).boolValue)
-              {
-                  NSLog(@"setted schedule");
-              }
-              else
-              {
-                  
-                  
-              }
-              
-              
-          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              if([self.delegate respondsToSelector:@selector(MNHTTPError)])
-                  [self.delegate MNHTTPError];
-          }];
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    [manager POST:[NSString stringWithFormat:@"%@user/set_schedule",SERVER_ADDRESS]  parameters:@{
+//                                                                                                  @"device_id": UUID,
+//                                                                                                  @"device_token": [MNAPI_Addition getObjectFROMNSUDWithKey:@"device_token"],
+//                                                                                                  @"device_type": @1,
+//                                                                                                  @"schedule_data": [NSString getJSONStringFromObject:scheduleData]}
+//          success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//              if(((NSNumber*)responseObject[@"succeed"]).boolValue)
+//              {
+//                  NSLog(@"setted schedule");
+//              }
+//              else
+//              {
+//                  
+//                  
+//              }
+//              
+//              
+//          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//              if([self.delegate respondsToSelector:@selector(MNHTTPError)])
+//                  [self.delegate MNHTTPError];
+//          }];
 }
 - (void) getSchedule
 {
@@ -284,5 +287,19 @@
          }];
 }
 
+- (void) getSemesterResults
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager POST:[NSString stringWithFormat:@"%@user/get_semester_results",SERVER_ADDRESS]  parameters:@{@"device_id": UUID,
+                                                                                                 @"device_token": [MNAPI_Addition getObjectFROMNSUDWithKey:@"device_token"],
+                                                                                                 @"device_type": @1
+                                                                                                 }
+    success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if([self.delegate respondsToSelector:@selector(MNHTTPError)])
+            [self.delegate MNHTTPError];
+    }];
+}
 
 @end

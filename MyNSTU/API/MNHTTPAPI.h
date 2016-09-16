@@ -90,7 +90,8 @@ typedef enum : NSUInteger {
                            andResult: (bool) result;
 - (void) MNHTTPDidRecieveAuthFail: (MNHTTPAPI*) api;
 - (void) MNHTTPDidRecieveAuthSuccess: (MNHTTPAPI*) api
-                            andToken: (NSString*) token;
+                            andToken: (NSString*) token
+                            userData: (NSDictionary*) userData;
 - (void) MNHTTPDidRecieveRegFail: (MNHTTPAPI*) api
                        andReason: (NSString*) reason;
 - (void) MNHTTPDidRecieveRegSuccess: (MNHTTPAPI*) api

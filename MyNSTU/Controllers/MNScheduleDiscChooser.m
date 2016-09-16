@@ -8,13 +8,14 @@
 
 #import "MNScheduleDiscChooser.h"
 #import "MNAPI+Addition.h"
-
+#import "MNSubGroupCell.h"
 #import "IQSideMenuController.h"
 @interface MNScheduleDiscChooser ()<UITableViewDataSource,UITableViewDelegate>
 {
     UISegmentedControl *seg_contr;
     NSMutableDictionary *rowSizes;
     MNHTTPAPI *api;
+    MNSubGroupCell *sub_group;
 }
 @end
 
@@ -28,9 +29,9 @@
     rowSizes = [NSMutableDictionary new];
     discTable.delegate = self;
     discTable.dataSource = self;
-    [self.discTable setFrame:CGRectMake(0, self.navigationController.navigationBar.frame.origin.y + 10, self.discTable.frame.size.width, self.discTable.frame.size.height - 40)];
-    seg_contr = [[UISegmentedControl alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.origin.y + self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, 40)];
-    [self.discTable addSubview:seg_contr];
+//    [self.discTable setFrame:CGRectMake(0, self.navigationController.navigationBar.frame.origin.y + 10, self.discTable.frame.size.width, self.discTable.frame.size.height - 40)];
+//    seg_contr = [[UISegmentedControl alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.origin.y + self.navigationController.navigationBar.frame.size.height, self.view.frame.size.width, 40)];
+//    [self.discTable addSubview:seg_contr];
     //    [seg_contr addTarget:self action:@selector(segmentSwitch:) forControlEvents:UIControlEventValueChanged];
     
     UIBarButtonItem *readyButton = [[UIBarButtonItem alloc] initWithTitle:@"Готово" style:UIBarButtonItemStylePlain target:self action:@selector(finish)];
@@ -74,7 +75,7 @@
     {
         [t setObject:self.group_name forKey:@"current"];
         NSArray *arr = @[ @{ @"name":self.group_name,@"semester_begin":self.semester_begin,@"valid_discs":newValDisc,
-                             @"days":days ,@"good_discs":goodDiskArray, @"sub_group" : [NSNumber numberWithInt:seg_contr.selectedSegmentIndex]}];
+                             @"days":days ,@"good_discs":goodDiskArray, @"sub_group" : [NSNumber numberWithInt:sub_group.segmentedControl.selectedSegmentIndex]}];
         [t setObject:arr forKey:@"data"];
     }
     else
@@ -83,11 +84,11 @@
         [t setObject:self.group_name forKey:@"current"];
         NSMutableArray *groupArray = [NSMutableArray arrayWithArray:t[@"data"]];
         [groupArray addObject:@{ @"name":self.group_name,@"semester_begin":self.semester_begin,@"valid_discs":newValDisc,
-                                 @"days":days ,@"good_discs":goodDiskArray, @"sub_group" : [NSNumber numberWithInt:seg_contr.selectedSegmentIndex]}];
+                                 @"days":days ,@"good_discs":goodDiskArray, @"sub_group" : [NSNumber numberWithInt:sub_group.segmentedControl.selectedSegmentIndex]}];
     }
     NSData *datad = [NSKeyedArchiver archivedDataWithRootObject:t];
     [datad writeToFile:plistPath atomically:YES];
-    [api setSchedule:t];
+//    [api setSchedule:t];
     if([[MNAPI_Addition getObjectFROMNSUDWithKey:@"sch"] isEqualToString:@"close"])
     {
         [[NSNotificationCenter defaultCenter]
@@ -100,9 +101,12 @@
     }
 }
 
-
 #pragma mark - Table view data source
-
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row == 0)
+        return 30;
+    return UITableViewAutomaticDimension;
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -112,19 +116,30 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DiscCell" forIndexPath:indexPath];
-    if (cell==nil) {
-        cell = [UITableViewCell new];
+    if(indexPath.row == 0)
+    {
+        MNSubGroupCell *cell = (MNSubGroupCell*)[tableView dequeueReusableCellWithIdentifier:@"SubGroupCell" forIndexPath:indexPath];
+        if (cell==nil)
+            cell = [MNSubGroupCell new];
+        sub_group = cell;
+        return cell;
     }
-    cell.translatesAutoresizingMaskIntoConstraints = YES;
-    cell.textLabel.text = data_array[indexPath.row][@"description"];
-    NSNumber *checked = data_array[indexPath.row][@"check"];
-    cell.textLabel.numberOfLines = 0;
-    if([checked  isEqual: @1])
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    else
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    return cell;
+    else{
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DiscCell" forIndexPath:indexPath];
+        if (cell==nil) {
+            cell = [UITableViewCell new];
+        }
+        cell.translatesAutoresizingMaskIntoConstraints = YES;
+        cell.textLabel.text = data_array[indexPath.row][@"description"];
+        NSNumber *checked = data_array[indexPath.row][@"check"];
+        cell.textLabel.numberOfLines = 0;
+        if([checked  isEqual: @1])
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        else
+            cell.accessoryType = UITableViewCellAccessoryNone;
+        return cell;
+    }
+    return nil;
 }
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

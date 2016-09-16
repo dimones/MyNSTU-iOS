@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MNAuthTextField.h"
+#import "MBProgressHUD.h"
 @protocol MNAuthDelegate <NSObject>
 @required
 - (void) MNAuthCompleted:(id) infoDict;
@@ -15,6 +16,7 @@
 @interface MNAuthViewController : UIViewController
 {
     __weak id <MNAuthDelegate> delegate;
+    MBProgressHUD *hud;
 }
 @property (nonatomic, weak) id <MNAuthDelegate> delegate;
 @property (weak, nonatomic) IBOutlet MNAuthTextField *loginField;

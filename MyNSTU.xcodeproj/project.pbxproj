@@ -899,6 +899,7 @@
 		46524EA31D50F24A00FD05C0 /* map.html in Resources */ = {isa = PBXBuildFile; fileRef = 46524E971D50F24A00FD05C0 /* map.html */; };
 		46524EA41D50F24A00FD05C0 /* nstu_map_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 46524E981D50F24A00FD05C0 /* nstu_map_data.json */; };
 		4656E2891B88E6BC001EFB41 /* MNBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656E2881B88E6BC001EFB41 /* MNBannerView.m */; };
+		466678931D8C527700B86BAE /* MNSubGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 466678921D8C527700B86BAE /* MNSubGroupCell.m */; };
 		466DDB8D1C6EA36400047033 /* WalkthroughPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466DDB8A1C6EA36400047033 /* WalkthroughPageViewController.m */; };
 		466DDB8E1C6EA36400047033 /* WalkThroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466DDB8C1C6EA36400047033 /* WalkThroughViewController.m */; };
 		466DDB9A1C6EA65600047033 /* CustomPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466DDB901C6EA65600047033 /* CustomPageViewController.m */; };
@@ -1890,6 +1891,8 @@
 		46524E981D50F24A00FD05C0 /* nstu_map_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = nstu_map_data.json; path = map/nstu_map_data.json; sourceTree = "<group>"; };
 		4656E2871B88E6BC001EFB41 /* MNBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNBannerView.h; path = Controllers/MNBannerView.h; sourceTree = "<group>"; };
 		4656E2881B88E6BC001EFB41 /* MNBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNBannerView.m; path = Controllers/MNBannerView.m; sourceTree = "<group>"; };
+		466678911D8C527700B86BAE /* MNSubGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSubGroupCell.h; path = Controllers/MNSubGroupCell.h; sourceTree = "<group>"; };
+		466678921D8C527700B86BAE /* MNSubGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSubGroupCell.m; path = Controllers/MNSubGroupCell.m; sourceTree = "<group>"; };
 		466DDB891C6EA36400047033 /* WalkthroughPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WalkthroughPageViewController.h; path = Controllers/WalkthroughPageViewController.h; sourceTree = "<group>"; };
 		466DDB8A1C6EA36400047033 /* WalkthroughPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WalkthroughPageViewController.m; path = Controllers/WalkthroughPageViewController.m; sourceTree = "<group>"; };
 		466DDB8B1C6EA36400047033 /* WalkThroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WalkThroughViewController.h; path = Controllers/WalkThroughViewController.h; sourceTree = "<group>"; };
@@ -3124,6 +3127,8 @@
 				464298911C7ADE5200AE65C2 /* MNScheduleCell.h */,
 				464298921C7ADE5200AE65C2 /* MNScheduleCell.m */,
 				464298931C7ADE5200AE65C2 /* MNScheduleCell.xib */,
+				466678911D8C527700B86BAE /* MNSubGroupCell.h */,
+				466678921D8C527700B86BAE /* MNSubGroupCell.m */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -4374,6 +4379,7 @@
 				46C94FC31C6FC2B500CBCB0E /* MNScheduleChooseFaculty.m in Sources */,
 				46D486751B8618FE00899BD3 /* main.m in Sources */,
 				463361CD1B86DFBC002DFFC7 /* MNRedHeaderTableViewCell.m in Sources */,
+				466678931D8C527700B86BAE /* MNSubGroupCell.m in Sources */,
 				4614A44D1B91E09400149679 /* UIScrollView+InfiniteScroll.m in Sources */,
 				46B980711D4F603E0038BDC2 /* MNMapViewController.m in Sources */,
 			);
@@ -4455,6 +4461,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2B793573M4;
 				ENABLE_BITCODE = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = MyNSTU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -4518,6 +4525,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2B793573M4;
 				ENABLE_BITCODE = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = MyNSTU/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

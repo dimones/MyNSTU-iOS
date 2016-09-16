@@ -12,7 +12,7 @@
 #import "MNRegController.h"
 #import "MNHTTPAPI.h"
 #import "MNAuthButton.h"
-
+#import "MNScheduleDiscChooser.h"
 #define multiplier 667.f/[[UIScreen mainScreen] bounds].size.height
 @interface MNAuthViewController ()<UITextFieldDelegate,MNSchedulePreparingDelegate,UIScrollViewDelegate,MNAPIHTTPDelegate>
 {
@@ -21,6 +21,7 @@
     CGFloat kbHeight;
     bool validUsername;
     MNHTTPAPI *api;
+    id _userData;
 }
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet MNAuthButton *regButton;
@@ -52,6 +53,8 @@
 }
 
 - (IBAction)authButton:(id)sender {
+    hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"Авторизуюсь";
     [api authUser:self.loginField.text andPassword:self.passField.text];
 }
 - (IBAction)reg_button:(id)sender {
@@ -142,15 +145,56 @@
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка авторизации" message:@"Неверные данные логина/пароля" delegate:self cancelButtonTitle:@"Хорошо" otherButtonTitles:nil];
     [alertView show];
 }
-- (void) MNHTTPDidRecieveAuthSuccess:(MNHTTPAPI *)aapi andToken:(NSString *)token
+- (void) MNHTTPDidRecieveAuthSuccess:(MNHTTPAPI *)aapi andToken:(NSString *)token userData:(NSDictionary *)userData
 {
+    
     [MNAPI_Addition setObjectTONSUD:token withKey:@"device_token"];
     [MNAPI_Addition setObjectTONSUD:@true withKey:@"authed"];
-    [api getInfo];
-    [self dismissViewControllerAnimated:NO completion:^{
-        
-    }];
+    [MNAPI_Addition setObjectTONSUD:userData withKey:@"user_info"];
+//    [api getInfo];
+    _userData = userData;
+    [api getScheduleFromGroup:userData[@"group"]];
+    
+    hud.labelText = @"Получаю расписание";
+//    [self dismissViewControllerAnimated:NO completion:^{
+//        
+//    }];
 }
+
+- (void) MNHTTPDidRecieveSchedule:(MNHTTPAPI *)api andResults:(NSArray *)results andSemesterBegin:(NSString *)semesterBegin
+{
+    NSMutableArray *discArray = [NSMutableArray new];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        [results enumerateObjectsUsingBlock:^(id day, NSUInteger idx, BOOL *stop) {
+            [day enumerateObjectsUsingBlock:^(id pair, NSUInteger idx, BOOL *stop) {
+                NSDictionary *dict = @{ @"id" : pair[@"id"], @"description" : pair[@"name"], @"check": @1 };
+                if(![discArray containsObject:dict])
+                    [discArray addObject:dict];
+            }];
+        }];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            MNScheduleDiscChooser *d_choose = [MNAPI_Addition getViewControllerWithIdentifier:@"DiscChooser"];
+            d_choose.semester_begin = semesterBegin;
+            d_choose.data_array = discArray;
+            d_choose.days = results;
+            d_choose.group_name = _userData[@"group"];
+            [hud hide:YES];
+            if(self.navigationController != nil){
+                [self.navigationController pushViewController:d_choose animated:YES];
+            }
+            else{
+                UINavigationController* nav = [MNAPI_Addition getViewControllerWithIdentifier:@"MYNSTU_NAVIGATION"];
+                [nav pushViewController:d_choose animated:NO];
+                [self presentViewController:nav animated:YES completion:^{
+                    
+                }];
+            }
+        });
+    });
+    
+    
+}
+
 - (void) MNHTTPError
 {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка сети" message:@"Не удалось авторизоваться. Попробуйте позднее или проверьте сетевое соединение" delegate:self cancelButtonTitle:@"Хорошо" otherButtonTitles:nil];
