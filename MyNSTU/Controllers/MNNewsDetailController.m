@@ -8,7 +8,6 @@
 
 #import "MNNewsDetailController.h"
 #import "MNAPI+Addition.h"
-#import "VKSdk.h"
 #import <Social/Social.h>
 @interface MNNewsDetailController ()
 {
@@ -56,16 +55,16 @@
     NSString *textToShare = subjectDictionary[@"title"];
     NSURL *myWebsite = [NSURL URLWithString:subjectDictionary[@"link"]];
     NSArray *activityItems = @[textToShare,myWebsite];
-    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:@[[VKActivity new]]];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:@[]];
     
-    [activityViewController setValue:@"VK SDK" forKey:@"subject"];
-    if (VK_SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0") && UIUserInterfaceIdiomPad == [[UIDevice currentDevice] userInterfaceIdiom])
-    {
-        UIPopoverPresentationController *popover = activityViewController.popoverPresentationController;
-        popover.sourceView = self.view;
-        popover.barButtonItem = self.navigationItem.rightBarButtonItem;
-    }
-    
+//    [activityViewController setValue:@"VK SDK" forKey:@"subject"];
+//    if (VK_SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"8.0") && UIUserInterfaceIdiomPad == [[UIDevice currentDevice] userInterfaceIdiom])
+//    {
+//        UIPopoverPresentationController *popover = activityViewController.popoverPresentationController;
+//        popover.sourceView = self.view;
+//        popover.barButtonItem = self.navigationItem.rightBarButtonItem;
+//    }
+//    
     [self presentViewController:activityViewController animated:YES completion:^{
         
     }];

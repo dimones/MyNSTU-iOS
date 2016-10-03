@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1FBD9D7A2ACE7ED39D96A93B /* Pods_MyNSTU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E12DAF1E2FD015FCAF315DF9 /* Pods_MyNSTU.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		460DFC591CE0D9B700E2C81F /* MNRegController.m in Sources */ = {isa = PBXBuildFile; fileRef = 460DFC581CE0D9B700E2C81F /* MNRegController.m */; };
 		460DFC5F1CE1AE4A00E2C81F /* MNSideTopCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 460DFC5E1CE1AE4A00E2C81F /* MNSideTopCell.m */; };
 		460DFC691CE1B67900E2C81F /* UIColor+HexString.m in Sources */ = {isa = PBXBuildFile; fileRef = 460DFC621CE1B67900E2C81F /* UIColor+HexString.m */; };
@@ -898,6 +899,11 @@
 		46524EA21D50F24A00FD05C0 /* three.js in Resources */ = {isa = PBXBuildFile; fileRef = 46524E961D50F24A00FD05C0 /* three.js */; };
 		46524EA31D50F24A00FD05C0 /* map.html in Resources */ = {isa = PBXBuildFile; fileRef = 46524E971D50F24A00FD05C0 /* map.html */; };
 		46524EA41D50F24A00FD05C0 /* nstu_map_data.json in Resources */ = {isa = PBXBuildFile; fileRef = 46524E981D50F24A00FD05C0 /* nstu_map_data.json */; };
+		465666781D8DAD3C001F28F5 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46902DC51D8D4715000BAF38 /* NotificationCenter.framework */; };
+		4656667C1D8DAD3C001F28F5 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656667B1D8DAD3C001F28F5 /* TodayViewController.m */; };
+		4656667F1D8DAD3C001F28F5 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4656667D1D8DAD3C001F28F5 /* MainInterface.storyboard */; };
+		465666831D8DAD3C001F28F5 /* schedule.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 465666771D8DAD3C001F28F5 /* schedule.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4656668A1D8DAFD3001F28F5 /* MNPairCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 465666891D8DAFD3001F28F5 /* MNPairCell.m */; };
 		4656E2891B88E6BC001EFB41 /* MNBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4656E2881B88E6BC001EFB41 /* MNBannerView.m */; };
 		466678931D8C527700B86BAE /* MNSubGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 466678921D8C527700B86BAE /* MNSubGroupCell.m */; };
 		466DDB8D1C6EA36400047033 /* WalkthroughPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 466DDB8A1C6EA36400047033 /* WalkthroughPageViewController.m */; };
@@ -912,6 +918,9 @@
 		468A0DF21CE0BB9100146EB9 /* nstu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 468A0DF11CE0BB9100146EB9 /* nstu.jpg */; };
 		468A0DF81CE0BE9400146EB9 /* MNEmptyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 468A0DF61CE0BE9400146EB9 /* MNEmptyViewController.m */; };
 		468A0DFA1CE0CC7C00146EB9 /* email.png in Resources */ = {isa = PBXBuildFile; fileRef = 468A0DF91CE0CC7C00146EB9 /* email.png */; };
+		46902DB91D8D4400000BAF38 /* MNSessionResultsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46902DB81D8D4400000BAF38 /* MNSessionResultsTableViewController.m */; };
+		46902DBC1D8D446D000BAF38 /* MNSessionResultsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46902DBB1D8D446D000BAF38 /* MNSessionResultsCell.m */; };
+		46902DBF1D8D4651000BAF38 /* MNSessionResultsScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46902DBE1D8D4651000BAF38 /* MNSessionResultsScrollViewController.m */; };
 		46B980711D4F603E0038BDC2 /* MNMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46B980701D4F603E0038BDC2 /* MNMapViewController.m */; };
 		46C29B061B8CC3BD00C70E73 /* MNBannerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C29B051B8CC3BD00C70E73 /* MNBannerScrollView.m */; };
 		46C29B091B8ED6F900C70E73 /* MNNewsDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46C29B081B8ED6F900C70E73 /* MNNewsDetailController.m */; };
@@ -946,11 +955,35 @@
 		46FAF6301C741FBC00DB2E1B /* MNSchedulePairCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FAF62F1C741FBC00DB2E1B /* MNSchedulePairCell.m */; };
 		46FAF6331C74202A00DB2E1B /* MNScheduleLeftCapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FAF6321C74202A00DB2E1B /* MNScheduleLeftCapController.m */; };
 		46FAF6361C74213900DB2E1B /* MNScheduleRightCapController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FAF6351C74213900DB2E1B /* MNScheduleRightCapController.m */; };
-		73706AFB8C486E478DB43A09 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85E3DB3F2257315EDA9B08B0 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		46FB3C6E1D8E69820002A9BA /* place.png in Resources */ = {isa = PBXBuildFile; fileRef = 46FB3C6C1D8E69820002A9BA /* place.png */; };
+		46FB3C6F1D8E69820002A9BA /* proffesor.png in Resources */ = {isa = PBXBuildFile; fileRef = 46FB3C6D1D8E69820002A9BA /* proffesor.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		465666811D8DAD3C001F28F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46D486671B8618FE00899BD3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 465666761D8DAD3C001F28F5;
+			remoteInfo = schedule;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		46902DD51D8D4715000BAF38 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				465666831D8DAD3C001F28F5 /* schedule.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		3985878A06803AA9A2217A7B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		460DFC571CE0D9B700E2C81F /* MNRegController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNRegController.h; path = Controllers/MNRegController.h; sourceTree = "<group>"; };
 		460DFC581CE0D9B700E2C81F /* MNRegController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNRegController.m; path = Controllers/MNRegController.m; sourceTree = "<group>"; };
 		460DFC5D1CE1AE4A00E2C81F /* MNSideTopCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSideTopCell.h; path = Controllers/MNSideTopCell.h; sourceTree = "<group>"; };
@@ -1889,6 +1922,16 @@
 		46524E961D50F24A00FD05C0 /* three.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = three.js; sourceTree = "<group>"; };
 		46524E971D50F24A00FD05C0 /* map.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = map.html; path = map/map.html; sourceTree = "<group>"; };
 		46524E981D50F24A00FD05C0 /* nstu_map_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = nstu_map_data.json; path = map/nstu_map_data.json; sourceTree = "<group>"; };
+		465666611D8D8A8D001F28F5 /* Pods_MyNSTU.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_MyNSTU.framework; path = "../Library/Developer/Xcode/DerivedData/MyNSTU-aovmxnzswhyvcefgelwzvpptgtko/Build/Products/Debug-iphonesimulator/Pods_MyNSTU.framework"; sourceTree = "<group>"; };
+		465666771D8DAD3C001F28F5 /* schedule.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = schedule.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4656667A1D8DAD3C001F28F5 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		4656667B1D8DAD3C001F28F5 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		4656667E1D8DAD3C001F28F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		465666801D8DAD3C001F28F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		465666871D8DAD58001F28F5 /* schedule.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = schedule.entitlements; sourceTree = "<group>"; };
+		465666881D8DAFD3001F28F5 /* MNPairCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNPairCell.h; sourceTree = "<group>"; };
+		465666891D8DAFD3001F28F5 /* MNPairCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNPairCell.m; sourceTree = "<group>"; };
+		4656AE261D8D4B98006CCA7D /* MyNSTU.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MyNSTU.entitlements; sourceTree = "<group>"; };
 		4656E2871B88E6BC001EFB41 /* MNBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNBannerView.h; path = Controllers/MNBannerView.h; sourceTree = "<group>"; };
 		4656E2881B88E6BC001EFB41 /* MNBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNBannerView.m; path = Controllers/MNBannerView.m; sourceTree = "<group>"; };
 		466678911D8C527700B86BAE /* MNSubGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSubGroupCell.h; path = Controllers/MNSubGroupCell.h; sourceTree = "<group>"; };
@@ -1909,6 +1952,13 @@
 		468A0DF61CE0BE9400146EB9 /* MNEmptyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNEmptyViewController.m; path = Controllers/MNEmptyViewController.m; sourceTree = "<group>"; };
 		468A0DF71CE0BE9400146EB9 /* MNEmptyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNEmptyViewController.h; path = Controllers/MNEmptyViewController.h; sourceTree = "<group>"; };
 		468A0DF91CE0CC7C00146EB9 /* email.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email.png; sourceTree = "<group>"; };
+		46902DB71D8D4400000BAF38 /* MNSessionResultsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSessionResultsTableViewController.h; path = Controllers/MNSessionResultsTableViewController.h; sourceTree = "<group>"; };
+		46902DB81D8D4400000BAF38 /* MNSessionResultsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSessionResultsTableViewController.m; path = Controllers/MNSessionResultsTableViewController.m; sourceTree = "<group>"; };
+		46902DBA1D8D446D000BAF38 /* MNSessionResultsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSessionResultsCell.h; path = Controllers/MNSessionResultsCell.h; sourceTree = "<group>"; };
+		46902DBB1D8D446D000BAF38 /* MNSessionResultsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSessionResultsCell.m; path = Controllers/MNSessionResultsCell.m; sourceTree = "<group>"; };
+		46902DBD1D8D4651000BAF38 /* MNSessionResultsScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNSessionResultsScrollViewController.h; path = Controllers/MNSessionResultsScrollViewController.h; sourceTree = "<group>"; };
+		46902DBE1D8D4651000BAF38 /* MNSessionResultsScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNSessionResultsScrollViewController.m; path = Controllers/MNSessionResultsScrollViewController.m; sourceTree = "<group>"; };
+		46902DC51D8D4715000BAF38 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		46B9806F1D4F603E0038BDC2 /* MNMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNMapViewController.h; path = Controllers/MNMapViewController.h; sourceTree = "<group>"; };
 		46B980701D4F603E0038BDC2 /* MNMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNMapViewController.m; path = Controllers/MNMapViewController.m; sourceTree = "<group>"; };
 		46C29B041B8CC3BD00C70E73 /* MNBannerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNBannerScrollView.h; sourceTree = "<group>"; };
@@ -1966,17 +2016,29 @@
 		46FAF6321C74202A00DB2E1B /* MNScheduleLeftCapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNScheduleLeftCapController.m; path = Controllers/MNScheduleLeftCapController.m; sourceTree = "<group>"; };
 		46FAF6341C74213900DB2E1B /* MNScheduleRightCapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MNScheduleRightCapController.h; path = Controllers/MNScheduleRightCapController.h; sourceTree = "<group>"; };
 		46FAF6351C74213900DB2E1B /* MNScheduleRightCapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MNScheduleRightCapController.m; path = Controllers/MNScheduleRightCapController.m; sourceTree = "<group>"; };
+		46FB3C6C1D8E69820002A9BA /* place.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = place.png; sourceTree = "<group>"; };
+		46FB3C6D1D8E69820002A9BA /* proffesor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = proffesor.png; sourceTree = "<group>"; };
+		4812BEF71A696A7CC354FF81 /* Pods-MyNSTU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNSTU.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyNSTU/Pods-MyNSTU.release.xcconfig"; sourceTree = "<group>"; };
+		6FEE5676054614310A4E4C84 /* Pods-MyNSTU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyNSTU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyNSTU/Pods-MyNSTU.debug.xcconfig"; sourceTree = "<group>"; };
 		85E3DB3F2257315EDA9B08B0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1C0BB212299BD6C877FCCE9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E12DAF1E2FD015FCAF315DF9 /* Pods_MyNSTU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyNSTU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		465666741D8DAD3C001F28F5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				465666781D8DAD3C001F28F5 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46D4866C1B8618FE00899BD3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				4614A4461B91C47000149679 /* Social.framework in Frameworks */,
-				73706AFB8C486E478DB43A09 /* Pods.framework in Frameworks */,
+				1FBD9D7A2ACE7ED39D96A93B /* Pods_MyNSTU.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2082,6 +2144,7 @@
 		4633616F1B8620E1002DFFC7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				46902DB61D8D4366000BAF38 /* MNSessionResults */,
 				46B9806E1D4F5FE00038BDC2 /* MNMap */,
 				46C94FC01C6FC26E00CBCB0E /* MNSchedule */,
 				466DDB881C6EA2EE00047033 /* MNWalkthrough */,
@@ -3079,6 +3142,22 @@
 			path = map/threejs;
 			sourceTree = "<group>";
 		};
+		465666791D8DAD3C001F28F5 /* schedule */ = {
+			isa = PBXGroup;
+			children = (
+				46FB3C6C1D8E69820002A9BA /* place.png */,
+				46FB3C6D1D8E69820002A9BA /* proffesor.png */,
+				465666871D8DAD58001F28F5 /* schedule.entitlements */,
+				4656667A1D8DAD3C001F28F5 /* TodayViewController.h */,
+				4656667B1D8DAD3C001F28F5 /* TodayViewController.m */,
+				4656667D1D8DAD3C001F28F5 /* MainInterface.storyboard */,
+				465666801D8DAD3C001F28F5 /* Info.plist */,
+				465666881D8DAFD3001F28F5 /* MNPairCell.h */,
+				465666891D8DAFD3001F28F5 /* MNPairCell.m */,
+			);
+			path = schedule;
+			sourceTree = "<group>";
+		};
 		466DDB881C6EA2EE00047033 /* MNWalkthrough */ = {
 			isa = PBXGroup;
 			children = (
@@ -3096,6 +3175,19 @@
 				466DDB8C1C6EA36400047033 /* WalkThroughViewController.m */,
 			);
 			name = MNWalkthrough;
+			sourceTree = "<group>";
+		};
+		46902DB61D8D4366000BAF38 /* MNSessionResults */ = {
+			isa = PBXGroup;
+			children = (
+				46902DB71D8D4400000BAF38 /* MNSessionResultsTableViewController.h */,
+				46902DB81D8D4400000BAF38 /* MNSessionResultsTableViewController.m */,
+				46902DBA1D8D446D000BAF38 /* MNSessionResultsCell.h */,
+				46902DBB1D8D446D000BAF38 /* MNSessionResultsCell.m */,
+				46902DBD1D8D4651000BAF38 /* MNSessionResultsScrollViewController.h */,
+				46902DBE1D8D4651000BAF38 /* MNSessionResultsScrollViewController.m */,
+			);
+			name = MNSessionResults;
 			sourceTree = "<group>";
 		};
 		469F27161C71DDBB0026AE21 /* Preparator */ = {
@@ -3172,9 +3264,10 @@
 				463361281B861AFC002DFFC7 /* design */,
 				46D486711B8618FE00899BD3 /* MyNSTU */,
 				46D4868B1B8618FE00899BD3 /* MyNSTUTests */,
+				465666791D8DAD3C001F28F5 /* schedule */,
 				46D486701B8618FE00899BD3 /* Products */,
-				E9F9019CB0C4DE03561CF1AB /* Pods */,
 				6473B20AEBC54FB002B4C955 /* Frameworks */,
+				4C360CA54650A32EA6638EF1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3182,6 +3275,7 @@
 			isa = PBXGroup;
 			children = (
 				46D4866F1B8618FE00899BD3 /* MyNSTU.app */,
+				465666771D8DAD3C001F28F5 /* schedule.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -3189,6 +3283,7 @@
 		46D486711B8618FE00899BD3 /* MyNSTU */ = {
 			isa = PBXGroup;
 			children = (
+				4656AE261D8D4B98006CCA7D /* MyNSTU.entitlements */,
 				46B980361D4F5F9D0038BDC2 /* map */,
 				4633618C1B86DDCC002DFFC7 /* Other LIbraries */,
 				463361851B86DD2B002DFFC7 /* API */,
@@ -3270,43 +3365,65 @@
 			name = MNNews;
 			sourceTree = "<group>";
 		};
+		4C360CA54650A32EA6638EF1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4812BEF71A696A7CC354FF81 /* Pods-MyNSTU.release.xcconfig */,
+				6FEE5676054614310A4E4C84 /* Pods-MyNSTU.debug.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6473B20AEBC54FB002B4C955 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				465666611D8D8A8D001F28F5 /* Pods_MyNSTU.framework */,
 				4614A4451B91C47000149679 /* Social.framework */,
 				85E3DB3F2257315EDA9B08B0 /* Pods.framework */,
+				46902DC51D8D4715000BAF38 /* NotificationCenter.framework */,
+				E12DAF1E2FD015FCAF315DF9 /* Pods_MyNSTU.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		E9F9019CB0C4DE03561CF1AB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				B1C0BB212299BD6C877FCCE9 /* Pods.debug.xcconfig */,
-				3985878A06803AA9A2217A7B /* Pods.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		46D4866E1B8618FE00899BD3 /* MyNSTU */ = {
+		465666761D8DAD3C001F28F5 /* schedule */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46D486921B8618FE00899BD3 /* Build configuration list for PBXNativeTarget "MyNSTU" */;
+			buildConfigurationList = 465666841D8DAD3C001F28F5 /* Build configuration list for PBXNativeTarget "schedule" */;
 			buildPhases = (
-				C91C15E01AF0959D071268A8 /* Check Pods Manifest.lock */,
-				46D4866B1B8618FE00899BD3 /* Sources */,
-				46D4866C1B8618FE00899BD3 /* Frameworks */,
-				46D4866D1B8618FE00899BD3 /* Resources */,
-				38A841190B37BF2050B412A7 /* Embed Pods Frameworks */,
-				1D34919F0118B6B357E5611E /* Copy Pods Resources */,
-				469B8EB61D57772800D84941 /* ShellScript */,
-				463F0E001D58855200F1B5E7 /* ShellScript */,
+				465666731D8DAD3C001F28F5 /* Sources */,
+				465666741D8DAD3C001F28F5 /* Frameworks */,
+				465666751D8DAD3C001F28F5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = schedule;
+			productName = schedule;
+			productReference = 465666771D8DAD3C001F28F5 /* schedule.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		46D4866E1B8618FE00899BD3 /* MyNSTU */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46D486921B8618FE00899BD3 /* Build configuration list for PBXNativeTarget "MyNSTU" */;
+			buildPhases = (
+				8570B831A40834662F627E4B /* [CP] Check Pods Manifest.lock */,
+				46D4866B1B8618FE00899BD3 /* Sources */,
+				46D4866C1B8618FE00899BD3 /* Frameworks */,
+				46D4866D1B8618FE00899BD3 /* Resources */,
+				469B8EB61D57772800D84941 /* ShellScript */,
+				463F0E001D58855200F1B5E7 /* ShellScript */,
+				46902DD51D8D4715000BAF38 /* Embed App Extensions */,
+				2179C95A4F56E69BB4488C73 /* [CP] Embed Pods Frameworks */,
+				9CDB205DF66926FCE53B634E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				465666821D8DAD3C001F28F5 /* PBXTargetDependency */,
 			);
 			name = MyNSTU;
 			productName = MyNSTU;
@@ -3324,12 +3441,25 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Дмитрий Богомолов";
 				TargetAttributes = {
+					465666761D8DAD3C001F28F5 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2B793573M4;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					46D4866E1B8618FE00899BD3 = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 2B793573M4;
 						DevelopmentTeamName = "Dmitriy Bogomolov (Personal Team)";
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -3351,11 +3481,22 @@
 			projectRoot = "";
 			targets = (
 				46D4866E1B8618FE00899BD3 /* MyNSTU */,
+				465666761D8DAD3C001F28F5 /* schedule */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		465666751D8DAD3C001F28F5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46FB3C6F1D8E69820002A9BA /* proffesor.png in Resources */,
+				4656667F1D8DAD3C001F28F5 /* MainInterface.storyboard in Resources */,
+				46FB3C6E1D8E69820002A9BA /* place.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46D4866D1B8618FE00899BD3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -4240,34 +4381,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1D34919F0118B6B357E5611E /* Copy Pods Resources */ = {
+		2179C95A4F56E69BB4488C73 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		38A841190B37BF2050B412A7 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyNSTU/Pods-MyNSTU-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		463F0E001D58855200F1B5E7 /* ShellScript */ = {
@@ -4294,26 +4420,50 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# если у нас релизная сборка, то нам нужна обычная иконка\n#if [ $CONFIGURATION = \"Release\" ]; then\n#exit\n#fi\n\n# номер версии\nversion=`/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\"`\n# номер билда\nbuild=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\"`\n# если нужно, можно взять имя ветки из git\nbranch=`git rev-parse --abbrev-ref HEAD`\n\n# функция генерации иконки\nfunction processIcon() {\n    export PATH=$PATH:/usr/local/bin\n    base_file=$1\n    target_icon_name=$2\n    base_path=`find ${SRCROOT} -name $base_file`\n    \n    if [[ ! -f ${base_path} || -z ${base_path} ]]; then\n    return;\n    fi\n    \n    target_file=`echo $target_icon_name | sed \"s/_base//\"`\n    target_path=\"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/${target_file}\"\n    \n    width=`identify -format %w ${base_path}`\n    \n    echo $target_path\n    echo $target_file\n    \n    convert -background '#0008' -fill white -gravity center -size ${width}x40 -pointsize 26\\\n    caption:\"${version} (${build})\"\\\n    \"${base_path}\" +swap -gravity south -composite \"${target_path}\"\n}\n\n# запускаем генерацию\nprocessIcon \"Icon-60@2x.png\" \"AppIcon-160x60@2x.png\"\nprocessIcon \"Icon-60@3x.png\" \"AppIcon-160x60@3x.png\"";
+			shellScript = "# если у нас релизная сборка, то нам нужна обычная иконка\n#if [ $CONFIGURATION = \"Release\" ]; then\n#exit\n#fi\n\n# номер версии\nversion=`/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\"`\n# номер билда\nbuild=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\"`\n# если нужно, можно взять имя ветки из git\nbranch=`git rev-parse --abbrev-ref HEAD`\n\n# функция генерации иконки\nfunction processIcon() {\n    export PATH=$PATH:/usr/local/bin\n    base_file=$1\n    target_icon_name=$2\n    base_path=`find ${SRCROOT} -name $base_file`\n    \n    if [[ ! -f ${base_path} || -z ${base_path} ]]; then\n    return;\n    fi\n    \n    target_file=`echo $target_icon_name | sed \"s/_base//\"`\n    target_path=\"${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/${target_file}\"\n    \n    width=`identify -format %w ${base_path}`\n    \n    echo $target_path\n    echo $target_file\n    \n    convert -background '#0008' -fill white -gravity center -size ${width}x40 -pointsize 26\\\n    caption:\"${version} (${build})\"\\\n    \"${base_path}\" +swap -gravity south -composite \"${target_path}\"\n}\n\n# запускаем генерацию\nprocessIcon \"Icon-App-60x60@2x.png\" \"AppIcon-160x60@2x.png\"\nprocessIcon \"Icon-App-60x60@3x.png\" \"AppIcon-160x60@3x.png\"";
 		};
-		C91C15E01AF0959D071268A8 /* Check Pods Manifest.lock */ = {
+		8570B831A40834662F627E4B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9CDB205DF66926FCE53B634E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyNSTU/Pods-MyNSTU-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		465666731D8DAD3C001F28F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4656668A1D8DAFD3001F28F5 /* MNPairCell.m in Sources */,
+				4656667C1D8DAD3C001F28F5 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		46D4866B1B8618FE00899BD3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -4341,6 +4491,7 @@
 				460DFC5F1CE1AE4A00E2C81F /* MNSideTopCell.m in Sources */,
 				46C29B061B8CC3BD00C70E73 /* MNBannerScrollView.m in Sources */,
 				46FAF6301C741FBC00DB2E1B /* MNSchedulePairCell.m in Sources */,
+				46902DBF1D8D4651000BAF38 /* MNSessionResultsScrollViewController.m in Sources */,
 				46398B5F1B972342005E5E6D /* MNPersonInfoCell.m in Sources */,
 				466DDB8E1C6EA36400047033 /* WalkThroughViewController.m in Sources */,
 				46F4D1501B9361B500B5B3C3 /* MNSearchView.m in Sources */,
@@ -4350,12 +4501,14 @@
 				460DFC691CE1B67900E2C81F /* UIColor+HexString.m in Sources */,
 				463361C11B86DDCC002DFFC7 /* ActionSheetCustomPicker.m in Sources */,
 				463A4BD21B9B06E40051F021 /* MNPersonSearchCell.m in Sources */,
+				46902DBC1D8D446D000BAF38 /* MNSessionResultsCell.m in Sources */,
 				46F4D14D1B93473100B5B3C3 /* MNSideUniCell.m in Sources */,
 				466DDB8D1C6EA36400047033 /* WalkthroughPageViewController.m in Sources */,
 				463361BD1B86DDCC002DFFC7 /* REMenuContainerView.m in Sources */,
 				463361BC1B86DDCC002DFFC7 /* REMenu.m in Sources */,
 				466DDB9A1C6EA65600047033 /* CustomPageViewController.m in Sources */,
 				463361C01B86DDCC002DFFC7 /* AbstractActionSheetPicker.m in Sources */,
+				46902DB91D8D4400000BAF38 /* MNSessionResultsTableViewController.m in Sources */,
 				463361B81B86DDCC002DFFC7 /* IQSideMenuController.m in Sources */,
 				46C94FC91C6FC33D00CBCB0E /* MNScheduleDiscChooser.m in Sources */,
 				463A4BCF1B9B05FC0051F021 /* MNPersonsSearchController.m in Sources */,
@@ -4387,7 +4540,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		465666821D8DAD3C001F28F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 465666761D8DAD3C001F28F5 /* schedule */;
+			targetProxy = 465666811D8DAD3C001F28F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		4656667D1D8DAD3C001F28F5 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4656667E1D8DAD3C001F28F5 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		46D4867C1B8618FE00899BD3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -4410,9 +4579,58 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		465666851D8DAD3C001F28F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = schedule/schedule.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dmitriy Bogomolov (2F289RM9P6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 2B793573M4;
+				INFOPLIST_FILE = schedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "dimones-dev.My-NSTU.schedule";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		465666861D8DAD3C001F28F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = schedule/schedule.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Dmitriy Bogomolov (2F289RM9P6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 2B793573M4;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = schedule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "dimones-dev.My-NSTU.schedule";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
 		469087951D105E0C00C4D4A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3985878A06803AA9A2217A7B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -4452,11 +4670,12 @@
 		};
 		469087961D105E0C00C4D4A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3985878A06803AA9A2217A7B /* Pods.release.xcconfig */;
+			baseConfigurationReference = 6FEE5676054614310A4E4C84 /* Pods-MyNSTU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MyNSTU/MyNSTU.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dmitriy Bogomolov (2F289RM9P6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2B793573M4;
@@ -4476,7 +4695,6 @@
 		};
 		46D486911B8618FE00899BD3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3985878A06803AA9A2217A7B /* Pods.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -4516,11 +4734,12 @@
 		};
 		46D486941B8618FE00899BD3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3985878A06803AA9A2217A7B /* Pods.release.xcconfig */;
+			baseConfigurationReference = 4812BEF71A696A7CC354FF81 /* Pods-MyNSTU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = MyNSTU/MyNSTU.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dmitriy Bogomolov (2F289RM9P6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 2B793573M4;
@@ -4541,6 +4760,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		465666841D8DAD3C001F28F5 /* Build configuration list for PBXNativeTarget "schedule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				465666851D8DAD3C001F28F5 /* Release */,
+				465666861D8DAD3C001F28F5 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		46D4866A1B8618FE00899BD3 /* Build configuration list for PBXProject "MyNSTU" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

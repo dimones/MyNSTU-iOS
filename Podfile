@@ -1,8 +1,5 @@
-platform :ios, '7.0'
+platform :ios, '8.0'
 use_frameworks!
-pod 'AFNetworking'
-pod 'YandexMobileMetrica'
-pod 'FBSDKCoreKit'
-pod 'FBSDKLoginKit'
-pod 'FBSDKShareKit'
-pod 'VK-ios-sdk'
+target 'MyNSTU' do
+	pod 'AFNetworking'
+end

@@ -48,8 +48,10 @@
         return;
     }
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        
+//        NSUserDefaults *myDefaults = [[NSUserDefaults alloc]
+//                                      initWithSuiteName:@"group.com.mynstu.schedule"];
         NSMutableDictionary *t = [[NSMutableDictionary alloc] initWithDictionary:[NSKeyedUnarchiver unarchiveObjectWithData:data]];
+//        t = [[NSMutableDictionary alloc] initWithDictionary:[NSKeyedUnarchiver unarchiveObjectWithData:[myDefaults objectForKey:@"schedule_data"]]];
         NSString *currentGroup = t[@"current"];
         [t[@"data"] enumerateObjectsUsingBlock:^(id groups, NSUInteger idx, BOOL *stop){
             NSString *dateString = groups[@"semester_begin"];
@@ -58,9 +60,15 @@
             [dateFormatter setDateFormat:@"dd.MM.yyyy"];
             NSDate *dateFromString = [[NSDate alloc] init];
             dateFromString = [dateFormatter dateFromString:dateString];
+            dateFromString = [dateFormatter dateFromString:@"29.08.2016"];
+
             NSTimeInterval diff = [dateFromString timeIntervalSinceDate:[NSDate date]];
             currentWeek = (int)(-1*diff/60/60/24/7)+1;
             displayWeek = currentWeek;
+            
+            
+            
+            
             MNScheduleLeftCapController *left = [MNAPI_Addition getViewControllerWithIdentifier:@"ScheduleCapLeft"];
             [left.weekLabel setText:[NSString stringWithFormat:@"%ld неделя",(long)displayWeek - 1]];
             [dayControllers addObject:left];
@@ -97,11 +105,24 @@
             [daysScroll addSubview:rightC.view];
             
             
-            daysScroll.contentSize = CGSizeMake(scrollFrame.size.width*8, scrollFrame.size.height);
+            
+            NSCalendar *calendar = [NSCalendar currentCalendar];
+            NSDateComponents *components = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute) fromDate:[NSDate date]];
+            
             NSDate *now = [NSDate date];
             NSDateFormatter *nowDateFormatter = [[NSDateFormatter alloc] init];
             [nowDateFormatter setDateFormat:@"e"];
             NSInteger weekdayNumber = (NSInteger)[[nowDateFormatter stringFromDate:now] integerValue];
+            
+            if ((weekdayNumber == 6 && components.hour > 19 ) || weekdayNumber == 7) {
+                displayWeek += 1;
+                weekdayNumber = 1;
+            }
+            
+            
+            
+            daysScroll.contentSize = CGSizeMake(scrollFrame.size.width*8, scrollFrame.size.height);
+            [nowDateFormatter setDateFormat:@"e"];
             self.daysScroll.bounces = YES;
             pageControl.currentPage = weekdayNumber-1;
             self.title = [NSString stringWithFormat:@"%@ %ld неделя",dayDisc[[NSString stringWithFormat:@"%ld",(long)weekdayNumber]],(long)displayWeek];
@@ -175,7 +196,6 @@
             pageControl.currentPage = 0;
             self.title = [NSString stringWithFormat:@"%@ %ld неделя",dayDisc[[NSString stringWithFormat:@"%ld",(long)1]],(long)displayWeek];
             [daysScroll scrollRectToVisible:CGRectMake(scrollFrame.size.width, 0,scrollFrame.size.width, scrollFrame.size.height) animated:NO];
-            
         }
     });
 }

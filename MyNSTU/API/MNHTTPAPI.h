@@ -98,6 +98,13 @@ typedef enum : NSUInteger {
                             andToken: (NSString*) token;
 - (void) MNHTTPDidRecieveInfo: (MNHTTPAPI*) api
                       andInfo: (id) infoDictionary;
+- (void) MNHTTPDidRecieveSessionResults: (MNHTTPAPI*) api
+                             andResults: (id)results;
+
+- (void) MNHTTPDidRecieveMonitoringWeekResults: (MNHTTPAPI*) api
+                             		andResults: (id)results;
+- (void) MNHTTPDidRecieveMessages: (MNHTTPAPI*) api
+                      andMessages: (id)messages;
 @end
 
 
@@ -134,5 +141,7 @@ typedef enum : NSUInteger {
 - (void) getBanners;
 - (void) getOneNews: (NSString*) newsId;
 
-
+- (void) getSemesterResults;
+- (void) getMonitoringWeekResults;
+- (void) getMessages;
 @end

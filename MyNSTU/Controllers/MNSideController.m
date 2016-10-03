@@ -57,6 +57,24 @@
     [self.sideTable insertSubview:searchView aboveSubview:self.sideTable];
     [self.sideTable bringSubviewToFront:searchView];
     [searchView.logButton addTarget:self action:@selector(authAction:) forControlEvents:UIControlEventTouchUpInside];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(setInfo:)
+                                                 name:@"setUserInfo"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(getFullUserInfo:)
+                                                 name:@"getFullUserInfo"
+                                               object:nil];
+}
+- (void) getFullUserInfo: (NSNotification*) notification{
+    [api getSemesterResults];
+    [api getMonitoringWeekResults];
+    [api getMessages];
+}
+- (void) setInfo:(NSNotification*)notification{
+    [MNAPI_Addition setObjectTONSUD:notification.userInfo withKey:@"user_info"];
+    [searchView updateInfo];
 }
 - (void) viewWillAppear:(BOOL)animated
 {
@@ -198,4 +216,7 @@
     
     [self presentViewController:authContr animated:YES completion:nil];
 }
+
+
+
 @end

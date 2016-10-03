@@ -1,81 +1,26 @@
 PODS:
-  - AFNetworking (2.6.0):
-    - AFNetworking/NSURLConnection (= 2.6.0)
-    - AFNetworking/NSURLSession (= 2.6.0)
-    - AFNetworking/Reachability (= 2.6.0)
-    - AFNetworking/Security (= 2.6.0)
-    - AFNetworking/Serialization (= 2.6.0)
-    - AFNetworking/UIKit (= 2.6.0)
-  - AFNetworking/NSURLConnection (2.6.0):
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.0)
-  - AFNetworking/Security (2.6.0)
-  - AFNetworking/Serialization (2.6.0)
-  - AFNetworking/UIKit (2.6.0):
-    - AFNetworking/NSURLConnection
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
-  - Bolts (1.2.0):
-    - Bolts/AppLinks (= 1.2.0)
-    - Bolts/Tasks (= 1.2.0)
-  - Bolts/AppLinks (1.2.0):
-    - Bolts/Tasks
-  - Bolts/Tasks (1.2.0)
-  - FBSDKCoreKit (4.5.1):
-    - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc (= 4.5.1)
-    - FBSDKCoreKit/no-arc (= 4.5.1)
-  - FBSDKCoreKit/arc (4.5.1):
-    - Bolts (~> 1.1)
-  - FBSDKCoreKit/no-arc (4.5.1):
-    - Bolts (~> 1.1)
-    - FBSDKCoreKit/arc
-  - FBSDKLoginKit (4.5.1):
-    - FBSDKCoreKit
-  - FBSDKShareKit (4.5.1):
-    - FBSDKCoreKit
-  - FMDB (2.5):
-    - FMDB/standard (= 2.5)
-  - FMDB/common (2.5)
-  - FMDB/standard (2.5):
-    - FMDB/common
-  - KSCrash/Recording (0.0.4)
-  - KSCrash/Reporting/Filters/AppleFmt (0.0.4):
-    - KSCrash/Recording
-    - KSCrash/Reporting/Filters/Base
-  - KSCrash/Reporting/Filters/Base (0.0.4):
-    - KSCrash/Recording
-  - protobuf-c (1.0.1)
-  - VK-ios-sdk (1.1.12)
-  - YandexMobileMetrica (1.8.5):
-    - FMDB (~> 2.2)
-    - KSCrash/Recording (~> 0.0.3)
-    - KSCrash/Reporting/Filters/AppleFmt (~> 0.0.3)
-    - protobuf-c (~> 1.0.1)
 
 DEPENDENCIES:
   - AFNetworking
-  - FBSDKCoreKit
-  - FBSDKLoginKit
-  - FBSDKShareKit
-  - VK-ios-sdk
-  - YandexMobileMetrica
 
 SPEC CHECKSUMS:
-  AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
-  Bolts: d176cb1e0012175589e389a9db49b85e27787576
-  FBSDKCoreKit: f335eaf6865e1e1597dee1debfb533045500da47
-  FBSDKLoginKit: 225cc9a388a92916ee3f3bb14422017b6e44b65b
-  FBSDKShareKit: 642034ac9f30793dfd897851b724bb4281750266
-  FMDB: 96e8f1bcc1329e269330f99770ad4285d9003e52
-  KSCrash: a17f93c9b300753bf66dd7d72260cace0d307b1b
-  protobuf-c: 87088f5a154d5293d9c75b44fc48b497056f4e76
-  VK-ios-sdk: 53e366d221b24cc0ef6f31c6e9dfae5f12eea054
-  YandexMobileMetrica: 16fb982e10fa66ccf6b0143264fd5354289029d1
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
 
-COCOAPODS: 0.38.2
+PODFILE CHECKSUM: 4379ccf82ab26a5c43223a0f71b4168849dc9740
+
+COCOAPODS: 1.1.0.rc.2

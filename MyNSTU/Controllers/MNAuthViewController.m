@@ -79,9 +79,9 @@
 }
 - (void) textFieldDidChange:(NSNotification *)notification
 {
-    if (self.loginField.text.length >= 3) {
-        [api checkUsername:self.loginField.text];
-    }
+//    if (self.loginField.text.length >= 3) {
+//        [api checkUsername:self.loginField.text];
+//    }
 }
 - (IBAction)guestButton:(id)sender {
     [MNAPI_Addition setObjectTONSUD:@"close" withKey:@"sch"];
@@ -142,6 +142,7 @@
 }
 - (void) MNHTTPDidRecieveAuthFail:(MNHTTPAPI *)api
 {
+    [hud hide:YES];
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка авторизации" message:@"Неверные данные логина/пароля" delegate:self cancelButtonTitle:@"Хорошо" otherButtonTitles:nil];
     [alertView show];
 }
@@ -151,14 +152,12 @@
     [MNAPI_Addition setObjectTONSUD:token withKey:@"device_token"];
     [MNAPI_Addition setObjectTONSUD:@true withKey:@"authed"];
     [MNAPI_Addition setObjectTONSUD:userData withKey:@"user_info"];
-//    [api getInfo];
+
     _userData = userData;
     [api getScheduleFromGroup:userData[@"group"]];
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"getFullUserInfo" object:nil];
     hud.labelText = @"Получаю расписание";
-//    [self dismissViewControllerAnimated:NO completion:^{
-//        
-//    }];
+
 }
 
 - (void) MNHTTPDidRecieveSchedule:(MNHTTPAPI *)api andResults:(NSArray *)results andSemesterBegin:(NSString *)semesterBegin
@@ -173,6 +172,8 @@
             }];
         }];
         dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"setUserInfo" object:_userData userInfo:_userData];
             MNScheduleDiscChooser *d_choose = [MNAPI_Addition getViewControllerWithIdentifier:@"DiscChooser"];
             d_choose.semester_begin = semesterBegin;
             d_choose.data_array = discArray;

@@ -8,8 +8,8 @@
 
 #import "AppDelegate.h"
 #import "MNAPI+Addition.h"
-#import "VKSdk.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
+
+
 #import "MNHTTPAPI.h"
 //
 #import "MNAuthViewController.h"
@@ -23,8 +23,14 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    NSUserDefaults *myDefaults = [[NSUserDefaults alloc]
+                                  initWithSuiteName:@"2F289RM9P6.group.com.mynstu.schedule"];
+    [myDefaults setObject:@"ТЕСТОВОЕ СООБЩЕНИЕ" forKey:@"TEST"];
+    [myDefaults synchronize];
+    NSLog(@"COM YOPTA: %@", [myDefaults objectForKey:@"TEST"]);
     //[YMMYandexMetrica startWithAPIKey:@"74261"];
-    [VKSdk initializeWithDelegate:nil andAppId:@"4834072"];
+//    [VKSdk initializeWithDelegate:nil andAppId:@"4834072"];
     [application setStatusBarHidden:NO];
     [application setStatusBarStyle:UIStatusBarStyleLightContent];
     NSNumber *scheduleFinished = [MNAPI_Addition getObjectFROMNSUDWithKey:@"schedule_finished"];
@@ -50,8 +56,9 @@
     }
     
     sideMenuController.view.hidden = NO;
-    return [[FBSDKApplicationDelegate sharedInstance] application:application
-                                    didFinishLaunchingWithOptions:launchOptions];
+    return YES;
+//    return [[FBSDKApplicationDelegate sharedInstance] application:application
+//                                    didFinishLaunchingWithOptions:launchOptions];
 }
 - (void) scheduleDismissed{
     [sideMenuController dismissViewControllerAnimated:YES completion:nil];
@@ -60,16 +67,20 @@
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
-    if ([[FBSDKApplicationDelegate sharedInstance] application:application
-                                                       openURL:url
-                                             sourceApplication:sourceApplication
-                                                    annotation:annotation]) {
-        return YES;
-    }
-    if ([VKSdk processOpenURL:url fromApplication:sourceApplication]) {
-        return YES;
-    }
+//    if ([[FBSDKApplicationDelegate sharedInstance] application:application
+//                                                       openURL:url
+//                                             sourceApplication:sourceApplication
+//                                                    annotation:annotation]) {
+//        return YES;
+//    }
+//    if ([VKSdk processOpenURL:url fromApplication:sourceApplication]) {
+//        return YES;
+//    }
     return NO;
+}
+- (void) application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
 }

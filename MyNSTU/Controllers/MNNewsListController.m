@@ -16,8 +16,11 @@
 #import "MBProgressHUD.h"
 #import "REMenu.h"
 #import "UIScrollView+InfiniteScroll.h"
-#import "AFNetworking.h"
+//#import "AFNetworking.h"
 #import <QuartzCore/QuartzCore.h>
+#import "AFNetworking.h"
+
+
 #define banner_ratio 16*9
 //#define banner_ratio 220*160
 #define ind_size 50.f
@@ -175,9 +178,10 @@
             [newsIndicator stopAnimating];
         });
     }
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager GET:[NSString stringWithFormat:@"%@2/get_news?count=20",SERVER_ADDRESS] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:[NSString stringWithFormat:@"%@2/get_news?count=20",SERVER_ADDRESS] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
             if ([newsList count] > 0) {
                 if (![responseObject[0][@"id"] isEqual:newsList[0][@"id"]]) {
@@ -208,13 +212,52 @@
             });
         });
         [self.newsTable reloadData];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [self.refreshControl endRefreshing];
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка сети" message:@"Не удалось получить новости. Попробуйте поздее или проверьте сетевое соединение" delegate:self cancelButtonTitle:@"Хорошо" otherButtonTitles:nil];
         [alertView show];
         NSLog(@"%@",error);
     }];
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    [manager GET:[NSString stringWithFormat:@"%@2/get_news?count=20",SERVER_ADDRESS] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+//            if ([newsList count] > 0) {
+//                if (![responseObject[0][@"id"] isEqual:newsList[0][@"id"]]) {
+//                    for (id someObject in [responseObject reverseObjectEnumerator])
+//                    {
+//                        if(((NSNumber*)someObject[@"id"]).intValue > ((NSNumber*)newsList[0][@"id"]).intValue)
+//                        {
+//                            [newsList insertObject:someObject atIndex:0];
+//                        }
+//                    }
+//                }
+//                else {
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        [self.refreshControl endRefreshing];
+//                        newsIndicator.hidden = YES;
+//                        [newsIndicator stopAnimating];
+//                    });
+//                    return;
+//                }
+//            }
+//            newsList = [NSMutableArray arrayWithArray:responseObject];
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [self.refreshControl endRefreshing];
+//                [self.newsTable reloadData];
+//                [self saveFile];
+//                newsIndicator.hidden = YES;
+//                [newsIndicator stopAnimating];
+//            });
+//        });
+//        [self.newsTable reloadData];
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        [self.refreshControl endRefreshing];
+//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка сети" message:@"Не удалось получить новости. Попробуйте поздее или проверьте сетевое соединение" delegate:self cancelButtonTitle:@"Хорошо" otherButtonTitles:nil];
+//        [alertView show];
+//        NSLog(@"%@",error);
+//    }];
 }
 - (void) saveFile{
     if (currentType == NewsNSTU) {

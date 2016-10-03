@@ -17,8 +17,8 @@
 {
     NSMutableArray *pairArray;
     NSDictionary *pairDescripion;
-    NSMutableDictionary *heightDict;
     NSDictionary *typeDescription;
+    NSMutableDictionary *heightDict;
     NSInteger maxcount;
     BOOL canUpdate;
     id personsName;
@@ -207,9 +207,15 @@
         }
     }
     else
+    {
         [cell.labelPersons setTextColor:[UIColor blackColor]];
+        
+    }
     if([pairArray[indexPath.row][@"person1"] isEqual:[NSNull null]])
+    {
+        [cell.labelPersons setText:@"Не указано"];
         [cell.labelPersons setTag:-1];
+    }
     else
         [cell.labelPersons setTag:((NSNumber*)pairArray[indexPath.row][@"person1"]).integerValue];
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(personTapped:)];
@@ -227,20 +233,23 @@
         cell.labelPersons.text = @"Не указано";
     if([cell.labelRoom.text isEqual:@""])
         cell.labelRoom.text = @"Не указано";
-    if(weeksString!=nil)
+    if(weeksString)
     {
-        if(![weeksString isEqualToString:@""])
+        if([weeksString length] > 0)
             cell.labelWeeks.text = [NSString stringWithFormat:@"Недели: %@", weeksString];
-        if (odd.intValue == 0) {
-            cell.labelWeeks.text = @"Недели: Четные";
+        else{
+            if (odd.intValue == 0) {
+                cell.labelWeeks.text = @"Недели: Четные";
+            }
+            if (odd.intValue == 1) {
+                cell.labelWeeks.text = @"Недели: Нечетные";
+            }
+            if(odd.intValue == -1)
+            {
+                cell.labelWeeks.text = @"Недели: Все";
+            }
         }
-        if (odd.intValue == 1) {
-            cell.labelWeeks.text = @"Недели: Нечетные";
-        }
-        if(odd.intValue == -1)
-        {
-            cell.labelWeeks.text = @"Недели: Все";
-        }
+        
     }
     [cell.labelTitle setFrame:[self rectByLabel:cell.labelTitle]];
     [cell.labelTime setFrame:[self rectByLabel:cell.labelTime]];

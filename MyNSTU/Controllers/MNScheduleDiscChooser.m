@@ -58,7 +58,7 @@
             [validDiscs addObject:@{ ((NSNumber*)disc[@"id"]).stringValue: disc[@"check"] }];
         [goodDiskArray addObject:@{ ((NSNumber*)disc[@"id"]).stringValue : disc[@"description"]}];
     }];
-    
+    NSURL *groupURL = [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier: @"group.com.mynstu.schedule"];
     NSString *plistPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"schedules.plist"];
     if([[NSFileManager defaultManager] fileExistsAtPath:plistPath isDirectory:NO])
         [[NSFileManager defaultManager] removeItemAtPath:plistPath error:nil];
@@ -70,7 +70,8 @@
     [validDiscs enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         [newValDisc addObject:[obj allKeys][0]];
     }];
-    
+    NSUserDefaults *def = [[NSUserDefaults alloc]
+                                  initWithSuiteName:@"group.com.mynstu.schedule"];
     if([t count] == 0)
     {
         [t setObject:self.group_name forKey:@"current"];
@@ -78,16 +79,22 @@
                              @"days":days ,@"good_discs":goodDiskArray, @"sub_group" : [NSNumber numberWithInt:sub_group.segmentedControl.selectedSegmentIndex]}];
         [t setObject:arr forKey:@"data"];
     }
-    else
-    {
-        [t removeObjectForKey:@"current"];
-        [t setObject:self.group_name forKey:@"current"];
-        NSMutableArray *groupArray = [NSMutableArray arrayWithArray:t[@"data"]];
-        [groupArray addObject:@{ @"name":self.group_name,@"semester_begin":self.semester_begin,@"valid_discs":newValDisc,
-                                 @"days":days ,@"good_discs":goodDiskArray, @"sub_group" : [NSNumber numberWithInt:sub_group.segmentedControl.selectedSegmentIndex]}];
-    }
+//    else
+//    {
+//        [t removeObjectForKey:@"current"];
+//        [t setObject:self.group_name forKey:@"current"];
+//        NSMutableArray *groupArray = [NSMutableArray arrayWithArray:t[@"data"]];
+//        [groupArray addObject:@{ @"name":self.group_name,@"semester_begin":self.semester_begin,@"valid_discs":newValDisc,
+//                                 @"days":days ,@"good_discs":goodDiskArray, @"sub_group" : [NSNumber numberWithInt:sub_group.segmentedControl.selectedSegmentIndex]}];
+//    }
+    
     NSData *datad = [NSKeyedArchiver archivedDataWithRootObject:t];
-    [datad writeToFile:plistPath atomically:YES];
+//    [datad writeToFile:plistPath atomically:YES];
+
+    NSLog(@"Write to file: %ld",[datad writeToFile:plistPath atomically:YES]);
+    [def setObject:datad forKey:@"schedule_data"];
+    [def synchronize];
+    NSLog(@"Schedule sync: %ld",[def synchronize]);
 //    [api setSchedule:t];
     if([[MNAPI_Addition getObjectFROMNSUDWithKey:@"sch"] isEqualToString:@"close"])
     {
@@ -97,7 +104,18 @@
     }
     else if([[MNAPI_Addition getObjectFROMNSUDWithKey:@"sch"] isEqualToString:@"move"])
     {
+        [self dismissViewControllerAnimated:NO completion:nil];
         [MNAPI_Addition changeContentViewControllerWithName:@"ScheduleController"];
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"ScheduleControllerDismissed"
+         object:nil userInfo:nil];
+    }
+    else{
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"ScheduleControllerDismissed"
+         object:nil userInfo:nil];
+//        [MNAPI_Addition changeContentViewControllerWithName:@"ScheduleController"];
+        
     }
 }
 
@@ -112,7 +130,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.data_array count];
+    return [self.data_array count] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -130,8 +148,8 @@
             cell = [UITableViewCell new];
         }
         cell.translatesAutoresizingMaskIntoConstraints = YES;
-        cell.textLabel.text = data_array[indexPath.row][@"description"];
-        NSNumber *checked = data_array[indexPath.row][@"check"];
+        cell.textLabel.text = data_array[indexPath.row-1][@"description"];
+        NSNumber *checked = data_array[indexPath.row-1][@"check"];
         cell.textLabel.numberOfLines = 0;
         if([checked  isEqual: @1])
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -143,7 +161,7 @@
 }
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:data_array[indexPath.row]];
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:data_array[indexPath.row-1]];
     NSNumber *checked = dict[@"check"];
     if([checked  isEqual: @1])
         checked = @0;
@@ -151,7 +169,7 @@
         checked = @1;
     [dict removeObjectForKey:@"check"];
     [dict setObject:checked forKey:@"check"];
-    [data_array replaceObjectAtIndex:indexPath.row withObject:(NSDictionary*)dict];
+    [data_array replaceObjectAtIndex:indexPath.row-1 withObject:(NSDictionary*)dict];
     [discTable reloadData];
     // [self.discTable deselectRowAtIndexPath:indexPath animated:NO];
     

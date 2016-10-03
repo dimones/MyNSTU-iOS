@@ -42,7 +42,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>126</string>
+	<string>456</string>
 	<key>FacebookAppID</key>
 	<string>898491700209337</string>
 	<key>FacebookDisplayName</key>
@@ -54,6 +54,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>RequestsOpenAccess</key>
+	<true/>
 	<key>UIAppFonts</key>
 	<array>
 		<string>ionicons.ttf</string>

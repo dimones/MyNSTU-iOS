@@ -224,6 +224,38 @@
     IQSideMenuController *sideController = [IQSideMenuController getNowUsedController];
     [sideController toggleMenuAnimated:YES];
 }
+
+
++ (UIColor*) getColorFromMARK14:(NSString*) mark14
+{
+    NSDictionary *colors = @{ @"F": @"F833931",
+                              @"FX": @"F833931",
+                              @"E": @"F833931",
+                              @"D-": @"F833931",
+                              @"D": @"ff3e06",
+                              @"D+": @"ff4d06",
+                              @"C-": @"ff5a06",
+                              @"C": @"ff6506",
+                              @"C+": @"ff7b06",
+                              @"B-": @"ff8d06",
+                              @"B": @"ffc306",
+                              @"B+": @"ffed06",
+                              @"A-": @"bbf906",
+                              @"A": @"a0de3d",
+                              @"A+": @"a0de3d"};
+    return [UIColor colorFromHexString:colors[mark14]];
+}
++ (UIColor*) getColorFromMARK:(NSNumber*) mark
+{
+    NSDictionary *colors = @{ @2: @"f83931",
+                              @3: @"ff5a06",
+                              @4: @"ffc306",
+                              @5: @"a0de3d"};
+    return [UIColor colorFromHexString:colors[mark]];
+}
+
+
+
 @end
 
 @implementation NSDate (MNAPIAddition)

@@ -43,7 +43,8 @@
         color:(UIColor*)color
     sizeToFit:(BOOL)shouldSizeToFit;
 + (void) hideORShowLeftBar;
-
++ (UIColor*) getColorFromMARK14:(NSString*) mark14;
++ (UIColor*) getColorFromMARK:(NSNumber*) mark;
 @end
 
 @interface NSDate (MNAPIAddition)
